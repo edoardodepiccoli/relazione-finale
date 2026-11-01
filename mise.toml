@@ -6,3 +6,7 @@ pandoc = "3.13"
 [tasks.pdf]
 description = "Compila i capitoli in tesi.pdf"
 run = "pandoc --defaults defaults.yaml capitoli/*.md -o tesi.pdf"
+
+[tasks.indice]
+description = "Compila l'indice proposto in indice.pdf, separato dalla tesi"
+run = "pandoc --defaults defaults.yaml --table-of-contents=false -M subtitle='Indice proposto' indice.md -o indice.pdf"
