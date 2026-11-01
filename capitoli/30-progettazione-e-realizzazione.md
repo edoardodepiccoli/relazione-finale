@@ -2,9 +2,9 @@
 
 ## Metodo di lavoro
 
-### Pianificazione e interazione con il tutor aziendale
+### Pianificazione e interazione con il *tutor* aziendale
 
-Confronto le modalità di interazione previste dal piano di lavoro con quelle effettive: le riunioni quotidiane, i resoconti di fine giornata su Slack, la riunione settimanale, i confronti su richiesta e le giornate in sede. Discuto le difficoltà di allineamento della fase iniziale, dovute anche alla mia scarsa iniziativa nel chiedere chiarimenti tempestivamente, e il modo in cui le ho superate. Descrivo infine i resoconti settimanali al relatore e la svolta della terza settimana: con gli obiettivi obbligatori già soddisfatti, io e il tutor abbiamo deciso di dedicare il resto dello *stage* alla sperimentazione.
+Confronto le modalità di interazione previste dal piano di lavoro con quelle effettive: le riunioni quotidiane, i resoconti di fine giornata su Slack, la riunione settimanale, i confronti su richiesta e le giornate in sede. Discuto le difficoltà di allineamento della fase iniziale, dovute anche alla mia scarsa iniziativa nel chiedere chiarimenti tempestivamente, e il modo in cui le ho superate. Descrivo infine i resoconti settimanali al relatore e la svolta della terza settimana: con gli obiettivi obbligatori già soddisfatti, io e il *tutor* abbiamo deciso di dedicare il resto dello *stage* alla sperimentazione.
 
 ### Organizzazione del lavoro e tracciamento delle attività
 
@@ -22,7 +22,7 @@ Descrivo la fase iniziale dello *stage*, dedicata allo studio del funzionamento 
 
 ### Un'analisi dei requisiti iterativa {#sec:requisiti}
 
-Motivo la scelta, condivisa con il tutor, di non svolgere un'analisi dei requisiti completa all'inizio del progetto: il lavoro aveva carattere esplorativo, nessun cliente ne dettava i requisiti, e una specifica fissata a priori sarebbe diventata presto obsoleta. Descrivo il procedimento che ho seguito: a partire dagli obiettivi del piano ho abbozzato i casi d'uso principali, rappresentati in un diagramma, e ne ho ricavato requisiti che ho rivisto a ogni iterazione. Una tabella riporta i requisiti con un identificativo, raggruppati per area; ne misuro la copertura nella @sec:quantitativi.
+Motivo la scelta, condivisa con il *tutor*, di non svolgere un'analisi dei requisiti completa all'inizio del progetto: il lavoro aveva carattere esplorativo, nessun cliente ne dettava i requisiti, e una specifica fissata a priori sarebbe diventata presto obsoleta. Descrivo il procedimento che ho seguito: a partire dagli obiettivi del piano ho abbozzato i casi d'uso principali, rappresentati in un diagramma, e ne ho ricavato requisiti che ho rivisto a ogni iterazione. Una tabella riporta i requisiti con un identificativo, raggruppati per area; ne misuro la copertura nella @sec:quantitativi.
 
 <!-- DA DEFINIRE: i casi d'uso iniziali e come raggruppare i requisiti (utente, agente, app...). Base possibile: la specifica cancellata il 15/10 in chat-cart. -->
 
@@ -48,11 +48,11 @@ Descrivo gli eventi che il *widget* registra, il *funnel* che la *dashboard* pre
 
 ## Sperimentazioni abbandonate
 
-Dedico questa sezione alle funzionalità che ho sperimentato e poi abbandonato, perché documentano l'orientamento alla ricerca che io e il tutor abbiamo dato al progetto dalla terza settimana: i messaggi di invito che comparivano prima dell'apertura della chat, i tre tentativi di adattare l'aspetto del *widget* al tema del negozio, l'impiego di Jev nella scelta dei componenti, il pannello a tutto schermo su *desktop*. Per ciascuna espongo l'ipotesi di partenza, l'esito che ho osservato e le ragioni dell'abbandono.
+Dedico questa sezione alle funzionalità che ho sperimentato e poi abbandonato, perché documentano l'orientamento alla ricerca che io e il *tutor* abbiamo dato al progetto dalla terza settimana: i messaggi di invito che comparivano prima dell'apertura della chat, i tre tentativi di adattare l'aspetto del *widget* al tema del negozio, l'impiego di Jev nella scelta dei componenti, il pannello a tutto schermo su *desktop*. Per ciascuna espongo l'ipotesi di partenza, l'esito che ho osservato e le ragioni dell'abbandono.
 
 ## Verifica e validazione
 
-Illustro la mia strategia di verifica: test automatici concentrati sui punti in cui ChatCart interagisce con sistemi esterni che non controllo, eseguiti su una base di dati reale e senza simulare i moduli interni. Discuto i limiti dei test tradizionali applicati a un agente che non risponde mai due volte nello stesso modo, e le valutazioni in cui un secondo modello giudica il comportamento dell'agente su scenari predefiniti. Concludo con la validazione svolta insieme al tutor e con il rilascio dell'applicazione *online*.
+Illustro la mia strategia di verifica: test automatici concentrati sui punti in cui ChatCart interagisce con sistemi esterni che non controllo, eseguiti su una base di dati reale e senza simulare i moduli interni. Discuto i limiti dei test tradizionali applicati a un agente che non risponde mai due volte nello stesso modo, e le valutazioni in cui un secondo modello giudica il comportamento dell'agente su scenari predefiniti. Concludo con la validazione svolta insieme al *tutor* e con il rilascio dell'applicazione *online*.
 
 ## Risultati
 

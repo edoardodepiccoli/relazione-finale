@@ -1,6 +1,6 @@
 # Halue: consulenza tecnologica per il commercio digitale
 
-Presento Halue S.r.l., l'azienda presso cui ho svolto lo *stage*: il profilo, la clientela, le tecnologie, i processi e il rapporto con l'innovazione. Le informazioni provengono da ciò che ho osservato durante lo *stage*, da quanto mi hanno riferito il tutor e il fondatore e dalle pagine pubbliche dell'azienda; nel testo distinguo queste fonti dove la differenza conta.
+Presento Halue S.r.l., l'azienda presso cui ho svolto lo *stage*: il profilo, la clientela, le tecnologie, i processi e il rapporto con l'innovazione. Le informazioni provengono da ciò che ho osservato durante lo *stage*, da quanto mi hanno riferito il *tutor* e il fondatore e dalle pagine pubbliche dell'azienda; nel testo distinguo queste fonti dove la differenza conta.
 
 <!-- DA DECIDERE: le direttive chiedono di spiegare, prima di descrivere l'azienda, come ho acquisito le informazioni e quanto le ritengo accurate. -->
 
