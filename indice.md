@@ -72,9 +72,15 @@ Presento gli strumenti che ho usato per sviluppare, verificare e rilasciare. Tra
 
 ### 3.2 Studio dell'ecosistema e analisi {.unnumbered .unlisted}
 
-Racconto la prima fase: lo studio di come funziona un'applicazione Shopify (autenticazione, *app proxy*, estensioni del tema, differenza tra Storefront API e Admin API) e degli strumenti per costruire agenti. Poi descrivo come ho definito cosa doveva fare ChatCart, a partire dagli obiettivi del piano: i casi d'uso, con un diagramma, e i requisiti che ne ho ricavato.
+#### 3.2.1 Studio dell'ecosistema Shopify {.unnumbered .unlisted}
 
-<!-- DA DECIDERE: come trattare i requisiti. La specifica con ID (G, R, B) è stata cancellata il 15/10 e poi il lavoro è proseguito in modo iterativo; da rivedere. -->
+Racconto la prima fase dello stage: lo studio di come funziona un'applicazione Shopify (autenticazione, *app proxy*, estensioni del tema, differenza tra Storefront API e Admin API) e degli strumenti per costruire agenti. Spiego cosa sapevo già dal mio lavoro sui temi Liquid e cosa ho dovuto imparare da zero.
+
+#### 3.2.2 Requisiti che evolvono con il prototipo {.unnumbered .unlisted}
+
+Spiego perché, d'accordo con il tutor, non ho fatto un'analisi dei requisiti completa all'inizio: il progetto era esplorativo, senza un cliente che li dettasse, e requisiti fissati a priori sarebbero diventati presto inutili. Descrivo come li ho definiti invece: sono partito dagli obiettivi del piano, ho abbozzato i casi d'uso principali, con un diagramma, e ne ho ricavato requisiti che ho rivisto a ogni iterazione. Una tabella riporta i requisiti con un identificativo, raggruppati per area, e li uso nel §3.7.2 per misurarne la copertura.
+
+<!-- DA DEFINIRE: i casi d'uso iniziali e come raggruppare i requisiti (utente, agente, app...). Base possibile: la specifica cancellata il 15/10 in chat-cart. -->
 
 ### 3.3 Progettazione dell'architettura {.unnumbered .unlisted}
 
@@ -112,7 +118,7 @@ Mostro ChatCart dal lato di chi lo usa, con una sequenza di schermate: un client
 
 #### 3.7.2 Risultati quantitativi {.unnumbered .unlisted}
 
-Riporto i numeri del progetto in tabelle: la copertura dei requisiti, la copertura dei test con le scelte che la spiegano, le righe di codice per parte dell'applicazione, il numero di *commit* e di documenti prodotti.
+Riporto i numeri del progetto in tabelle: la copertura dei requisiti del §3.2.2, la copertura dei test con le scelte che la spiegano, le righe di codice per parte dell'applicazione, il numero di *commit* e di documenti prodotti.
 
 ## 4 Bilancio dello stage {.unnumbered .unlisted}
 
