@@ -5,10 +5,11 @@ documentclass: report
 classoption: [a4paper, 12pt, oneside]
 geometry: [margin=3cm]
 colorlinks: true
-# pandoc-crossref: riferimenti a figure e tabelle in italiano
+# pandoc-crossref: riferimenti a figure, tabelle e codici sorgente in italiano
 linkReferences: true
 figureTitle: "Figura"
 tableTitle: "Tabella"
 figPrefix: [figura, figure]
 tblPrefix: [tabella, tabelle]
+lstPrefix: [codice, codici]
 secPrefix: [sezione, sezioni]
