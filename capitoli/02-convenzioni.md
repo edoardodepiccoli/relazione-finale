@@ -1,6 +1,6 @@
 # Convenzioni tipografiche {.unnumbered .unlisted}
 
-Elencherò qui le convenzioni tipografiche che adotto nel documento:
+Nel documento adotto le seguenti convenzioni tipografiche:
 
 - il corsivo indica i termini in lingua straniera;
 - alla prima occorrenza di un termine tecnico ne do nel testo una definizione essenziale, e un pedice G rimanda all'approfondimento nel glossario;
