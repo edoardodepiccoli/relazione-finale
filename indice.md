@@ -1,6 +1,6 @@
 # Indice proposto {.unnumbered}
 
-Propongo qui la struttura della relazione, per capitoli e sezioni. Sotto ogni voce scrivo in breve cosa intendo raccontare e con quali illustrazioni. I titoli sono provvisori, e alcune sezioni del capitolo 3 si preciseranno durante la stesura.
+Propongo qui la struttura della relazione finale «ChatCart: agente conversazionale con interfaccia generativa», per capitoli e sezioni. Sotto ogni voce scrivo in breve cosa intendo raccontare e con quali illustrazioni. I titoli sono provvisori, e alcune sezioni del capitolo 3 si preciseranno durante la stesura.
 
 ## Parti iniziali {.unnumbered .unlisted}
 
