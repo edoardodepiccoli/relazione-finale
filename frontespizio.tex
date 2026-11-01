@@ -1,5 +1,6 @@
 % Frontespizio e retro, sul modello delle tesi seguite da Vardanega.
 % Pandoc chiama \maketitle quando metadata.yaml ha un titolo.
+\usepackage{graphicx}
 \makeatletter
 \renewcommand{\maketitle}{%
   \begin{titlepage}
@@ -9,6 +10,8 @@
     {\large\textsc{Dipartimento di Matematica “Tullio Levi-Civita”}\par}
     \vspace{0.8em}
     {\large\textsc{Corso di Laurea in Informatica}\par}
+    \vfill
+    \includegraphics[width=0.38\textwidth]{figure/unipd-logo.png}\par
     \vfill
     {\LARGE\bfseries \@title\par}
     \vspace{1.2em}
@@ -22,7 +25,8 @@
     \begin{minipage}[t]{0.47\textwidth}
       \raggedleft
       {\itshape Laureando}\\[0.3em]
-      \@author
+      \@author\\[0.3em]
+      {\itshape Matricola} 2101055
     \end{minipage}
     \vfill
     \rule{0.8\textwidth}{0.4pt}\par
