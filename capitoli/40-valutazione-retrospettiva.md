@@ -1,8 +1,10 @@
 # Valutazione retrospettiva
 
+Guardo indietro allo *stage*: quanto ho raggiunto degli obiettivi, cosa ho imparato e quanto il corso di studi mi aveva preparato.
+
 ## Soddisfacimento degli obiettivi
 
-Valuto, sulla base di dati di fatto, il grado di soddisfacimento degli obiettivi presentati nella @sec:obiettivi: una tabella riporta ciascun obiettivo del piano, da OB1 a FA2, con il relativo stato e l'evidenza che lo documenta. Discuto gli scostamenti, come gli obiettivi che io e il *tutor* abbiamo scartato e i limiti delle metriche raccolte, e valuto anche il raggiungimento dei miei obiettivi personali.
+Valuto, sulla base di dati di fatto, il grado di soddisfacimento degli obiettivi presentati nella @sec:obiettivi e nella @sec:obiettivi-personali: una tabella riporta ciascun obiettivo del piano, da OB1 a FA2, e ciascuno dei miei obiettivi personali, con il relativo stato e l'evidenza che lo documenta. Valuto allo stesso modo i prodotti attesi: quelli elencati nel piano di lavoro e la presentazione formale al *team* che il *tutor* mi ha chiesto a fine *stage*. Discuto gli scostamenti, come gli obiettivi che io e il *tutor* abbiamo scartato e i limiti delle metriche raccolte.
 
 ## Maturazione professionale
 
