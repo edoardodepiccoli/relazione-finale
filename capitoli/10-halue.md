@@ -1,8 +1,6 @@
 # Halue: consulenza tecnologica per il commercio digitale
 
-Presento Halue S.r.l., l'azienda presso cui ho svolto lo *stage*: il profilo, la clientela, le tecnologie, i processi e il rapporto con l'innovazione. Le informazioni provengono da ciò che ho osservato durante lo *stage*, da quanto mi hanno riferito il *tutor* e il fondatore e dalle pagine pubbliche dell'azienda; nel testo distinguo queste fonti dove la differenza conta.
-
-<!-- DA DECIDERE: le direttive chiedono di spiegare, prima di descrivere l'azienda, come ho acquisito le informazioni e quanto le ritengo accurate. -->
+Presento Halue S.r.l., l'azienda presso cui ho svolto lo *stage*: il profilo, la clientela, le tecnologie, i processi e il rapporto con l'innovazione. Per ciascun aspetto dico da dove viene l'informazione: ciò che ho visto durante lo *stage*, le risposte scritte del *tutor* alle mie domande, il colloquio conoscitivo con il fondatore e il *tutor*, il sito e il portfolio dell'azienda.
 
 ## Profilo aziendale e linee di attività
 
@@ -14,11 +12,17 @@ Descrivo la clientela di Halue: aziende private di medie e grandi dimensioni nei
 
 ## Ecosistema tecnologico
 
-Presento le tecnologie ricorrenti nei progetti di Halue: l'ecosistema Shopify (temi Liquid, API GraphQL, Hydrogen, applicazioni personalizzate), la *suite* Salesforce, i CMS *headless* e le piattaforme *cloud*. Esamino poi le differenze nei progetti basati sull'intelligenza artificiale, in cui i modelli linguistici accedono ai dati del negozio tramite strumenti sviluppati internamente. Una tabella riassume le tecnologie e i rispettivi ambiti d'uso.
+Presento le tecnologie ricorrenti nei progetti di Halue: l'ecosistema Shopify (temi Liquid, API GraphQL, Hydrogen, applicazioni personalizzate), la *suite* Salesforce, i CMS *headless* e le piattaforme *cloud*. Esamino poi le differenze nei progetti basati sull'intelligenza artificiale, in cui i modelli linguistici accedono ai dati del negozio tramite strumenti sviluppati internamente. Una tabella riassume le tecnologie e i rispettivi ambiti d'uso, e distingue quelle che ho usato in prima persona da quelle che conosco dai racconti del *team*.
 
 ## Processi di sviluppo e gestione dei progetti
 
-Illustro il percorso di un progetto dalla richiesta del cliente al rilascio: la raccolta dei requisiti in *ticket*, le due fasi di *refinement*, le stime, la variante di Scrum adattata a un'agenzia con i relativi ruoli, le convenzioni di codifica, i test, il rilascio su tre ambienti, la manutenzione, la documentazione delle decisioni architetturali e le retrospettive. Un diagramma rappresenta il ciclo di vita di un *ticket*.
+### Organizzazione del lavoro e gestione dei progetti
+
+Descrivo come Halue organizza il lavoro: la variante di Scrum adattata a un'agenzia e i suoi ruoli, la pianificazione mensile delle persone sui clienti, il controllo di avanzamento e rischi, la comunicazione con il cliente e la condivisione della conoscenza. A quanto mi ha riferito il *tutor* affianco ciò che ho vissuto di persona: la riunione quotidiana del *team*, i canali Slack e le giornate in sede.
+
+### Dal *ticket* al rilascio
+
+Illustro il percorso di un progetto dalla richiesta del cliente al rilascio: la raccolta dei requisiti in *ticket*, le due fasi di *refinement*, le stime, le convenzioni di codifica e di versionamento, i test, il rilascio su tre ambienti, la manutenzione, la documentazione delle decisioni architetturali e le retrospettive. Un diagramma rappresenta il ciclo di vita di un *ticket*.
 
 ## Propensione all'innovazione e ruolo dell'intelligenza artificiale {#sec:innovazione}
 
