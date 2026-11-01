@@ -1,0 +1,15 @@
+title: "Titolo da definire"
+author: "Edoardo De Piccoli"
+date: "Anno accademico 2026-2027"
+lang: it-IT
+documentclass: report
+classoption: [a4paper, 12pt, oneside]
+geometry: [margin=3cm]
+colorlinks: true
+# pandoc-crossref: riferimenti a figure e tabelle in italiano
+linkReferences: true
+figureTitle: "Figura"
+tableTitle: "Tabella"
+figPrefix: [figura, figure]
+tblPrefix: [tabella, tabelle]
+secPrefix: [sezione, sezioni]

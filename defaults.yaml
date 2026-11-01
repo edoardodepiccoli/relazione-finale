@@ -1,0 +1,8 @@
+from: markdown
+metadata-files: [metadata.yaml]
+filters: [pandoc-crossref]
+pdf-engine: tectonic
+resource-path: [., figure]
+number-sections: true
+top-level-division: chapter
+table-of-contents: true
