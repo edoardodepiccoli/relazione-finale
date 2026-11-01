@@ -10,4 +10,4 @@ Descrivo la mia maturazione professionale in termini di conoscenze, come l'ecosi
 
 ## Distanza tra formazione universitaria e competenze richieste
 
-Confronto le competenze che lo stage mi ha richiesto con quelle che ho acquisito nel corso di studi. Individuo quelle che si sono rivelate utili e le lacune che sono emerse, come la progettazione di agenti e la verifica di sistemi dal comportamento non deterministico, sia rispetto allo stage sia rispetto all'idea che ho del mondo del lavoro.
+Confronto le competenze che lo *stage* mi ha richiesto con quelle che ho acquisito nel corso di studi. Individuo quelle che si sono rivelate utili e le lacune che sono emerse, come la progettazione di agenti e la verifica di sistemi dal comportamento non deterministico, sia rispetto allo *stage* sia rispetto all'idea che ho del mondo del lavoro.

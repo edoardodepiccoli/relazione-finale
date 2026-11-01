@@ -1,12 +1,12 @@
 # Halue: consulenza tecnologica per il commercio digitale
 
-Presento Halue S.r.l., l'azienda presso cui ho svolto lo stage: il profilo, la clientela, le tecnologie, i processi e il rapporto con l'innovazione. Le informazioni provengono da ciò che ho osservato durante lo stage, da quanto mi hanno riferito il tutor e il fondatore e dalle pagine pubbliche dell'azienda; nel testo distinguo queste fonti dove la differenza conta.
+Presento Halue S.r.l., l'azienda presso cui ho svolto lo *stage*: il profilo, la clientela, le tecnologie, i processi e il rapporto con l'innovazione. Le informazioni provengono da ciò che ho osservato durante lo *stage*, da quanto mi hanno riferito il tutor e il fondatore e dalle pagine pubbliche dell'azienda; nel testo distinguo queste fonti dove la differenza conta.
 
 <!-- DA DECIDERE: le direttive chiedono di spiegare, prima di descrivere l'azienda, come ho acquisito le informazioni e quanto le ritengo accurate. -->
 
 ## Profilo aziendale e linee di attività
 
-Descrivo Halue: una società di consulenza tecnologica fondata nel 2022, composta da dieci persone e Società Benefit dal 2024, con i ruoli presenti nel team. Presento le linee di attività in ordine di peso, dall'*e-commerce* su Shopify e Salesforce ai servizi di intelligenza artificiale, e chiarisco che l'azienda opera su progetti commissionati dai clienti, senza prodotti propri.
+Descrivo Halue: una società di consulenza tecnologica fondata nel 2022, composta da dieci persone e Società Benefit dal 2024, con i ruoli presenti nel *team*. Presento le linee di attività in ordine di peso, dall'*e-commerce* su Shopify e Salesforce ai servizi di intelligenza artificiale, e chiarisco che l'azienda opera su progetti commissionati dai clienti, senza prodotti propri.
 
 ## Clientela e modalità di ingaggio
 
@@ -14,7 +14,7 @@ Descrivo la clientela di Halue: aziende private di medie e grandi dimensioni nei
 
 ## Ecosistema tecnologico
 
-Presento le tecnologie ricorrenti nei progetti di Halue: l'ecosistema Shopify (temi Liquid, API GraphQL, Hydrogen, applicazioni personalizzate), la suite Salesforce, i CMS *headless* e le piattaforme *cloud*. Esamino poi le differenze nei progetti basati sull'intelligenza artificiale, in cui i modelli linguistici accedono ai dati del negozio tramite strumenti sviluppati internamente. Una tabella riassume le tecnologie e i rispettivi ambiti d'uso.
+Presento le tecnologie ricorrenti nei progetti di Halue: l'ecosistema Shopify (temi Liquid, API GraphQL, Hydrogen, applicazioni personalizzate), la *suite* Salesforce, i CMS *headless* e le piattaforme *cloud*. Esamino poi le differenze nei progetti basati sull'intelligenza artificiale, in cui i modelli linguistici accedono ai dati del negozio tramite strumenti sviluppati internamente. Una tabella riassume le tecnologie e i rispettivi ambiti d'uso.
 
 ## Processi di sviluppo e gestione dei progetti
 

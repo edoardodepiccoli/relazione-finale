@@ -4,7 +4,7 @@
 
 ### Pianificazione e interazione con il tutor aziendale
 
-Confronto le modalità di interazione previste dal piano di lavoro con quelle effettive: le riunioni quotidiane, i resoconti di fine giornata su Slack, la riunione settimanale, i confronti su richiesta e le giornate in sede. Discuto le difficoltà di allineamento della fase iniziale, dovute anche alla mia scarsa iniziativa nel chiedere chiarimenti tempestivamente, e il modo in cui le ho superate. Descrivo infine i resoconti settimanali al relatore e la svolta della terza settimana: con gli obiettivi obbligatori già soddisfatti, io e il tutor abbiamo deciso di dedicare il resto dello stage alla sperimentazione.
+Confronto le modalità di interazione previste dal piano di lavoro con quelle effettive: le riunioni quotidiane, i resoconti di fine giornata su Slack, la riunione settimanale, i confronti su richiesta e le giornate in sede. Discuto le difficoltà di allineamento della fase iniziale, dovute anche alla mia scarsa iniziativa nel chiedere chiarimenti tempestivamente, e il modo in cui le ho superate. Descrivo infine i resoconti settimanali al relatore e la svolta della terza settimana: con gli obiettivi obbligatori già soddisfatti, io e il tutor abbiamo deciso di dedicare il resto dello *stage* alla sperimentazione.
 
 ### Organizzazione del lavoro e tracciamento delle attività
 
@@ -12,13 +12,13 @@ Illustro come ho organizzato il lavoro da remoto: il *brain dump* quotidiano, da
 
 ### Strumenti di sviluppo e assistenti basati sull'intelligenza artificiale
 
-Presento gli strumenti che ho impiegato per lo sviluppo, la verifica e il rilascio. Tra questi includo gli assistenti di programmazione basati su modelli linguistici, Claude Code e OpenCode, che in Halue considerano strumenti come gli altri, il cui valore dipende da un uso consapevole. Descrivo il ruolo che hanno avuto nel mio lavoro: la sperimentazione e la validazione rapida delle idee, fino a prototipi funzionanti nell'arco di una giornata, a cui seguiva l'implementazione definitiva scritta a mano; e le attività di supporto, come la generazione dei dati di prova e degli script di valutazione.
+Presento gli strumenti che ho impiegato per lo sviluppo, la verifica e il rilascio. Tra questi includo gli assistenti di programmazione basati su modelli linguistici, Claude Code e OpenCode, che in Halue considerano strumenti come gli altri, il cui valore dipende da un uso consapevole. Descrivo il ruolo che hanno avuto nel mio lavoro: la sperimentazione e la validazione rapida delle idee, fino a prototipi funzionanti nell'arco di una giornata, a cui seguiva l'implementazione definitiva scritta a mano; e le attività di supporto, come la generazione dei dati di prova e degli *script* di valutazione.
 
 ## Studio preliminare e analisi
 
 ### L'ecosistema delle applicazioni Shopify
 
-Descrivo la fase iniziale dello stage, dedicata allo studio del funzionamento di un'applicazione Shopify (autenticazione, *app proxy*, estensioni del tema, differenze tra Storefront API e Admin API) e degli strumenti per la costruzione di agenti. Distinguo le conoscenze che avevo già acquisito lavorando sui temi Liquid da quelle che ho dovuto costruire per la prima volta.
+Descrivo la fase iniziale dello *stage*, dedicata allo studio del funzionamento di un'applicazione Shopify (autenticazione, *app proxy*, estensioni del tema, differenze tra Storefront API e Admin API) e degli strumenti per la costruzione di agenti. Distinguo le conoscenze che avevo già acquisito lavorando sui temi Liquid da quelle che ho dovuto costruire per la prima volta.
 
 ### Un'analisi dei requisiti iterativa {#sec:requisiti}
 

@@ -1,16 +1,16 @@
-# Oltre la conversazione testuale: le ragioni dello stage
+# Oltre la conversazione testuale: le ragioni dello *stage*
 
-## Il ruolo degli stage nella strategia aziendale
+## Il ruolo degli *stage* nella strategia aziendale
 
-Descrivo il rapporto di Halue con gli stage: il numero di stagisti che ospita ogni anno, la loro provenienza e il duplice scopo che l'azienda attribuisce a queste esperienze, cioè esplorare temi che i progetti per i clienti non lasciano il tempo di approfondire e conoscere persone con cui collaborare in futuro. Illustro come nasce un progetto di stage e quale destino può avere il lavoro al suo termine, e collego queste scelte alla propensione all'innovazione discussa nella @sec:innovazione.
+Descrivo il rapporto di Halue con gli *stage*: il numero di stagisti che ospita ogni anno, la loro provenienza e il duplice scopo che l'azienda attribuisce a queste esperienze, cioè esplorare temi che i progetti per i clienti non lasciano il tempo di approfondire e conoscere persone con cui collaborare in futuro. Illustro come nasce un progetto di *stage* e quale destino può avere il lavoro al suo termine, e collego queste scelte alla propensione all'innovazione discussa nella @sec:innovazione.
 
 ## I limiti degli assistenti conversazionali testuali
 
-Introduco il problema che lo stage affronta. I *chatbot* integrati nei negozi *online* rispondono quasi esclusivamente in forma testuale, una modalità poco efficace quando il cliente deve esplorare un catalogo, confrontare prodotti o scegliere una variante. Esamino le alternative disponibili sul mercato, dai *chatbot* generici a strumenti come Shopify Sidekick, rivolto al commerciante più che al cliente, e discuto perché le soluzioni preconfezionate si adattano con difficoltà all'identità del marchio e alle specificità del suo catalogo.
+Introduco il problema che lo *stage* affronta. I *chatbot* integrati nei negozi *online* rispondono quasi esclusivamente in forma testuale, una modalità poco efficace quando il cliente deve esplorare un catalogo, confrontare prodotti o scegliere una variante. Esamino le alternative disponibili sul mercato, dai *chatbot* generici a strumenti come Shopify Sidekick, rivolto al commerciante più che al cliente, e discuto perché le soluzioni preconfezionate si adattano con difficoltà all'identità del marchio e alle specificità del suo catalogo.
 
 ## Il commercio agentico nella visione di Halue
 
-Colloco lo stage nella strategia dell'azienda, che intende costruire competenze sul commercio agentico, in cui un agente di intelligenza artificiale accompagna il cliente fino all'acquisto. Descrivo le esperienze da cui Halue partiva, su Shopify Plus e sull'intelligenza artificiale, e l'uso che intende fare dei risultati: proporre questo tipo di soluzione ai propri clienti come servizio.
+Colloco lo *stage* nella strategia dell'azienda, che intende costruire competenze sul commercio agentico, in cui un agente di intelligenza artificiale accompagna il cliente fino all'acquisto. Descrivo le esperienze da cui Halue partiva, su Shopify Plus e sull'intelligenza artificiale, e l'uso che intende fare dei risultati: proporre questo tipo di soluzione ai propri clienti come servizio.
 
 ## Obiettivi e vincoli del progetto {#sec:obiettivi}
 
