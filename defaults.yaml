@@ -6,3 +6,4 @@ resource-path: [., figure]
 number-sections: true
 top-level-division: chapter
 table-of-contents: true
+include-in-header: [frontespizio.tex]
