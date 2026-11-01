@@ -1,5 +1,7 @@
-# Nota a questa versione {.unnumbered}
+```{=latex}
+\pagenumbering{roman}
+```
 
-Questo documento è la relazione finale nella sua forma iniziale. L'indice è quello che propongo, e sotto ogni sezione scrivo per ora in breve cosa intendo raccontare e con quali illustrazioni. A indice approvato, sostituirò questi paragrafi con il testo, un capitolo alla volta. I titoli sono provvisori, e alcune sezioni del capitolo 3 si preciseranno durante la stesura.
+# Nota alla presente versione {.unnumbered .unlisted}
 
-Prima del capitolo 1 la versione finale avrà un sommario e le convenzioni tipografiche. Nelle convenzioni spiegherò che i termini in lingua straniera sono in corsivo e che la prima volta che uso un termine tecnico ne do una definizione essenziale nel testo, lasciando al glossario solo l'approfondimento.
+Questo documento è la relazione finale nella sua forma iniziale. L'indice è quello che propongo; sotto ogni sezione descrivo per ora in breve il contenuto che intendo sviluppare e le illustrazioni che lo accompagneranno. Dopo l'approvazione dell'indice sostituirò questi paragrafi con il testo definitivo, un capitolo alla volta. I titoli sono provvisori, e alcune sezioni del capitolo 3 si preciseranno durante la stesura.

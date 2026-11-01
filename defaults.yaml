@@ -5,5 +5,7 @@ pdf-engine: tectonic
 resource-path: [., figure]
 number-sections: true
 top-level-division: chapter
-table-of-contents: true
+# L'indice e gli elenchi di figure e tabelle li mette capitoli/03-indici.md,
+# dopo sommario e convenzioni tipografiche.
+table-of-contents: false
 include-in-header: [frontespizio.tex]
