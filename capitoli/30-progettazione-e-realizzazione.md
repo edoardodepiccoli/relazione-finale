@@ -52,9 +52,11 @@ Presento il *widget*: i componenti (schede prodotto con selezione della variante
 
 Descrivo gli eventi che il *widget* registra, il *funnel* che la *dashboard* presenta al commerciante e l'analisi automatica delle conversazioni con Jev, un modello più rapido che assegna a ciascuna conversazione un punteggio e alcune etichette. Questa parte risponde all'obiettivo OB5.
 
-## Sperimentazioni abbandonate
+## Funzionalità sperimentali e possibili evoluzioni
 
-Dedico questa sezione alle funzionalità che ho sperimentato e poi abbandonato, perché documentano l'orientamento alla ricerca che io e il *tutor* abbiamo dato al progetto dalla terza settimana: i messaggi di invito che comparivano prima dell'apertura della chat, i tre tentativi di adattare l'aspetto del *widget* al tema del negozio, l'impiego di Jev nella scelta dei componenti, il pannello a tutto schermo su *desktop*. Per ciascuna espongo l'ipotesi di partenza, l'esito che ho osservato e le ragioni dell'abbandono.
+Dedico questa sezione alle funzionalità che ho sperimentato senza portarle nel prodotto finale, perché documentano l'orientamento alla ricerca che io e il *tutor* abbiamo dato al progetto dalla terza settimana: i messaggi di invito che comparivano prima dell'apertura della chat, i tre tentativi di adattare l'aspetto del *widget* al tema del negozio, l'impiego di Jev nella scelta dei componenti, il pannello a tutto schermo su *desktop*. Per ciascuna espongo l'ipotesi di partenza, l'esito che ho osservato e le ragioni per cui l'ho messa da parte. Da queste prove ricavo infine le strade lungo cui ChatCart potrebbe evolvere in futuro.
+
+<!-- DA CONFERMARE: quali strade di evoluzione indicare. -->
 
 ## Verifica e validazione
 
