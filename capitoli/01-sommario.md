@@ -6,7 +6,7 @@
 
 In questa relazione descrivo lo *stage* che ho svolto presso Halue S.r.l., società di consulenza tecnologica con sede operativa ad Abano Terme, dal 14 settembre al 9 novembre 2026.
 
-Con la supervisione del Prof. Tullio Vardanega, relatore, e di Antonio Cavestro, *tutor* aziendale, ho progettato e realizzato ChatCart, il prototipo di un assistente conversazionale per i negozi Shopify che risponde al cliente non soltanto con il testo, ma anche con componenti dell'interfaccia che sceglie e popola in tempo reale con i dati del negozio. Ho sviluppato ChatCart in TypeScript, con React per il *widget* e Node.js per l'agente.
+Con la supervisione del Prof. Tullio Vardanega, relatore, e di Antonio Cavestro, *tutor* aziendale, ho progettato e realizzato ChatCart, il prototipo di un assistente conversazionale per i negozi Shopify che risponde al cliente non soltanto con il testo, ma anche con componenti dell'interfaccia che sceglie e popola in tempo reale con i dati del negozio.
 
 La relazione si articola in **quattro capitoli**:
 
