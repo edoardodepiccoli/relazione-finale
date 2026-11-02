@@ -4,6 +4,8 @@ lang: it-IT
 documentclass: report
 classoption: [a4paper, 12pt, oneside]
 geometry: [margin=3cm]
+# interlinea un po' più ampia, per leggere meglio
+linestretch: 1.25
 colorlinks: true
 # pandoc-crossref: riferimenti a figure, tabelle e codici sorgente in italiano
 linkReferences: true
