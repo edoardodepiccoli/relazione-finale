@@ -6,15 +6,15 @@ Racconto lo *stage* come un piccolo progetto a sé stante: il metodo di lavoro, 
 
 ### Pianificazione e interazione con il *tutor* aziendale
 
-Confronto le modalità di interazione previste dal piano di lavoro con quelle effettive: le riunioni quotidiane, i resoconti di fine giornata su Slack, la riunione settimanale, i confronti su richiesta e le giornate in sede. Discuto le difficoltà di allineamento della fase iniziale, dovute anche alla mia scarsa iniziativa nel chiedere chiarimenti tempestivamente, e il modo in cui le ho superate. Descrivo infine i resoconti settimanali al relatore e la svolta della terza settimana: con gli obiettivi obbligatori già soddisfatti, io e il *tutor* abbiamo deciso di dedicare il resto dello *stage* alla sperimentazione. Un diagramma temporale mette a confronto la pianificazione originaria del piano di lavoro con il modo in cui ho usato davvero il tempo, attività per attività.
+Confronto le modalità di interazione previste dal piano di lavoro con quelle effettive: le riunioni quotidiane, i resoconti di fine giornata su Slack, la riunione settimanale, i confronti su richiesta e le giornate in sede. Discuto le difficoltà della fase iniziale e il modo in cui le ho superate. Descrivo infine i resoconti settimanali al relatore e la svolta della terza settimana: con gli obiettivi obbligatori già soddisfatti, io e il *tutor* abbiamo deciso di dedicare il resto dello *stage* alla sperimentazione. Un diagramma temporale mette a confronto la pianificazione originaria del piano di lavoro con il modo in cui ho usato davvero il tempo, attività per attività.
 
 ### Organizzazione del lavoro e tracciamento delle attività
 
-Illustro come ho organizzato il lavoro da remoto: il *brain dump* quotidiano, da cui ricavavo le attività e ne stabilivo le priorità, gli elenchi di attività nel *repository*, gli appunti, i *commit* in un formato convenzionale e i documenti di progettazione che redigevo prima delle modifiche più estese.
+Illustro come ho organizzato il mio lavoro, svolto in gran parte da remoto: come individuavo le attività e ne stabilivo le priorità, come ne tenevo traccia e come preparavo le modifiche più estese prima di realizzarle.
 
 ### Strumenti di sviluppo e assistenti basati sull'intelligenza artificiale
 
-Presento gli strumenti che ho impiegato per lo sviluppo, la verifica e il rilascio. Tra questi includo gli assistenti di programmazione basati su modelli linguistici, Claude Code e OpenCode, che in Halue considerano strumenti come gli altri, il cui valore dipende da un uso consapevole. Descrivo il ruolo che hanno avuto nel mio lavoro: la sperimentazione e la validazione rapida delle idee, fino a prototipi funzionanti nell'arco di una giornata, a cui seguiva l'implementazione definitiva scritta a mano; e le attività di supporto, come la generazione dei dati di prova.
+Presento gli strumenti che ho impiegato per lo sviluppo, la verifica e il rilascio, tra cui gli assistenti di programmazione basati su modelli linguistici. Di questi descrivo l'uso che ne ho fatto: la sperimentazione e la validazione rapida delle idee, fino a prototipi funzionanti nell'arco di una giornata, a cui seguiva l'implementazione definitiva scritta a mano; la stesura dei documenti di progettazione, per individuare in anticipo i casi limite e i test necessari; le attività di supporto, come la generazione dei dati di prova. Ciò che ho imparato da questo uso lo discuto nella @sec:maturazione.
 
 ## Studio preliminare e analisi
 
@@ -24,7 +24,7 @@ Descrivo la fase iniziale dello *stage*, dedicata allo studio del funzionamento 
 
 ### Un'analisi dei requisiti iterativa {#sec:requisiti}
 
-Motivo la scelta, condivisa con il *tutor*, di non svolgere un'analisi dei requisiti completa all'inizio del progetto: il lavoro aveva carattere esplorativo, nessun cliente ne dettava i requisiti, e una specifica fissata a priori sarebbe diventata presto obsoleta. Descrivo il procedimento che ho seguito: a partire dagli obiettivi del piano ho abbozzato i casi d'uso principali, rappresentati in un diagramma, e ne ho ricavato requisiti che ho rivisto a ogni iterazione. Una tabella riporta i requisiti con un identificativo, raggruppati per area; ne misuro la copertura nella @sec:quantitativi.
+Motivo la scelta, condivisa con il *tutor*, di non svolgere un'analisi dei requisiti completa all'inizio del progetto: il lavoro aveva carattere esplorativo, nessun cliente ne dettava i requisiti, e una specifica fissata a priori sarebbe diventata presto obsoleta. Descrivo il procedimento che ho seguito: a partire dagli obiettivi del piano ho abbozzato i casi d'uso principali e ne ho ricavato i requisiti, che ho rivisto a ogni iterazione insieme al prodotto. Un diagramma mostra i casi d'uso nella loro forma finale e una tabella riporta i requisiti a cui sono arrivato, raggruppati per area, ciascuno con un identificativo e l'obiettivo del piano da cui deriva; ne misuro la copertura nella @sec:quantitativi.
 
 <!-- DA DEFINIRE: prima i casi d'uso iniziali, poi come raggruppare i requisiti (utente, agente, app...). Solo dopo valutare se partire dalla specifica cancellata il 15/10 in chat-cart. -->
 
@@ -32,7 +32,7 @@ Motivo la scelta, condivisa con il *tutor*, di non svolgere un'analisi dei requi
 
 ### Visione d'insieme
 
-Illustro l'architettura di ChatCart con un diagramma: il *widget* nel negozio (*app layer*), il *server* che ospita l'agente (*agent layer*), la *dashboard* del commerciante e i servizi esterni. Motivo la scelta di uno stile funzionale anziché orientato agli oggetti, la decisione di non introdurre astrazioni prima che fossero necessarie e i *design pattern* che ho adottato quando lo sono diventate.
+Illustro l'architettura di ChatCart con un diagramma: il *widget* nel negozio (*app layer*), il *server* che ospita l'agente (*agent layer*), la *dashboard* del commerciante e i servizi esterni. Motivo la scelta di uno stile funzionale anziché orientato agli oggetti, la decisione, su indicazione del *tutor*, di non introdurre astrazioni prima che fossero necessarie e i *design pattern* che ho adottato quando lo sono diventate.
 
 ### Il contratto tra agente e *widget*
 
@@ -50,17 +50,17 @@ Presento il *widget*: i componenti (schede prodotto con selezione della variante
 
 ### Metriche di utilizzo e analisi delle conversazioni
 
-Descrivo gli eventi che il *widget* registra, il *funnel* che la *dashboard* presenta al commerciante e l'analisi automatica delle conversazioni con Jev, un modello più rapido che assegna a ciascuna conversazione un punteggio e alcune etichette. Questa parte risponde all'obiettivo OB5.
+Descrivo gli eventi che il *widget* registra e il *funnel* che la *dashboard* presenta al commerciante. Mi soffermo poi sull'analisi automatica delle conversazioni, che ho affidato a Jev, il primo modello «System One» di TypeSafe AI, pubblicato in accesso anticipato a metà settembre 2026, proprio mentre lavoravo al progetto. Jev è un tipo di modello diverso da un modello linguistico generativo: non produce testo, ma riceve uno stato, in questo caso una conversazione conclusa, e restituisce decisioni tipizzate con la relativa probabilità, come la scelta tra opzioni predefinite o un punteggio su una scala. Il nome della categoria richiama il «Sistema 1» di Kahneman, il pensiero veloce e intuitivo. Lo uso per assegnare a ogni conversazione un punteggio, l'intento del cliente e l'aspetto che ne spiega meglio l'esito. Da questa scelta apro un confronto tra modelli linguistici generativi e modelli decisionali come Jev nei compiti in cui serve una decisione, non una risposta. Questa parte risponde all'obiettivo OB5.
 
 ## Funzionalità sperimentali e possibili evoluzioni
 
-Dedico questa sezione alle funzionalità che ho sperimentato senza portarle nel prodotto finale, perché documentano l'orientamento alla ricerca che io e il *tutor* abbiamo dato al progetto dalla terza settimana: i messaggi di invito che comparivano prima dell'apertura della chat, i tre tentativi di adattare l'aspetto del *widget* al tema del negozio, l'impiego di Jev nella scelta dei componenti, il pannello a tutto schermo su *desktop*. Per ciascuna espongo l'ipotesi di partenza, l'esito che ho osservato e le ragioni per cui l'ho messa da parte. Da queste prove ricavo infine le strade lungo cui ChatCart potrebbe evolvere in futuro.
+Dedico questa sezione alle funzionalità che ho sperimentato senza portarle nel prodotto finale, perché documentano l'orientamento alla ricerca che io e il *tutor* abbiamo dato al progetto dalla terza settimana: i messaggi di invito che comparivano prima dell'apertura della chat, i tre tentativi di adattare l'aspetto del *widget* al tema del negozio, l'impiego di Jev nella scelta dei componenti, il pannello a tutto schermo su *desktop*. Per ciascuna espongo l'ipotesi di partenza, l'esito che ho osservato e le ragioni per cui io e il *tutor* abbiamo deciso di non inserirla nel prodotto consegnato. Da queste prove ricavo infine le strade lungo cui ChatCart potrebbe evolvere in futuro.
 
 <!-- DA CONFERMARE: quali strade di evoluzione indicare. -->
 
 ## Verifica e validazione
 
-Illustro la mia strategia di verifica: test automatici concentrati sui punti in cui ChatCart interagisce con sistemi esterni che non controllo, eseguiti su una base di dati reale e senza simulare i moduli interni. Discuto i limiti dei test tradizionali applicati a un agente che non risponde mai due volte nello stesso modo. Concludo con la validazione svolta insieme al *tutor* e con il rilascio dell'applicazione *online*.
+Illustro la mia strategia di verifica: test automatici concentrati sui punti in cui ChatCart interagisce con sistemi esterni che non controllo, eseguiti su una base di dati reale e senza simulare i moduli interni, e le ragioni di questa scelta. Discuto i limiti dei test tradizionali applicati a un agente che non risponde mai due volte nello stesso modo. Concludo con la validazione svolta insieme al *tutor* e con il rilascio dell'applicazione *online*.
 
 ## Risultati
 
@@ -70,4 +70,4 @@ Presento ChatCart dal punto di vista di chi lo utilizza, attraverso una sequenza
 
 ### Risultati quantitativi {#sec:quantitativi}
 
-Riporto in tabelle i dati quantitativi del progetto: la copertura dei requisiti definiti nella @sec:requisiti, la copertura dei test con le scelte che la motivano, le righe di codice per ciascuna parte dell'applicazione, il numero di *commit* e di documenti prodotti.
+Riporto in tabelle i dati quantitativi del progetto: la copertura dei requisiti definiti nella @sec:requisiti, la copertura dei test con le scelte che la motivano, le righe di codice per ciascuna parte dell'applicazione e i documenti che ho consegnato al *team*.
