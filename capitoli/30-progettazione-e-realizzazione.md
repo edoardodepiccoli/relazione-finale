@@ -50,7 +50,7 @@ Presento il *widget*: i componenti (schede prodotto con selezione della variante
 
 ### Metriche di utilizzo e analisi delle conversazioni
 
-Descrivo gli eventi che il *widget* registra e il *funnel* che la *dashboard* presenta al commerciante. Mi soffermo poi sull'analisi automatica delle conversazioni, che ho affidato a Jev, il primo modello «System One» di TypeSafe AI, pubblicato in accesso anticipato a metà settembre 2026, proprio mentre lavoravo al progetto. Jev è un tipo di modello diverso da un modello linguistico generativo: non produce testo, ma riceve uno stato, in questo caso una conversazione conclusa, e restituisce decisioni tipizzate con la relativa probabilità, come la scelta tra opzioni predefinite o un punteggio su una scala. Il nome della categoria richiama il «Sistema 1» di Kahneman, il pensiero veloce e intuitivo. Lo uso per assegnare a ogni conversazione un punteggio, l'intento del cliente e l'aspetto che ne spiega meglio l'esito. Da questa scelta apro un confronto tra modelli linguistici generativi e modelli decisionali come Jev nei compiti in cui serve una decisione, non una risposta. Questa parte risponde all'obiettivo OB5.
+Descrivo gli eventi che il *widget* registra, il *funnel* che la *dashboard* presenta al commerciante e l'analisi delle conversazioni con Jev, un modello decisionale di TypeSafe AI uscito durante lo *stage*: a differenza di un modello linguistico generativo, non produce testo ma restituisce decisioni tipizzate con la loro probabilità. Da qui apro il confronto tra i due tipi di modello nei compiti decisionali. Questa parte risponde all'obiettivo OB5.
 
 ## Funzionalità sperimentali e possibili evoluzioni
 
