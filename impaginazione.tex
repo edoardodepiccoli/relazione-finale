@@ -1,4 +1,18 @@
-% Tabelle: interlinea normale, e mai spezzate se ne restano meno di 12 righe in fondo alla pagina.
+% Tabelle: righe alternate, intestazione distinta e nessun bordo verticale.
 \usepackage{etoolbox}
 \usepackage{needspace}
-\AtBeginEnvironment{longtable}{\needspace{12\baselineskip}\linespread{1}\selectfont}
+\usepackage{colortbl}
+\definecolor{TabellaIntestazione}{HTML}{E2E5E9}
+\definecolor{TabellaRiga}{HTML}{F3F4F6}
+\AtBeginEnvironment{longtable}{%
+  \needspace{12\baselineskip}%
+  \linespread{1}\fontsize{11}{13.5}\selectfont
+  \setlength{\tabcolsep}{8pt}%
+  % I fondi delle celle si estendono nel margine interno della tabella.
+  \addtolength{\linewidth}{-2\tabcolsep}%
+  \renewcommand{\arraystretch}{1.3}%
+  \setlength{\extrarowheight}{3pt}%
+  \setlength{\aboverulesep}{0pt}%
+  \setlength{\belowrulesep}{0pt}%
+  \arrayrulecolor{black!25}%
+}

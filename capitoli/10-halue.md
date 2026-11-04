@@ -42,7 +42,7 @@ Halue lavora soltanto con aziende private, per lo più di medie e grandi dimensi
 Cito soltanto i clienti che Halue rende pubblici sul proprio sito: fin dalla stesura del piano di lavoro il *tutor* mi ha chiesto di non nominare gli altri, perché avrebbe dovuto verificarne gli accordi di riservatezza. La @tbl:progetti riporta i quattro progetti che il sito descrive. Oltre a questi, il sito mostra i marchi di Piazza Italia, Velasca, Davines e Comfort Zone.
 
 | Cliente | Settore | Piattaforma | Intervento |
-| --- | --- | --- | --- |
+| ---------------------- | ------------------------ | -------------------------- | ---------------------------- |
 | Dainese | Abbigliamento e protezioni per la moto | Salesforce Commerce Cloud | Nuova architettura per gestire più marchi |
 | Philippe Model Paris | Calzature e moda | Shopify Plus | Migrazione da Adobe Commerce |
 | Colnago | Biciclette | Shopify Plus | Configuratore 3D dei prodotti su misura |
@@ -63,7 +63,7 @@ Delle tecnologie di Halue ho usato in prima persona soltanto quelle dell'ecosist
 <!-- DA RIVEDERE: l'ecosistema tecnologico, prima di confermare questa sezione. -->
 
 | Tecnologia | Che cos'è e a cosa serve | Nello *stage* |
-| --- | --- | --- |
+| ---------------------------- | ------------------------------------------ | ------------------------------ |
 | Shopify Plus | Piattaforma di *e-commerce* per i commercianti più grandi | Sì, su un negozio di sviluppo |
 | Temi Liquid | Il linguaggio di *template* con cui Shopify compone le pagine del negozio | Sì, per inserire il *widget* nel tema |
 | Admin API e Storefront API | Le interfacce GraphQL per gestire il negozio e per leggerne il catalogo | Sì |
@@ -102,7 +102,7 @@ Gli orari e il luogo di lavoro sono flessibili. Da quello che ho osservato, i co
 La @tbl:strumenti elenca gli strumenti che il *team* usa ogni giorno, con l'indicazione di come li conosco.
 
 | Strumento | Uso in Halue | Come lo conosco |
-| --- | --- | --- |
+| ------------------------- | ---------------------------------------- | ----------------------------------- |
 | Slack | Comunicazione interna e canali dedicati ai clienti | Usato, in un canale con il *tutor* |
 | Google Meet | Riunioni quotidiane e *call* | Usato |
 | Jira | *Ticket*, *board* e stime | Visto, spiegato da un collega |

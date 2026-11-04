@@ -1,6 +1,6 @@
 from: markdown
 metadata-files: [metadata.yaml]
-filters: [pandoc-crossref]
+filters: [pandoc-crossref, tabelle.lua]
 pdf-engine: tectonic
 resource-path: [., figure]
 number-sections: true
