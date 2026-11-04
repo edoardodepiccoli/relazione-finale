@@ -1,0 +1,33 @@
+% !TeX program = xelatex
+\documentclass[a4paper,12pt,oneside]{report}
+
+\input{config/dati}
+\input{config/stile}
+\input{config/comandi}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\input{preliminari/frontespizio}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\input{preliminari/sommario}
+\tableofcontents
+\listoffigures
+\listoftables
+\listoflistings
+\clearpage
+
+\pagenumbering{arabic}
+% L'ordine dei capitoli è esplicito: i nomi dei file non determinano la compilazione.
+\include{capitoli/01-halue}
+\include{capitoli/02-ragioni-dello-stage}
+\include{capitoli/03-progetto-e-sviluppo}
+\include{capitoli/04-valutazione-retrospettiva}
+
+\input{finali/acronimi}
+\input{finali/glossario}
+\input{finali/riferimenti}
+
+\end{document}

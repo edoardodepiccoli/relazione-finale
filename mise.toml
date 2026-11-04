@@ -1,8 +1,14 @@
 [tools]
-pandoc = "3.13"
-"github:lierdakil/pandoc-crossref" = "v0.3.26a"
 "github:tectonic-typesetting/tectonic" = "tectonic@0.17.0"
 
+[tasks.anteprima]
+description = "Compila in build/tesi.pdf senza aggiornare il PDF condiviso"
+run = """
+mkdir -p build
+tectonic --keep-logs --synctex --outdir build tesi.tex
+"""
+
 [tasks.pdf]
-description = "Compila i capitoli in tesi.pdf"
-run = "pandoc --defaults defaults.yaml capitoli/*.md -o tesi.pdf"
+description = "Compila e aggiorna tesi.pdf per la revisione"
+depends = ["anteprima"]
+run = "cp build/tesi.pdf tesi.pdf"

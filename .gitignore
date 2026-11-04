@@ -1,2 +1,10 @@
 .DS_Store
 build/
+*.aux
+*.log
+*.toc
+*.lof
+*.lot
+*.lol
+*.out
+*.synctex.gz

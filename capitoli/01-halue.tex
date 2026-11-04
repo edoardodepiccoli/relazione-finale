@@ -1,0 +1,399 @@
+% !TeX root = ../tesi.tex
+
+\chapter{Halue e il commercio digitale}
+
+Presento Halue S.r.l., l’azienda presso cui ho svolto lo \emph{stage}, descrivendone le attività, i
+clienti, le tecnologie, i processi e il rapporto con l’innovazione. Mi baso sulle otto settimane di
+lavoro, sulle conversazioni con i colleghi e sulle risposte raccolte durante un’intervista dedicata
+al \emph{tutor} aziendale, Antonio Cavestro, integrando queste informazioni con quelle del sito
+dell’azienda\footnote{Halue S.r.l., sito istituzionale, \url{https://halue.com/it}, pagine «Chi
+siamo», «Approccio» e «Progetti», consultate il 4 novembre 2026.}. Le risposte hanno confermato
+quanto ho osservato e completato il quadro sugli aspetti che non ho seguito direttamente, come
+contratti e gestione dei progetti; per questi aspetti riporto informazioni riferite, mentre
+distinguo le dichiarazioni del sito dalle mie osservazioni.
+
+\section{Profilo aziendale e linee di attività}
+
+Halue è una società di consulenza tecnologica nata nel 2022, con sede legale a Parma e sede
+operativa ad Abano Terme, in provincia di Padova. Dal 2024 è una \gloss{societa-benefit}{Società
+Benefit}: una forma giuridica, introdotta in Italia nel 2015, per le società che oltre al profitto
+perseguono obiettivi di beneficio comune dichiarati nello statuto e ne rendono conto ogni anno in
+una relazione d’impatto.
+
+Oggi l’azienda conta dieci persone, con i seguenti ruoli:
+
+\begin{itemize}
+        \item \gloss{founder-senior-consultant}{\emph{Founder \& Senior Consultant}}: il fondatore
+	Valentino Baraldo, che svolge anche attività di consulenza;
+        \item \gloss{solution-technical-architect}{\emph{Solution \& Technical Architect}}:
+	definisce le soluzioni e l’architettura tecnica;
+        \item \gloss{senior-project-manager}{\emph{Senior Project Manager}} e
+	\gloss{project-management-assistant}{\emph{Project Management Assistant}}: due ruoli dedicati alla
+	gestione dei progetti;
+        \item \gloss{senior-software-engineer}{\emph{Senior Software Engineer}},
+	\gloss{software-engineer}{\emph{Software Engineer}} e \gloss{junior-developer}{\emph{Junior
+	Developer}}: cinque sviluppatori con diversi livelli di esperienza;
+        \item \gloss{ux-ui-digital-consultant}{\emph{UX/UI Digital Consultant}}: cura la
+	progettazione dell’esperienza utente e dell’interfaccia.
+\end{itemize}
+
+Halue è nata come società di consulenza sull’\gloss{e-commerce}{\emph{e-commerce}} e sui sistemi di
+\gloss{crm}{\emph{Customer Relationship Management} (CRM)}, con Shopify e Salesforce come
+piattaforme di riferimento. Il primo ambito riguarda la vendita di prodotti e servizi tramite canali
+digitali; il secondo, la gestione delle relazioni di un’azienda con i propri clienti. Halue dedica
+inoltre particolare attenzione allo sviluppo di soluzioni basate sull’intelligenza artificiale per
+il commercio digitale. In questo ambito, un \gloss{llm}{modello linguistico di grandi dimensioni
+(LLM)}, addestrato a elaborare e generare testo, può assistere il cliente nella consultazione di
+cataloghi complessi e nel percorso d’acquisto attraverso l’accesso ai dati del negozio.
+
+La \figref{fig:halue-attivita} riassume le linee di attività dell’azienda, in ordine di peso:
+
+\begin{enumerate}
+        \item l’\emph{e-commerce} su Shopify e su Salesforce Commerce Cloud, sia verso il
+	consumatore finale (\gloss{b2c}{B2C}) sia verso altre aziende (\gloss{b2b}{B2B});
+        \item l’integrazione di sistemi, cioè il collegamento del negozio con i gestionali aziendali
+	(\gloss{erp}{ERP}), la logistica e i servizi di terze parti, punto a punto o tramite piattaforme di
+	integrazione (\gloss{ipaas}{iPaaS});
+        \item i servizi di intelligenza artificiale, dalla valutazione di quanto un’azienda sia
+	pronta ad adottarla fino allo sviluppo di agenti su misura;
+	\item i sistemi CRM su Salesforce;
+	\item la formazione;
+	\item la progettazione dell’interfaccia e dell’esperienza utente.
+\end{enumerate}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figure/comuni/segnaposto.pdf}
+        \caption{Le linee di attività di Halue, in ordine di peso dall’\emph{e-commerce} alla
+	progettazione dell’interfaccia. La consulenza tecnologica e l’intelligenza artificiale le
+	attraversano tutte.}
+	\label{fig:halue-attivita}
+\end{figure}
+
+% FIGURA DA REALIZZARE: le sei linee di attività in ordine di peso, con due fasce trasversali (consulenza tecnologica, IA).
+
+La figura mostra due elementi trasversali. La consulenza tecnologica accompagna tutte le linee,
+dalla valutazione iniziale alla scelta dei sistemi. L’intelligenza artificiale è insieme una linea a
+sé e, sempre di più, una competenza che entra nei progetti di \emph{e-commerce} e di integrazione.
+
+Halue lavora su commessa, non vende prodotti propri, come applicazioni pubblicate sullo Shopify App
+Store, ma costruisce soluzioni su misura per i singoli clienti. Anche ChatCart segue questa
+impostazione: descrivo nella \secref{sec:ecosistema-applicazioni} come lo integro nel singolo
+negozio, anziché distribuirlo come applicazione pubblica.
+
+\section{Clientela e modalità di ingaggio}
+
+Halue lavora soltanto con aziende private, per lo più di medie e grandi dimensioni, e non con la
+pubblica amministrazione. Sono marchi strutturati della moda, dello sport, del commercio al
+dettaglio e della cosmetica professionale, che vendono \emph{online} su più mercati, con lingue e
+valute diverse. La maggior parte dei clienti è italiana, ma ci sono anche marchi esteri.
+
+Il sito di Halue cita alcuni di questi clienti. La \tabref{tbl:progetti} riporta i quattro progetti
+che descrive; oltre a questi, il sito mostra i marchi di Piazza Italia, Velasca, Davines e Comfort
+Zone.
+
+\begin{tabellatesi}{P{0.22}P{0.24}P{0.26}P{0.28}}
+        \caption{I progetti per i clienti che Halue pubblica sul proprio sito, con il settore del
+	cliente, la piattaforma e il tipo di intervento.}\label{tbl:progetti}\\
+	\toprule
+        \rowcolor{TabellaIntestazione} \textbf{Cliente} & \textbf{Settore} & \textbf{Piattaforma} &
+	\textbf{Intervento} \\
+	\midrule
+	\endfirsthead
+	\toprule
+        \rowcolor{TabellaIntestazione} \textbf{Cliente} & \textbf{Settore} & \textbf{Piattaforma} &
+	\textbf{Intervento} \\
+	\midrule
+	\endhead
+	\bottomrule
+	\endfoot
+        Dainese & Abbigliamento e dispositivi di protezione per il motociclismo & Salesforce
+	Commerce Cloud & Revisione dell’architettura per la gestione di più marchi \\
+        Philippe Model Paris & Calzature e abbigliamento & Shopify Plus & Migrazione della
+	piattaforma di commercio elettronico da Adobe Commerce \\
+        Colnago & Produzione di biciclette & Shopify Plus & Sviluppo di un configuratore
+	tridimensionale per la personalizzazione dei prodotti \\
+        Gruppo Rossignol & Attrezzature per sport invernali & Salesforce Commerce Cloud &
+	Realizzazione dei negozi digitali dei marchi Dynastar e Lange \\
+\end{tabellatesi}
+
+La tabella mostra che la clientela si divide tra le due piattaforme principali, Shopify e
+Salesforce, e che gli interventi vanno dalla migrazione di un intero negozio a funzionalità molto
+specifiche, come un configuratore tridimensionale.
+
+I progetti arrivano soprattutto per passaparola, da clienti e contatti che segnalano l’azienda, e in
+parte da gare e bandi. Le formule contrattuali sono tre: a tempo e materiali, in cui il cliente paga
+il tempo effettivamente impiegato; a corpo, con un prezzo fissato in anticipo, per i progetti dal
+perimetro ben definito; e i contratti di manutenzione e assistenza per i negozi già in produzione.
+Halue è inoltre \emph{partner} di Shopify per Shopify Plus, il piano della piattaforma rivolto ai
+commercianti più grandi, sia per i negozi B2C sia per quelli B2B.
+
+Due caratteristiche di questa clientela ritornano nel resto della relazione. La prima è la vendita
+su più mercati: per questo il supporto a più lingue e valute è diventato uno degli obiettivi del mio
+progetto (\secref{sec:obiettivi}). La seconda è che ogni cliente ha un’identità visiva propria, che
+vuole vedere rispettata anche negli strumenti che aggiunge al negozio: ne discuto nella
+\secref{sec:limiti-assistenti} e nella \secref{sec:sperimentazioni}.
+
+\section{Ecosistema tecnologico}
+
+Gli \gloss{storefront}{\emph{storefront}}, cioè le interfacce dei negozi Shopify rivolte ai clienti,
+possono seguire due modalità di sviluppo. La prima usa i temi della piattaforma: Shopify genera le
+pagine a partire da modelli scritti in \gloss{liquid}{Liquid}, il suo linguaggio di \emph{template},
+combinandoli con i dati del negozio. La seconda adotta un’architettura
+\gloss{headless}{\emph{headless}}, in cui l’interfaccia è un’applicazione separata che accede alle
+funzioni commerciali tramite \gloss{api}{API}, interfacce di comunicazione tra programmi. Per questa
+modalità Shopify offre \gloss{hydrogen}{Hydrogen}, un \emph{framework} basato su React, e Oxygen, il
+servizio che ospita l’applicazione; Hydrogen non è però l’unico strumento possibile per costruire
+uno \emph{storefront headless}.
+
+Le Admin API permettono alle applicazioni di gestire i dati e le operazioni del negozio; le
+Storefront API espongono catalogo, carrello e altre funzioni dell’esperienza d’acquisto. Entrambe
+offrono interfacce \gloss{graphql}{GraphQL}, un linguaggio di interrogazione con cui chi invia una
+richiesta specifica i campi da ottenere. I temi Liquid accedono invece ai dati anche tramite gli
+oggetti che Shopify rende disponibili durante la generazione delle pagine: non richiedono
+necessariamente chiamate esplicite a queste API. Per aggiungere funzionalità, Halue sviluppa
+applicazioni personalizzate in Node.js e TypeScript, integrabili con entrambe le modalità.
+
+La \tabref{tbl:tecnologie} distingue l’ambito di utilizzo delle tecnologie ricorrenti in Halue dal
+loro impiego nel progetto di \emph{stage}.
+
+% DA RIVEDERE: l'ecosistema tecnologico, prima di confermare questa sezione.
+
+\begin{tabellatesi}{P{0.28}P{0.42}P{0.3}}
+        \caption{Le tecnologie ricorrenti nei progetti di Halue e il loro utilizzo nel progetto di
+	\emph{stage}.}\label{tbl:tecnologie}\\
+	\toprule
+        \rowcolor{TabellaIntestazione} \textbf{Tecnologia} & \textbf{Ambito di utilizzo} &
+	\textbf{Utilizzo nel progetto di \emph{stage}} \\
+	\midrule
+	\endfirsthead
+	\toprule
+        \rowcolor{TabellaIntestazione} \textbf{Tecnologia} & \textbf{Ambito di utilizzo} &
+	\textbf{Utilizzo nel progetto di \emph{stage}} \\
+	\midrule
+	\endhead
+	\bottomrule
+	\endfoot
+	Shopify e Shopify Plus & Gestione di negozi \emph{e-commerce} B2C e B2B & Negozio Shopify di sviluppo \\
+	Temi Liquid & Generazione delle pagine del negozio & Inserimento di ChatCart nel tema \\
+        Admin API e Storefront API & Gestione del negozio e funzioni di acquisto tramite GraphQL &
+	Accesso al catalogo con Storefront API \\
+	Node.js e TypeScript & Sviluppo di applicazioni personalizzate & Implementazione di ChatCart \\
+	Hydrogen e Oxygen & Sviluppo e pubblicazione di \emph{storefront headless} & Non utilizzati \\
+	Salesforce & Commercio digitale, CRM, assistenza e campagne commerciali & Non utilizzato \\
+	Storyblok e Sanity & Gestione dei contenuti separata dalla loro presentazione & Non utilizzati \\
+        Heroku, Google Cloud e AWS & Esecuzione di applicazioni e servizi in infrastrutture
+	\emph{cloud} & Non utilizzati; rilascio su Vercel \\
+\end{tabellatesi}
+
+Per il mio progetto ho scelto i temi Liquid per la loro maggiore diffusione rispetto agli
+\emph{storefront} costruiti con Hydrogen. Questa scelta permette di integrare ChatCart nei negozi
+esistenti senza sostituirne l’interfaccia.
+
+Nei progetti di intelligenza artificiale cambia soprattutto l’architettura. Halue collega un LLM, di
+solito Claude, ai dati del negozio tramite \gloss{mcp}{MCP}, un protocollo aperto che collega
+applicazioni basate su modelli linguistici a strumenti e dati esterni, e affianca al modello
+strumenti e istruzioni sviluppati internamente. Segue inoltre i nuovi protocolli per il commercio
+agentico, come \gloss{ucp}{UCP}, pensati per permettere a un agente di completare un acquisto per
+conto dell’utente. Questa preferenza per strumenti propri l’ho vissuta direttamente: quando abbiamo
+definito il progetto, il \emph{tutor} mi ha consigliato di non affidarmi al \emph{server} MCP di
+Shopify, che considerava ancora troppo semplice, e di sviluppare una ricerca nel catalogo su misura.
+È la scelta da cui nasce il contratto tra agente e \emph{widget} che descrivo nella
+\secref{sec:contratto}.
+
+\section{Processi di sviluppo e gestione dei progetti}
+
+Ho partecipato al coordinamento quotidiano del \emph{team}, ma ho lavorato su un progetto interno,
+senza seguire l’intero ciclo di una commessa per un cliente.
+
+\subsection{Organizzazione del lavoro e gestione dei progetti}
+\label{sec:organizzazione-halue}
+
+La cosa che mi ha colpito di più è il contrasto tra le dimensioni dell’azienda e il suo metodo.
+Halue ha dieci persone, ma adotta \emph{framework} di lavoro molto strutturati, che di solito si
+associano ad aziende più grandi; allo stesso tempo mantiene la velocità di decisione di un’azienda
+piccola.
+
+Il metodo di riferimento è \gloss{scrum}{Scrum}, un \emph{framework} per organizzare il lavoro in
+cicli brevi, adattato al lavoro di un’agenzia. Il lavoro procede per \gloss{sprint}{\emph{sprint}},
+cicli brevi al termine dei quali il \emph{team} presenta i risultati al cliente in una \emph{sprint
+review} e ne discute internamente in una retrospettiva. Nella gestione operativa Halue distingue il
+\gloss{team-lead}{\emph{team lead}}, che cura l’analisi funzionale, le stime per il cliente e il
+coordinamento tecnico, dal \gloss{project-service-manager}{\emph{project/service manager}}, che
+pianifica le attività e la capacità del \emph{team}. A questi si affiancano gli sviluppatori e chi
+progetta l’interfaccia. Nella mia lettura, l’adattamento sta soprattutto qui: non compaiono le
+figure canoniche di Scrum, il \emph{Product Owner} e lo \emph{Scrum Master}, e le loro
+responsabilità si distribuiscono tra il \emph{team lead} e il \emph{project/service manager}. È una
+scelta coerente con un’agenzia, in cui lo stesso gruppo di persone lavora per più clienti nello
+stesso periodo.
+
+Per la stessa ragione le persone non sono assegnate a un progetto in modo stabile. Ogni mese un
+\emph{demand planning} condiviso ripartisce il \emph{team} sui clienti, e l’avanzamento di ciascun
+progetto si segue sulla \emph{board} di Jira e con un rapporto sullo \gloss{sal}{stato di
+avanzamento dei lavori (SAL)}, che riporta con un semaforo lo stato del progetto, le scadenze, i
+rischi e i punti aperti. La \figref{fig:ritmi} mette in fila questi momenti, dal più frequente al
+più raro.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figure/comuni/segnaposto.pdf}
+        \caption{I momenti di coordinamento del lavoro in Halue, ordinati per frequenza: la riunione
+	quotidiana, le attività di ogni \emph{sprint}, la pianificazione mensile delle persone sui clienti
+	e i rapporti di avanzamento e le retrospettive di ogni progetto.}
+	\label{fig:ritmi}
+\end{figure}
+
+% FIGURA DA REALIZZARE: quattro scale temporali (giorno, sprint, mese, progetto) con i rispettivi momenti di coordinamento.
+
+Il primo livello della figura è l’unico che ho vissuto ogni giorno. Ogni mattina tutto il
+\emph{team} si collega su Google Meet per una riunione di allineamento: ciascuno dice su cosa ha
+lavorato il giorno prima e su cosa lavorerà quel giorno. La riunione dura di solito tra i quindici e
+i venti minuti, al massimo mezz’ora. Ho partecipato anch’io, con lo stesso formato degli altri.
+
+Gli orari e il luogo di lavoro sono flessibili. Da quello che ho osservato, i colleghi lavorano in
+sede per circa il 70\% del tempo e da remoto per il resto, ma ognuno gestisce la propria presenza in
+autonomia. Io sono stato in sede in media un giorno a settimana, come previsto dal piano di lavoro,
+e ho lavorato da remoto negli altri giorni.
+
+La \tabref{tbl:strumenti} elenca gli strumenti di lavoro del \emph{team} e distingue quelli che ho
+utilizzato da quelli che ho visto usare o che non ho impiegato direttamente.
+
+\begin{tabellatesi}{P{0.25}P{0.4}P{0.35}}
+        \caption{Gli strumenti di lavoro di Halue, con il loro uso e il modo in cui li conosco:
+	usati durante lo \emph{stage}, visti usare dai colleghi o soltanto riferiti dal
+	\emph{tutor}.}\label{tbl:strumenti}\\
+	\toprule
+	\rowcolor{TabellaIntestazione} \textbf{Strumento} & \textbf{Uso in Halue} & \textbf{Come lo conosco} \\
+	\midrule
+	\endfirsthead
+	\toprule
+	\rowcolor{TabellaIntestazione} \textbf{Strumento} & \textbf{Uso in Halue} & \textbf{Come lo conosco} \\
+	\midrule
+	\endhead
+	\bottomrule
+	\endfoot
+	Slack & Comunicazione interna e canali dedicati ai clienti & Usato, in un canale con il \emph{tutor} \\
+	Google Meet & Riunioni quotidiane e \emph{call} & Usato \\
+        Jira & Tracciamento delle unità di lavoro (\gloss{ticket}{\emph{ticket}}), \emph{board} e
+	stime & Visto, spiegato da un collega \\
+	Confluence & Documentazione e procedure & Visto \\
+	GitHub e Bitbucket & Versionamento del codice & GitHub usato, Bitbucket riferito \\
+	Figma & Progetto grafico e passaggio agli sviluppatori & Visto \\
+	Granola & Appunti automatici delle \emph{call} & Visto \\
+	Postman & Prova delle API & Riferito \\
+\end{tabellatesi}
+
+Con i clienti il \emph{team} comunica su canali Slack dedicati a ciascun marchio, nelle \emph{sprint
+review} con dimostrazioni del lavoro svolto e con rapporti periodici di avanzamento; i rapporti
+sulle attività e le variazioni contrattuali passano invece per \emph{email}. La conoscenza interna
+sta su Confluence e su Google Drive. Una persona nuova parte dalla documentazione e dalle procedure
+e comincia con \emph{ticket} piccoli su un progetto reale, con l’affiancamento di un collega. Il mio
+inserimento è stato diverso, perché lavoravo su un progetto mio: ho imparato i processi dell’azienda
+facendo domande e ascoltando le riunioni, più che lavorandoci dentro.
+
+\subsection{Dal \emph{ticket} al rilascio}
+
+Le richieste arrivano da \emph{call}, \emph{email} o \emph{workshop} e diventano \emph{ticket} su
+Jira, di quattro tipi: \emph{Epic} per gli insiemi di funzionalità, \emph{Story} per le singole
+funzionalità, \emph{Change Request} per le modifiche chieste a progetto avviato e \emph{Bug} per i
+difetti. Ogni \emph{ticket} passa per due fasi di approfondimento: il \emph{refinement} funzionale,
+che ne valuta la completezza e la fattibilità, e il \emph{refinement} tecnico, svolto dagli
+sviluppatori. I \emph{bug} di norma saltano il secondo passaggio.
+
+Le stime sono due, perché servono a due destinatari. Per il \emph{team} si usano gli
+\gloss{story-point}{\emph{story point}}, una misura della complessità relativa espressa con i numeri
+di Fibonacci da 1 a 13: servono a pianificare lo \emph{sprint}, e un \emph{ticket} che supera 13 va
+spezzato in \emph{ticket} più piccoli. Per il cliente si stimano invece le ore, con un metodo
+interno che pesa quattro dimensioni: la complessità, la chiarezza della richiesta, il \emph{team}
+coinvolto e la confidenza nella stima.
+
+Il progetto grafico arriva da Figma, collegato al \emph{ticket}, sempre in versione per dispositivi
+mobili e per \emph{desktop}. Il passaggio agli sviluppatori avviene in Figma stesso, con le
+specifiche e con un confronto diretto con il \emph{designer} sui punti meno chiari, e il
+\emph{designer} rivede l’implementazione prima del rilascio. Ogni marchio ha il proprio
+\gloss{design-system}{\emph{design system}}, cioè l’insieme di componenti e stili che rende coerenti
+le sue pagine: è il motivo per cui, nel mio progetto, adattare l’aspetto del \emph{widget} al
+negozio si è rivelato così difficile (\secref{sec:sperimentazioni}).
+
+Nello sviluppo ogni \emph{ticket} corrisponde a una \gloss{pull-request}{\emph{pull request}}, una
+proposta di integrazione delle modifiche al codice, e i nomi dei \emph{branch} e i messaggi di
+\emph{commit} riportano la chiave del \emph{ticket}, così che ogni modifica al codice si possa
+ricondurre alla richiesta da cui nasce. ESLint e Prettier controllano lo stile del codice, e le
+versioni seguono il \gloss{semver}{versionamento semantico (SemVer)}, che distingue modifiche
+incompatibili, nuove funzionalità e correzioni, con \emph{tag} e \emph{release} su GitHub. La
+verifica combina \emph{test} automatici, di unità e di integrazione, e \emph{test} manuali; non c’è
+una copertura minima prefissata. Il controllo di qualità lo svolgono gli sviluppatori durante lo
+sviluppo, e poi il cliente nel collaudo.
+
+Il rilascio attraversa tre ambienti: sviluppo, un ambiente di collaudo
+(\gloss{staging}{\emph{staging}} o \emph{preview}) e produzione. Il \emph{deploy} è automatizzato e
+segue una procedura scritta, ma il passaggio in produzione lo esegue sempre una persona del
+\emph{team}. Dopo la consegna, i difetti e le richieste di modifica passano per i contratti di
+manutenzione: le segnalazioni arrivano su Jira, sul canale Slack del cliente o per \emph{email}, e
+le priorità si concordano con il cliente caso per caso, senza livelli di servizio formali.
+
+Le decisioni di architettura nascono nel \emph{refinement} funzionale e si consolidano in quello
+tecnico. Quelle che riguardano un singolo \emph{ticket} restano scritte nel \emph{ticket}, dove chi
+sviluppa le trova; quelle che valgono per tutto il progetto diventano \gloss{adr}{ADR}, documenti
+brevi che registrano il contesto, la scelta e la sua motivazione. Il ciclo si chiude con le
+retrospettive, a fine \emph{sprint} e alla chiusura di un progetto o di una \emph{release}
+importante, per portare le correzioni nei progetti successivi.
+
+La \figref{fig:ticket} riassume questo percorso, dalla richiesta del cliente al rilascio in
+produzione e alla manutenzione, mostrando i passaggi di analisi, sviluppo e verifica.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figure/comuni/segnaposto.pdf}
+        \caption{Il ciclo di vita di un \emph{ticket} in Halue: dalla richiesta del cliente al
+	\emph{ticket} su Jira, attraverso i due \emph{refinement}, la stima, lo sviluppo con \emph{pull
+	request} e \emph{test}, il collaudo in \emph{staging}, fino al rilascio in produzione e alla
+	manutenzione.}
+	\label{fig:ticket}
+\end{figure}
+
+% FIGURA DA REALIZZARE: diagramma di attività del ciclo di vita di un ticket, con la scorciatoia dei bug che saltano il tech refinement.
+
+Da questo quadro ricavo una lettura del metodo di Halue: la struttura è rigida dove si ripaga
+sempre, cioè nella tracciabilità dalla richiesta al codice e nelle stime, e flessibile dove i
+clienti sono diversi tra loro, come la copertura dei \emph{test} o i livelli di servizio, che si
+decidono progetto per progetto. Ho trovato la stessa impostazione nel mio \emph{stage}, per esempio
+nella scelta di concentrare i \emph{test} automatici dove servivano davvero (\secref{sec:verifica}).
+
+\section{Innovazione e intelligenza artificiale}
+\label{sec:innovazione}
+
+L’azienda dichiara sul proprio sito di fare uno \emph{scouting} tecnologico continuo, di ridurre il
+debito tecnico allungando la vita delle piattaforme e di dedicare oltre il 10\% del tempo a progetti
+di ricerca e sviluppo, tra cui quelli di intelligenza artificiale. Non ho verificato la percentuale,
+ma ho visto quanto tempo i colleghi dedicano a studiare: lo considerano un modo per crescere come
+professionisti, non soltanto come dipendenti dell’azienda. Halue organizza inoltre una formazione
+interna sui metodi agili, sulle piattaforme e sulla tecnologia, e ogni anno qualche evento formativo
+per i clienti.
+
+L’intelligenza artificiale è lo strumento in cui questa propensione si vede di più. Il \emph{team}
+usa ampiamente strumenti di sviluppo basati sull’IA e segue da vicino tutto ciò che esce nel
+settore: ho visto \emph{workflow} di \emph{code review} automatica, la lettura dei \emph{changelog}
+delle tecnologie in uso, \emph{routine} ricorrenti con Claude Cowork e Claude Code, e ho sentito
+parlare di prove con altri agenti, come Codex di OpenAI. L’uso quotidiano dell’IA comprende anche la
+scrittura della documentazione e dei \emph{ticket}, la gestione dei progetti, per i rapporti e le
+stime, e il progetto grafico. Per i processi ricorrenti l’azienda ha scritto
+\gloss{skill}{\emph{skill}} interne, istruzioni riusabili che codificano un processo per un
+assistente basato su IA.
+
+La regola di fondo è che l’IA propone e la persona decide. L’azienda riscontra una riduzione dei
+tempi, ma non dispone ancora di misure precise su questo beneficio e sull’impatto sulla qualità. Ho
+percepito anche un’opinione condivisa nel \emph{team}, che la mia esperienza conferma: nelle mani di
+un programmatore esperto l’IA è un buon programmatore \emph{junior}, ma non sostituisce un
+\emph{senior}, e chi sa cosa sta facendo ottiene risultati migliori di quelli dell’IA da sola. Torno
+su questo punto nella \secref{sec:maturazione}.
+
+Nei progetti di IA per i clienti Halue adotta alcune regole che ho ritrovato nel mio progetto. I
+dati vengono sempre dal catalogo reale, tramite strumenti e ricerca, e mai dalla memoria del
+modello; le azioni con effetti esterni restano sotto controllo umano; la qualità delle risposte si
+valuta con \emph{test} manuali su casi d’uso reali; il modello si sceglie in base al compito, e i
+consumi di \emph{token} si tengono sotto controllo.
+
+Questa propensione all’innovazione passa anche dagli \emph{stage}, che Halue usa per esplorare temi
+che i progetti per i clienti non lasciano il tempo di approfondire. Approfondisco questo ruolo nella
+\secref{sec:stage-strategia}.
