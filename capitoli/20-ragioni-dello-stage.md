@@ -1,4 +1,4 @@
-# Oltre la conversazione testuale: le ragioni dello *stage*
+# Oltre la conversazione testuale
 
 Discuto perché Halue ha proposto questo *stage* e perché io l'ho scelto: il problema che affronta, il suo posto nella strategia dell'azienda, gli obiettivi e i vincoli del progetto.
 

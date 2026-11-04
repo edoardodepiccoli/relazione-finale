@@ -1,4 +1,4 @@
-# Halue: consulenza tecnologica per il commercio digitale
+# Halue e il commercio digitale
 
 Presento Halue S.r.l., l'azienda presso cui ho svolto lo *stage*: il profilo, la clientela, le tecnologie, i processi e il rapporto con l'innovazione. Per ciascun aspetto dico da dove viene l'informazione: ciò che ho visto durante lo *stage*, le risposte scritte del *tutor* alle mie domande, il colloquio conoscitivo con il fondatore e il *tutor*, il sito e il portfolio dell'azienda.
 
@@ -24,6 +24,6 @@ Descrivo come Halue organizza il lavoro: la variante di Scrum adattata a un'agen
 
 Illustro il percorso di un progetto dalla richiesta del cliente al rilascio: la raccolta dei requisiti in *ticket*, le due fasi di *refinement*, le stime, le convenzioni di codifica e di versionamento, i *test*, il rilascio su tre ambienti, la manutenzione, la documentazione delle decisioni architetturali e le retrospettive. Un diagramma rappresenta il ciclo di vita di un *ticket*.
 
-## Propensione all'innovazione e ruolo dell'intelligenza artificiale {#sec:innovazione}
+## Innovazione e intelligenza artificiale {#sec:innovazione}
 
 Concludo il capitolo con il rapporto di Halue con l'innovazione: lo *scouting* tecnologico, la quota di tempo che l'azienda dichiara di dedicare alla ricerca e sviluppo e, in particolare, l'impiego quotidiano dell'intelligenza artificiale nello sviluppo, nella documentazione e nella gestione dei progetti, secondo il principio per cui l'IA propone e la persona decide. Questa sezione introduce i temi del capitolo 2.
