@@ -4,6 +4,16 @@
 \usepackage{colortbl}
 \definecolor{TabellaIntestazione}{HTML}{E2E5E9}
 \definecolor{TabellaRiga}{HTML}{F3F4F6}
+% Pandoc elimina il margine esterno con @{}, ma colortbl colora anche
+% gli 8 pt esterni. Estendiamo le linee booktabs dello stesso tabcolsep.
+\makeatletter
+\patchcmd{\@BLTrule}
+  {\@@BLTrule()}
+  {\@@BLTrule(l{-\tabcolsep}r{-\tabcolsep})}
+  {}
+  {\PackageError{impaginazione}{Impossibile estendere le linee delle tabelle}
+    {Controllare la definizione di @BLTrule nel pacchetto booktabs.}}
+\makeatother
 \AtBeginEnvironment{longtable}{%
   \needspace{12\baselineskip}%
   \linespread{1}\fontsize{11}{13.5}\selectfont
