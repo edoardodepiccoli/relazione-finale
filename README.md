@@ -11,4 +11,19 @@ Relazione finale di *stage* di Edoardo De Piccoli presso Halue S.r.l., per la la
 
 Il documento comprende inoltre sommario, acronimi, glossario e riferimenti.
 
-La versione corrente è in [`tesi.pdf`](tesi.pdf); i singoli capitoli sono in [`capitoli/`](capitoli/).
+La versione corrente è in [`tesi.pdf`](tesi.pdf); i sorgenti sono in LaTeX, con un file per capitolo in [`capitoli/`](capitoli/).
+
+## Scrittura e compilazione
+
+Con [mise](https://mise.jdx.dev/) installato, dalla radice del repository:
+
+```sh
+mise trust
+mise install
+mise run anteprima  # build/tesi.pdf, per la scrittura
+mise run pdf        # aggiorna anche tesi.pdf, per la revisione
+```
+
+L'unico strumento di compilazione è Tectonic; al primo utilizzo scarica i pacchetti LaTeX necessari. Ogni comando compila l'intero documento e risolve automaticamente indice e rimandi.
+
+L'ordine dei contenuti è in [`tesi.tex`](tesi.tex), i dati del frontespizio in [`config/dati.tex`](config/dati.tex) e la formattazione in [`config/stile.tex`](config/stile.tex). La [guida alla scrittura](CONTRIBUTING.md) descrive struttura, figure, tabelle, glossario e configurazione dell'editor.
