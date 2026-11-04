@@ -17,6 +17,10 @@ Con la supervisione del Prof. Tullio Vardanega, relatore, e di Antonio Cavestro,
 
 In appendice raccolgo gli acronimi e le abbreviazioni con la loro forma estesa, il glossario e i riferimenti.
 
+```{=latex}
+\newpage
+```
+
 **Convenzioni tipografiche.** Nel documento adotto le seguenti convenzioni:
 
 - il corsivo indica i termini in lingua straniera, e soltanto questi; i nomi propri di aziende, prodotti e metodi (come Shopify, Slack o Scrum) restano in tondo;
