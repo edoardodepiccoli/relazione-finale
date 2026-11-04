@@ -2,11 +2,11 @@
 
 Discuto perché Halue ha proposto questo *stage* e perché io l'ho scelto: il problema che affronta, il suo posto nella strategia dell'azienda, gli obiettivi e i vincoli del progetto.
 
-## Il ruolo degli *stage* nella strategia aziendale
+## Il ruolo degli *stage* nella strategia aziendale {#sec:stage-strategia}
 
 Descrivo il rapporto di Halue con gli *stage*: il numero di stagisti che ospita ogni anno, la loro provenienza e il duplice scopo che l'azienda attribuisce a queste esperienze, cioè esplorare temi che i progetti per i clienti non lasciano il tempo di approfondire e conoscere persone con cui collaborare in futuro. Illustro come nasce un progetto di *stage* e quale destino può avere il lavoro al suo termine, e collego queste scelte alla propensione all'innovazione discussa nella @sec:innovazione.
 
-## I limiti degli assistenti conversazionali testuali
+## I limiti degli assistenti conversazionali testuali {#sec:limiti-assistenti}
 
 Introduco il problema che lo *stage* affronta. I *chatbot* integrati nei negozi *online* rispondono quasi esclusivamente in forma testuale, una modalità poco efficace quando il cliente deve esplorare un catalogo, confrontare prodotti o scegliere una variante. Una figura mette a confronto la risposta solo testuale di un *chatbot* con quella di ChatCart alla stessa domanda. Esamino le alternative disponibili: i *chatbot* generici, Shopify Sidekick, rivolto al commerciante più che al cliente, e i protocolli con cui Shopify apre il negozio agli agenti, come il suo *server* MCP e UCP. Discuto infine perché le soluzioni preconfezionate si adattano con difficoltà all'identità del marchio e alle specificità del suo catalogo.
 

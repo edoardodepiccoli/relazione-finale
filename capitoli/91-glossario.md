@@ -1,6 +1,6 @@
 # Glossario {.unnumbered}
 
-Raccolgo in ordine alfabetico i termini tecnici introdotti nel testo. Il termine e il pedice G nel corpo della relazione rimandano alla voce corrispondente.
+Raccolgo in ordine alfabetico i termini tecnici introdotti nel testo. Alla prima occorrenza nel corpo della relazione, il termine e il pedice G rimandano alla voce corrispondente.
 
 [**ADR**]{#glossario-adr}
 :	Documento che registra una decisione di architettura: il contesto in cui nasce, le alternative considerate, la scelta e le sue conseguenze. Conserva le motivazioni della scelta anche quando cambia chi lavora al progetto.
@@ -26,6 +26,9 @@ Raccolgo in ordine alfabetico i termini tecnici introdotti nel testo. Il termine
 [**ERP**]{#glossario-erp}
 :	Sistema gestionale che integra dati e processi di diverse aree aziendali, come amministrazione, acquisti, magazzino e vendite. Il collegamento con il negozio permette, per esempio, di sincronizzare ordini e disponibilità dei prodotti.
 
+[***Founder & Senior Consultant***]{#glossario-founder-senior-consultant}
+:	Ruolo che unisce la fondazione dell'azienda all'attività di consulenza esperta. In Halue lo ricopre Valentino Baraldo.
+
 [**GraphQL**]{#glossario-graphql}
 :	Linguaggio di interrogazione per API e insieme di regole per eseguire le richieste su uno schema di dati tipizzato. Il programma che invia la richiesta specifica i campi di cui ha bisogno; Shopify lo adotta per la Admin API e la Storefront API.
 
@@ -38,6 +41,9 @@ Raccolgo in ordine alfabetico i termini tecnici introdotti nel testo. Il termine
 [**iPaaS**]{#glossario-ipaas}
 :	Piattaforma erogata come servizio per collegare applicazioni e sistemi diversi. Offre connettori e strumenti per trasformare e trasferire i dati, riducendo la necessità di costruire un'integrazione distinta per ogni coppia di sistemi.
 
+[***Junior Developer***]{#glossario-junior-developer}
+:	Sviluppatore all'inizio del proprio percorso professionale, che realizza e verifica funzionalità con il supporto di colleghi più esperti.
+
 [**Liquid**]{#glossario-liquid}
 :	Linguaggio di *template* usato nei temi Shopify. Permette di combinare la struttura delle pagine con i dati del negozio, attraverso variabili, condizioni e cicli; la piattaforma elabora i modelli e genera le pagine da inviare al navigatore.
 
@@ -47,6 +53,12 @@ Raccolgo in ordine alfabetico i termini tecnici introdotti nel testo. Il termine
 [**MCP**]{#glossario-mcp}
 :	Protocollo aperto che standardizza la comunicazione tra applicazioni basate su modelli linguistici e servizi esterni. Un *server* MCP può esporre strumenti, risorse e istruzioni; è l'applicazione che ospita il modello a gestire il collegamento e l'esecuzione delle richieste.
 
+[***Project Management Assistant***]{#glossario-project-management-assistant}
+:	Figura che supporta la gestione dei progetti, contribuendo all'organizzazione delle attività, all'aggiornamento della documentazione e al monitoraggio delle scadenze.
+
+[***Project/service manager***]{#glossario-project-service-manager}
+:	Responsabilità operativa di gestione di un progetto o di un servizio continuativo. Nel metodo di Halue cura la pianificazione delle attività e la capacità disponibile del gruppo di lavoro.
+
 [***Pull request***]{#glossario-pull-request}
 :	Proposta di integrare un insieme di modifiche da un *branch* a un altro in un sistema di versionamento. Raccoglie le differenze nel codice, la discussione di revisione e gli esiti dei controlli automatici prima dell'integrazione.
 
@@ -54,10 +66,16 @@ Raccolgo in ordine alfabetico i termini tecnici introdotti nel testo. Il termine
 :	Stato di avanzamento dei lavori. Nel contesto descritto indica un rapporto periodico che riassume il progresso del progetto, le scadenze, i rischi e i punti aperti, per condividere la situazione con le persone coinvolte.
 
 [**Scrum**]{#glossario-scrum}
-:	*Framework* per affrontare problemi complessi attraverso cicli brevi di lavoro, chiamati *sprint*, e un confronto regolare sui risultati. Prevede responsabilità, eventi e artefatti definiti; nel capitolo 1 distinguo questo riferimento dall'adattamento che Halue ne fa per il lavoro su commessa.
+:	*Framework* per affrontare problemi complessi attraverso cicli brevi di lavoro, chiamati *sprint*, e un confronto regolare sui risultati. Prevede responsabilità, eventi e artefatti definiti; nella @sec:organizzazione-halue distinguo questo riferimento dall'adattamento che Halue ne fa per il lavoro su commessa.
 
 [**SemVer**]{#glossario-semver}
 :	Convenzione di versionamento semantico che esprime una versione nella forma `MAJOR.MINOR.PATCH`. Rispetto all'API pubblica dichiarata, il primo numero cambia per modifiche incompatibili, il secondo per nuove funzionalità compatibili e il terzo per correzioni compatibili.
+
+[***Senior Project Manager***]{#glossario-senior-project-manager}
+:	Figura con esperienza nella gestione dei progetti, responsabile del coordinamento di pianificazione, risorse e avanzamento delle attività.
+
+[***Senior Software Engineer***]{#glossario-senior-software-engineer}
+:	Professionista dello sviluppo del *software* con esperienza consolidata, che affronta problemi progettuali complessi e contribuisce alle scelte tecniche e alla revisione del codice.
 
 [***Skill***]{#glossario-skill}
 :	Insieme riusabile di istruzioni e, quando necessari, risorse o strumenti, che guida un assistente basato su IA in un'attività specifica. Serve a rendere esplicito un procedimento, ma non garantisce da solo la correttezza dell'esecuzione.
@@ -65,17 +83,32 @@ Raccolgo in ordine alfabetico i termini tecnici introdotti nel testo. Il termine
 [**Società Benefit**]{#glossario-societa-benefit}
 :	Società che affianca allo scopo di lucro una o più finalità di beneficio comune indicate nello statuto. La disciplina italiana richiede una gestione che bilanci questi obiettivi e una relazione annuale sull'impatto prodotto; la qualifica non coincide con una certificazione privata di sostenibilità.
 
+[***Software Engineer***]{#glossario-software-engineer}
+:	Professionista che applica metodi di ingegneria del *software* alla progettazione, realizzazione, verifica e manutenzione di sistemi *software*.
+
+[***Solution & Technical Architect***]{#glossario-solution-technical-architect}
+:	Figura che traduce le esigenze applicative in una soluzione tecnica, definendo l'architettura del sistema, le tecnologie e le integrazioni tra componenti.
+
 [***Sprint***]{#glossario-sprint}
 :	Ciclo di lavoro di durata fissa, non superiore a un mese nel riferimento Scrum, durante il quale il gruppo persegue un obiettivo concordato. La revisione dei risultati e la retrospettiva permettono di adattare il prodotto e il modo di lavorare al ciclo successivo.
 
 [***Staging***]{#glossario-staging}
 :	Ambiente separato dalla produzione in cui collaudare una versione dell'applicazione prima di renderla disponibile agli utenti. Riproduce le condizioni di esercizio per quanto necessario alla verifica, senza coincidere con il servizio effettivamente usato dai clienti.
 
+[***Storefront***]{#glossario-storefront}
+:	Interfaccia di un negozio digitale rivolta al cliente, attraverso cui consultare il catalogo, selezionare prodotti e avviare l'acquisto. In Shopify può basarsi sui temi della piattaforma oppure su un'applicazione separata con architettura *headless*.
+
 [***Story point***]{#glossario-story-point}
 :	Unità di stima relativa che un gruppo usa per confrontare le attività in termini di complessità, impegno e incertezza. Non corrisponde a un numero fisso di ore e acquista significato rispetto alle stime dello stesso gruppo; la scala di Fibonacci è una possibile convenzione, non un obbligo di Scrum.
+
+[***Team lead***]{#glossario-team-lead}
+:	Responsabilità di guida tecnica di un gruppo di lavoro. In Halue comprende l'analisi funzionale, le stime per il cliente e il coordinamento tecnico degli sviluppatori.
 
 [***Ticket***]{#glossario-ticket}
 :	Unità di lavoro registrata in un sistema di tracciamento, con un identificativo, una descrizione e uno stato. Può rappresentare una funzionalità, una modifica o un difetto, e raccogliere stime, discussioni e collegamenti alle modifiche del codice.
 
 [**UCP**]{#glossario-ucp}
 :	Protocollo aperto per rendere interoperabili i servizi commerciali e gli agenti che operano per conto dell'utente. Definisce modalità condivise per scoprire le capacità di un negozio e interagire con le fasi dell'acquisto; riguarda il dominio commerciale, mentre MCP offre un meccanismo generale per collegare applicazioni e strumenti.
+
+[***UX/UI Digital Consultant***]{#glossario-ux-ui-digital-consultant}
+:	Consulente che progetta l'esperienza utente e l'interfaccia di un prodotto digitale, considerando percorsi d'uso, struttura delle informazioni e aspetto visivo.

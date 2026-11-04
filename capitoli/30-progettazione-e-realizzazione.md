@@ -18,7 +18,7 @@ Presento gli strumenti che ho impiegato per lo sviluppo, la verifica e il rilasc
 
 ## Studio preliminare e analisi
 
-### L'ecosistema delle applicazioni Shopify
+### L'ecosistema delle applicazioni Shopify {#sec:ecosistema-applicazioni}
 
 Descrivo la fase iniziale dello *stage*, dedicata allo studio del funzionamento di un'applicazione Shopify (autenticazione, *app proxy*, estensioni del tema, differenze tra Storefront API e Admin API) e degli strumenti per la costruzione di agenti. Distinguo le conoscenze che avevo già acquisito lavorando sui temi Liquid da quelle che ho dovuto costruire per la prima volta.
 

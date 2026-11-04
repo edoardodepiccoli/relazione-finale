@@ -31,3 +31,7 @@ Elenco in ordine alfabetico gli acronimi e le abbreviazioni introdotti nel capit
 [**SemVer**](#glossario-semver): *Semantic Versioning*.
 
 [**UCP**](#glossario-ucp): *Universal Commerce Protocol*.
+
+**UI**: *User Interface*.
+
+**UX**: *User Experience*.
