@@ -1,3 +1,3 @@
 # Riferimenti {.unnumbered}
 
-Elencherò qui le fonti che cito nel testo: la documentazione delle tecnologie che ho usato e le pagine pubbliche di Halue.
+- Halue S.r.l., sito istituzionale, <https://halue.com/it>, pagine «Chi siamo», «Approccio» e «Progetti», consultate il 4 novembre 2026.
