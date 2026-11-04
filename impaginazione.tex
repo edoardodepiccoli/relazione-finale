@@ -1,0 +1,4 @@
+% Tabelle: interlinea normale, e mai spezzate se ne restano meno di 12 righe in fondo alla pagina.
+\usepackage{etoolbox}
+\usepackage{needspace}
+\AtBeginEnvironment{longtable}{\needspace{12\baselineskip}\linespread{1}\selectfont}
