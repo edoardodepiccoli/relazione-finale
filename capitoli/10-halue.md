@@ -22,7 +22,7 @@ Descrivo come Halue organizza il lavoro: la variante di Scrum adattata a un'agen
 
 ### Dal *ticket* al rilascio
 
-Illustro il percorso di un progetto dalla richiesta del cliente al rilascio: la raccolta dei requisiti in *ticket*, le due fasi di *refinement*, le stime, le convenzioni di codifica e di versionamento, i test, il rilascio su tre ambienti, la manutenzione, la documentazione delle decisioni architetturali e le retrospettive. Un diagramma rappresenta il ciclo di vita di un *ticket*.
+Illustro il percorso di un progetto dalla richiesta del cliente al rilascio: la raccolta dei requisiti in *ticket*, le due fasi di *refinement*, le stime, le convenzioni di codifica e di versionamento, i *test*, il rilascio su tre ambienti, la manutenzione, la documentazione delle decisioni architetturali e le retrospettive. Un diagramma rappresenta il ciclo di vita di un *ticket*.
 
 ## Propensione all'innovazione e ruolo dell'intelligenza artificiale {#sec:innovazione}
 

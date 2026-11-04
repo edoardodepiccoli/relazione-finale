@@ -14,7 +14,7 @@ Illustro come ho organizzato il mio lavoro, svolto in gran parte da remoto: come
 
 ### Strumenti di sviluppo e assistenti basati sull'intelligenza artificiale
 
-Presento gli strumenti che ho impiegato per lo sviluppo, la verifica e il rilascio, tra cui gli assistenti di programmazione basati su modelli linguistici. Di questi descrivo l'uso che ne ho fatto: la sperimentazione e la validazione rapida delle idee, fino a prototipi funzionanti nell'arco di una giornata, a cui seguiva l'implementazione definitiva scritta a mano; la stesura dei documenti di progettazione, per individuare in anticipo i casi limite e i test necessari; le attività di supporto, come la generazione dei dati di prova. Ciò che ho imparato da questo uso lo discuto nella @sec:maturazione.
+Presento gli strumenti che ho impiegato per lo sviluppo, la verifica e il rilascio, tra cui gli assistenti di programmazione basati su modelli linguistici. Di questi descrivo l'uso che ne ho fatto: la sperimentazione e la validazione rapida delle idee, fino a prototipi funzionanti nell'arco di una giornata, a cui seguiva l'implementazione definitiva scritta a mano; la stesura dei documenti di progettazione, per individuare in anticipo i casi limite e i *test* necessari; le attività di supporto, come la generazione dei dati di prova. Ciò che ho imparato da questo uso lo discuto nella @sec:maturazione.
 
 ## Studio preliminare e analisi
 
@@ -60,7 +60,7 @@ Dedico questa sezione alle funzionalità che ho sperimentato senza portarle nel 
 
 ## Verifica e validazione
 
-Illustro la mia strategia di verifica: test automatici concentrati sui punti in cui ChatCart interagisce con sistemi esterni che non controllo, eseguiti su una base di dati reale e senza simulare i moduli interni, e le ragioni di questa scelta. Discuto i limiti dei test tradizionali applicati a un agente che non risponde mai due volte nello stesso modo. Concludo con la validazione svolta insieme al *tutor* e con il rilascio dell'applicazione *online*.
+Illustro la mia strategia di verifica: *test* automatici concentrati sui punti in cui ChatCart interagisce con sistemi esterni che non controllo, eseguiti su una base di dati reale e senza simulare i moduli interni, e le ragioni di questa scelta. Discuto i limiti dei *test* tradizionali applicati a un agente che non risponde mai due volte nello stesso modo. Concludo con la validazione svolta insieme al *tutor* e con il rilascio dell'applicazione *online*.
 
 ## Risultati
 
@@ -70,4 +70,4 @@ Presento ChatCart dal punto di vista di chi lo utilizza, attraverso una sequenza
 
 ### Risultati quantitativi {#sec:quantitativi}
 
-Riporto in tabelle i dati quantitativi del progetto: la copertura dei requisiti definiti nella @sec:requisiti, la copertura dei test con le scelte che la motivano, le righe di codice per ciascuna parte dell'applicazione e i documenti che ho consegnato al *team*.
+Riporto in tabelle i dati quantitativi del progetto: la copertura dei requisiti definiti nella @sec:requisiti, la copertura dei *test* con le scelte che la motivano, le righe di codice per ciascuna parte dell'applicazione e i documenti che ho consegnato al *team*.
