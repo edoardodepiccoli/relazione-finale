@@ -6,6 +6,6 @@ resource-path: [., figure]
 number-sections: true
 top-level-division: chapter
 # L'indice e gli elenchi di figure, tabelle e codici sorgente li mette capitoli/03-indici.md,
-# dopo sommario e convenzioni tipografiche.
+# dopo il sommario.
 table-of-contents: false
 include-in-header: [frontespizio.tex, codici-sorgente.tex]
