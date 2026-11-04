@@ -1,7 +1,14 @@
-# Relazione finale di stage
+# ChatCart: agente conversazionale con interfaccia generativa
 
-Relazione finale di stage di Edoardo De Piccoli, laurea triennale in Informatica, Università di Padova.
+Relazione finale di *stage* di Edoardo De Piccoli presso Halue S.r.l., per la laurea in Informatica all’Università di Padova.
 
-La versione corrente è [`tesi.pdf`](tesi.pdf). Per ora contiene l'indice proposto, con un paragrafo di intento sotto ogni sezione; il testo arriverà un capitolo alla volta. Ogni versione inviata al relatore ha il tag `invio-N`.
+## Struttura della tesi
 
-Il testo sta in `capitoli/`, in Markdown. Per ricompilare il PDF: `mise install`, poi `mise run pdf`.
+1. **Halue e il commercio digitale**: contesto aziendale, tecnologie e processi di lavoro.
+2. **Oltre la conversazione testuale**: motivazioni, obiettivi e vincoli del progetto.
+3. **Progetto e sviluppo di ChatCart**: analisi, architettura, realizzazione e verifica.
+4. **Valutazione retrospettiva**: risultati rispetto agli obiettivi e maturazione professionale.
+
+Il documento comprende inoltre sommario, acronimi, glossario e riferimenti.
+
+La versione corrente è in [`tesi.pdf`](tesi.pdf); i singoli capitoli sono in [`capitoli/`](capitoli/).
