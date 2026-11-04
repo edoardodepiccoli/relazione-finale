@@ -6,7 +6,7 @@
 
 In questa relazione descrivo lo *stage* che ho svolto presso Halue S.r.l., società di consulenza tecnologica con sede operativa ad Abano Terme, dal 14 settembre al 9 novembre 2026.
 
-Con la supervisione del Prof. Tullio Vardanega, relatore, e di Antonio Cavestro, *tutor* aziendale, ho progettato e realizzato ChatCart, il prototipo di un assistente conversazionale per i negozi Shopify che risponde al cliente non soltanto con il testo, ma anche con componenti dell'interfaccia che sceglie e popola in tempo reale con i dati del negozio.
+Con la supervisione del Prof. Tullio Vardanega, relatore, e di Antonio Cavestro, *tutor* aziendale, ho progettato e realizzato ChatCart, il prototipo di un assistente conversazionale per i negozi Shopify che risponde al cliente non soltanto con testo, ma anche con componenti dell'interfaccia che sceglie e popola in tempo reale con i dati del negozio.
 
 **Struttura del documento.** La relazione si articola in quattro capitoli:
 
@@ -24,5 +24,5 @@ In appendice raccolgo gli acronimi e le abbreviazioni con la loro forma estesa, 
 **Convenzioni tipografiche.** Nel documento adotto le seguenti convenzioni:
 
 - il corsivo indica i termini in lingua straniera, e soltanto questi; i nomi propri di aziende, prodotti e metodi (come Shopify, Slack o Scrum) restano in tondo;
-- alla prima occorrenza di un termine presente nel glossario ne do nel testo una definizione essenziale e lo contrassegno con il pedice G; il termine e il pedice sono cliccabili e rimandano all'approfondimento nel glossario. Nelle occorrenze successive non ripeto il pedice;
+- alla prima occorrenza di un termine presente nel glossario ne do nel testo una definizione essenziale e lo contrassegno con il pedice G; il termine e il pedice sono cliccabili e rimandano all'approfondimento nel glossario;
 - le figure e le tabelle hanno una numerazione progressiva e una didascalia, che ne indica la fonte quando non sono di mia realizzazione.

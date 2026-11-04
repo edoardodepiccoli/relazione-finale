@@ -1,26 +1,26 @@
 # Halue e il commercio digitale
 
-Presento Halue S.r.l., l'azienda presso cui ho svolto lo *stage*, descrivendone le attività, i clienti, le tecnologie, i processi e il rapporto con l'innovazione. Mi baso sulle otto settimane di lavoro, sulle conversazioni con i colleghi e sulle risposte scritte del *tutor* aziendale, Antonio Cavestro, integrate dal sito dell'azienda[^sito]. Le risposte hanno confermato quanto ho osservato e completato il quadro sugli aspetti che non ho seguito direttamente, come contratti e gestione dei progetti; per questi aspetti riporto informazioni riferite, mentre distinguo le dichiarazioni del sito dalle mie osservazioni.
+Presento Halue S.r.l., l'azienda presso cui ho svolto lo *stage*, descrivendone le attività, i clienti, le tecnologie, i processi e il rapporto con l'innovazione. Mi baso sulle otto settimane di lavoro, sulle conversazioni con i colleghi e sulle risposte raccolte durante un'intervista dedicata al *tutor* aziendale, Antonio Cavestro, integrando queste informazioni con quelle del sito dell'azienda[^sito]. Le risposte hanno confermato quanto ho osservato e completato il quadro sugli aspetti che non ho seguito direttamente, come contratti e gestione dei progetti; per questi aspetti riporto informazioni riferite, mentre distinguo le dichiarazioni del sito dalle mie osservazioni.
 
 ## Profilo aziendale e linee di attività
 
 [^sito]: Halue S.r.l., sito istituzionale, <https://halue.com/it>, pagine «Chi siamo», «Approccio» e «Progetti», consultate il 4 novembre 2026.
 
-Halue è una società di consulenza tecnologica nata nel 2022, con sede legale a Parma e sede operativa ad Abano Terme, in provincia di Padova, all'interno di un centro di *coworking*. Dal 2024 è una [Società Benefit~G~](#glossario-societa-benefit): una forma giuridica, introdotta in Italia nel 2015, per le società che oltre al profitto perseguono obiettivi di beneficio comune dichiarati nello statuto e ne rendono conto ogni anno in una relazione d'impatto.
+Halue è una società di consulenza tecnologica nata nel 2022, con sede legale a Parma e sede operativa ad Abano Terme, in provincia di Padova. Dal 2024 è una [Società Benefit~G~](#glossario-societa-benefit): una forma giuridica, introdotta in Italia nel 2015, per le società che oltre al profitto perseguono obiettivi di beneficio comune dichiarati nello statuto e ne rendono conto ogni anno in una relazione d'impatto.
 
 Oggi l'azienda conta dieci persone, con i seguenti ruoli:
 
 - [*Founder & Senior Consultant*~G~](#glossario-founder-senior-consultant): il fondatore Valentino Baraldo, che svolge anche attività di consulenza;
 - [*Solution & Technical Architect*~G~](#glossario-solution-technical-architect): definisce le soluzioni e l'architettura tecnica;
-- [*Senior Project Manager*~G~](#glossario-senior-project-manager) e [*Project Management Assistant*~G~](#glossario-project-management-assistant): due persone dedicate alla gestione dei progetti;
+- [*Senior Project Manager*~G~](#glossario-senior-project-manager) e [*Project Management Assistant*~G~](#glossario-project-management-assistant): due ruoli dedicati alla gestione dei progetti;
 - [*Senior Software Engineer*~G~](#glossario-senior-software-engineer), [*Software Engineer*~G~](#glossario-software-engineer) e [*Junior Developer*~G~](#glossario-junior-developer): cinque sviluppatori con diversi livelli di esperienza;
 - [*UX/UI Digital Consultant*~G~](#glossario-ux-ui-digital-consultant): cura la progettazione dell'esperienza utente e dell'interfaccia.
 
-Halue è nata come società di consulenza sull'[*e-commerce*~G~](#glossario-e-commerce) e sui sistemi di [*Customer Relationship Management* (CRM)~G~](#glossario-crm), con Shopify e Salesforce come piattaforme di riferimento. Il primo ambito riguarda la vendita di prodotti e servizi tramite canali digitali; il secondo, la gestione delle relazioni di un'azienda con i propri clienti. L'interesse per l'intelligenza artificiale è nato dal lavoro quotidiano su cataloghi, contenuti e flussi d'acquisto complessi. In questi contesti un [modello linguistico di grandi dimensioni (LLM)~G~](#glossario-llm), addestrato a elaborare e generare testo, può assistere il cliente usando i dati del negozio.
+Halue è nata come società di consulenza sull'[*e-commerce*~G~](#glossario-e-commerce) e sui sistemi di [*Customer Relationship Management* (CRM)~G~](#glossario-crm), con Shopify e Salesforce come piattaforme di riferimento. Il primo ambito riguarda la vendita di prodotti e servizi tramite canali digitali; il secondo, la gestione delle relazioni di un'azienda con i propri clienti. Halue dedica inoltre particolare attenzione allo sviluppo di soluzioni basate sull'intelligenza artificiale per il commercio digitale. In questo ambito, un [modello linguistico di grandi dimensioni (LLM)~G~](#glossario-llm), addestrato a elaborare e generare testo, può assistere il cliente nella consultazione di cataloghi complessi e nel percorso d'acquisto attraverso l'accesso ai dati del negozio.
 
 La @fig:halue-attivita riassume le linee di attività dell'azienda, in ordine di peso:
 
-1. l'*e-commerce* su Shopify e su Salesforce Commerce Cloud, sia verso il consumatore finale ([B2C~G~](#glossario-b2c)) sia verso altre aziende ([B2B~G~](#glossario-b2b)), che è l'attività principale;
+1. l'*e-commerce* su Shopify e su Salesforce Commerce Cloud, sia verso il consumatore finale ([B2C~G~](#glossario-b2c)) sia verso altre aziende ([B2B~G~](#glossario-b2b));
 2. l'integrazione di sistemi, cioè il collegamento del negozio con i gestionali aziendali ([ERP~G~](#glossario-erp)), la logistica e i servizi di terze parti, punto a punto o tramite piattaforme di integrazione ([iPaaS~G~](#glossario-ipaas));
 3. i servizi di intelligenza artificiale, dalla valutazione di quanto un'azienda sia pronta ad adottarla fino allo sviluppo di agenti su misura;
 4. i sistemi CRM su Salesforce;
@@ -33,7 +33,7 @@ La @fig:halue-attivita riassume le linee di attività dell'azienda, in ordine di
 
 La figura mostra due elementi trasversali. La consulenza tecnologica accompagna tutte le linee, dalla valutazione iniziale alla scelta dei sistemi. L'intelligenza artificiale è insieme una linea a sé e, sempre di più, una competenza che entra nei progetti di *e-commerce* e di integrazione.
 
-Halue lavora su commessa: non vende prodotti propri, come applicazioni pubblicate sullo Shopify App Store, ma costruisce soluzioni su misura per i singoli clienti. Anche ChatCart segue questa impostazione: descrivo nella @sec:ecosistema-applicazioni come lo integro nel singolo negozio, anziché distribuirlo come applicazione pubblica.
+Halue lavora su commessa, non vende prodotti propri, come applicazioni pubblicate sullo Shopify App Store, ma costruisce soluzioni su misura per i singoli clienti. Anche ChatCart segue questa impostazione: descrivo nella @sec:ecosistema-applicazioni come lo integro nel singolo negozio, anziché distribuirlo come applicazione pubblica.
 
 ## Clientela e modalità di ingaggio
 
@@ -43,10 +43,10 @@ Il sito di Halue cita alcuni di questi clienti. La @tbl:progetti riporta i quatt
 
 | Cliente | Settore | Piattaforma | Intervento |
 | ---------------------- | ------------------------ | -------------------------- | ---------------------------- |
-| Dainese | Abbigliamento e protezioni per la moto | Salesforce Commerce Cloud | Nuova architettura per gestire più marchi |
-| Philippe Model Paris | Calzature e moda | Shopify Plus | Migrazione da Adobe Commerce |
-| Colnago | Biciclette | Shopify Plus | Configuratore 3D dei prodotti su misura |
-| Gruppo Rossignol | Attrezzatura per gli sport invernali | Salesforce Commerce Cloud | Negozi dei marchi Dynastar e Lange |
+| Dainese | Abbigliamento e dispositivi di protezione per il motociclismo | Salesforce Commerce Cloud | Revisione dell'architettura per la gestione di più marchi |
+| Philippe Model Paris | Calzature e abbigliamento | Shopify Plus | Migrazione della piattaforma di commercio elettronico da Adobe Commerce |
+| Colnago | Produzione di biciclette | Shopify Plus | Sviluppo di un configuratore tridimensionale per la personalizzazione dei prodotti |
+| Gruppo Rossignol | Attrezzature per sport invernali | Salesforce Commerce Cloud | Realizzazione dei negozi digitali dei marchi Dynastar e Lange |
 
 : I progetti per i clienti che Halue pubblica sul proprio sito, con il settore del cliente, la piattaforma e il tipo di intervento. {#tbl:progetti}
 
