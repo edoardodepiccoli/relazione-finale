@@ -127,26 +127,24 @@ vuole vedere rispettata anche negli strumenti che aggiunge al negozio: ne discut
 
 \section{Ecosistema tecnologico}
 
-Gli \gloss{storefront}{\emph{storefront}}, cioè le interfacce dei negozi Shopify rivolte ai clienti,
-possono seguire due modalità di sviluppo. La prima usa i temi della piattaforma: Shopify genera le
-pagine a partire da modelli scritti in \gloss{liquid}{Liquid}, il suo linguaggio di \emph{templating},
-combinandoli con i dati del negozio. La seconda adotta un’architettura
-\gloss{headless}{\emph{headless}}, in cui l’interfaccia è un’applicazione separata che accede alle
-funzioni commerciali tramite \gloss{api}{API}, cioè interfacce con cui un programma mette a
-disposizione di altri programmi dati e operazioni, secondo un contratto definito. Per questa modalità
-Shopify offre \gloss{hydrogen}{Hydrogen}, un \emph{framework} basato su React con componenti già
-predisposti per leggere i dati del negozio, e Oxygen, il servizio che ospita l’applicazione; Hydrogen non è però l’unico strumento possibile per costruire
-uno \emph{storefront headless}.
+Le interfacce dei negozi Shopify rivolte ai clienti, dette \gloss{storefront}{\emph{storefront}}, si
+possono sviluppare in due modi:
 
-Le Admin API permettono alle applicazioni di gestire i dati e le operazioni del negozio; le
-Storefront API espongono catalogo, carrello e altre funzioni dell’esperienza d’acquisto. Entrambe
-offrono interfacce \gloss{graphql}{GraphQL}, un linguaggio di interrogazione per API basato su uno
-schema tipizzato: il \emph{client} dichiara nella \emph{query} la struttura esatta dei dati da
-ottenere e il \emph{server} restituisce soltanto quei campi, anche da più risorse collegate, con
-un’unica richiesta a un solo \emph{endpoint}. I temi Liquid accedono invece ai dati anche tramite gli
-oggetti che Shopify rende disponibili durante la generazione delle pagine: non richiedono
-necessariamente chiamate esplicite a queste API. Per aggiungere funzionalità, Halue sviluppa
-applicazioni personalizzate in Node.js e TypeScript, integrabili con entrambe le modalità.
+\begin{itemize}
+        \item con un tema della piattaforma: Shopify genera le pagine a partire da modelli scritti in
+	\gloss{liquid}{Liquid}, il suo linguaggio di \emph{templating}, e dai dati del negozio;
+        \item con un’architettura \gloss{headless}{\emph{headless}}: l’interfaccia è un’applicazione
+	separata, costruita per esempio con \gloss{hydrogen}{Hydrogen}, il \emph{framework} di Shopify
+	basato su React, e accede al negozio tramite \gloss{api}{API}, cioè interfacce con cui un
+	programma mette a disposizione di altri programmi dati e operazioni, secondo un contratto definito.
+\end{itemize}
+
+Shopify offre due famiglie di API: le Admin API, per gestire i dati e le operazioni del negozio, e
+le Storefront API, per catalogo, carrello e acquisto. Entrambe usano \gloss{graphql}{GraphQL}, un
+linguaggio di interrogazione in cui il \emph{client} chiede con una sola richiesta esattamente i
+campi che gli servono. Un tema Liquid riceve invece i dati del negozio durante la generazione delle
+pagine. Per aggiungere funzionalità, Halue sviluppa applicazioni personalizzate in Node.js e
+TypeScript, integrabili con entrambe le modalità.
 
 La \tabref{tbl:tecnologie} distingue l’ambito di utilizzo delle tecnologie ricorrenti in Halue dal
 loro impiego nel progetto di \emph{stage}. Per il mio progetto ho scelto i temi Liquid per la loro maggiore diffusione rispetto agli
