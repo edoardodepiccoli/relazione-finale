@@ -42,7 +42,7 @@ digitali; il secondo, la gestione delle relazioni delle aziende con i propri cli
 inoltre particolare attenzione allo sviluppo di soluzioni basate sull’intelligenza artificiale per
 il commercio digitale.
 
-La \figref{fig:halue-attivita} riassume le linee di attività dell’azienda, in ordine di peso:
+Le linee di attività dell’azienda sono, in ordine di peso:
 
 \begin{enumerate}
         \item l’\emph{e-commerce} su Shopify e su Salesforce Commerce Cloud, sia verso il
@@ -60,18 +60,7 @@ La \figref{fig:halue-attivita} riassume le linee di attività dell’azienda, in
 	\item la progettazione dell’interfaccia e dell’esperienza utente.
 \end{enumerate}
 
-\begin{figure}[htbp]
-	\centering
-	\setstretch{1}
-	\input{figure/01-halue/attivita.tex}
-        \caption{Le linee di attività di Halue come colonne in ordine di peso, dall’\emph{e-commerce}
-	alla progettazione dell’interfaccia, sulla base comune della consulenza tecnologica.
-	L’intelligenza artificiale è una linea a sé ed entra anche nei progetti di \emph{e-commerce} e di
-	integrazione.}
-	\label{fig:halue-attivita}
-\end{figure}
-
-La figura mostra due elementi trasversali. La consulenza tecnologica accompagna tutte le linee,
+Due elementi attraversano queste linee. La consulenza tecnologica accompagna tutte le linee,
 dalla valutazione iniziale alla scelta dei sistemi. L’intelligenza artificiale è insieme una linea a
 sé e, sempre di più, una competenza che entra nei progetti di \emph{e-commerce} e di integrazione.
 
@@ -87,29 +76,11 @@ pubblica amministrazione. Sono marchi strutturati della moda, dello sport, del c
 dettaglio e della cosmetica professionale, che vendono \emph{online} su più mercati, con lingue e
 valute diverse. La maggior parte dei clienti è italiana, ma ci sono anche marchi esteri.
 
-La \tabref{tbl:progetti} riporta quattro progetti realizzati per questi clienti; tra gli altri
-marchi seguiti dall’azienda figurano Piazza Italia, Velasca, Davines e Comfort Zone.
+Tra i marchi seguiti dall’azienda figurano Dainese, Philippe Model Paris, Colnago, Gruppo
+Rossignol, Piazza Italia, Velasca, Davines e Comfort Zone.
 
-\begin{tabellatesi}{P{0.22}P{0.24}P{0.26}P{0.28}}
-	{Alcuni progetti di Halue per i propri clienti, con il settore del cliente, la piattaforma e il tipo di intervento.}
-	{tbl:progetti}
-	\toprule
-        \rowcolor{TabellaIntestazione} \textbf{Cliente} & \textbf{Settore} & \textbf{Piattaforma} &
-	\textbf{Intervento} \\
-	\midrule
-        Dainese & Abbigliamento e dispositivi di protezione per il motociclismo & Salesforce
-	Commerce Cloud & Revisione dell’architettura per la gestione di più marchi \\
-        Philippe Model Paris & Calzature e abbigliamento & Shopify Plus & Migrazione della
-	piattaforma di commercio elettronico da Adobe Commerce \\
-        Colnago & Produzione di biciclette & Shopify Plus & Sviluppo di un configuratore
-	tridimensionale per la personalizzazione dei prodotti \\
-        Gruppo Rossignol & Attrezzature per sport invernali & Salesforce Commerce Cloud &
-	Realizzazione dei negozi digitali dei marchi Dynastar e Lange \\
-	\bottomrule
-\end{tabellatesi}
-
-La tabella mostra che la clientela si divide tra le due piattaforme principali, Shopify e
-Salesforce, e che gli interventi vanno dalla migrazione di un intero negozio a funzionalità molto
+La clientela si divide tra le due piattaforme principali, Shopify e Salesforce, e gli
+interventi vanno dalla migrazione di un intero negozio a funzionalità molto
 specifiche, come un configuratore tridimensionale.
 
 I progetti arrivano soprattutto per passaparola, da clienti e contatti che segnalano l’azienda, e in
@@ -146,29 +117,8 @@ campi che gli servono. Un tema Liquid riceve invece i dati del negozio durante l
 pagine. Per aggiungere funzionalità, Halue sviluppa applicazioni personalizzate in Node.js e
 TypeScript, integrabili con entrambe le modalità.
 
-La \tabref{tbl:tecnologie} distingue l’ambito di utilizzo delle tecnologie ricorrenti in Halue dal
-loro impiego nel progetto di \emph{stage}. Per il mio progetto ho scelto i temi Liquid per la loro maggiore diffusione rispetto agli
+Per il mio progetto ho scelto i temi Liquid per la loro maggiore diffusione rispetto agli
 \emph{storefront} costruiti con Hydrogen.
-
-\begin{tabellatesi}{P{0.28}P{0.42}P{0.3}}
-	{Le tecnologie ricorrenti nei progetti di Halue e il loro utilizzo nel progetto di \emph{stage}.}
-	{tbl:tecnologie}
-	\toprule
-        \rowcolor{TabellaIntestazione} \textbf{Tecnologia} & \textbf{Ambito di utilizzo} &
-	\textbf{Utilizzo nel progetto di \emph{stage}} \\
-	\midrule
-	Shopify e Shopify Plus & Gestione di negozi \emph{e-commerce} B2C e B2B & Negozio Shopify di sviluppo \\
-	Temi Liquid & Generazione delle pagine del negozio & Inserimento di ChatCart nel tema \\
-        Admin API e Storefront API & Gestione del negozio e funzioni di acquisto tramite GraphQL &
-	Accesso al catalogo con Storefront API \\
-	Node.js e TypeScript & Sviluppo di applicazioni personalizzate & Implementazione di ChatCart \\
-	Hydrogen e Oxygen & Sviluppo e pubblicazione di \emph{storefront headless} & Non utilizzati \\
-	Salesforce & Commercio digitale, CRM, assistenza e campagne commerciali & Non utilizzato \\
-	Storyblok e Sanity & Gestione dei contenuti separata dalla loro presentazione & Non utilizzati \\
-        Heroku, Google Cloud e AWS & Esecuzione di applicazioni e servizi in infrastrutture
-	\emph{cloud} & Non utilizzati; rilascio su Vercel \\
-	\bottomrule
-\end{tabellatesi}
 
 Nei progetti di intelligenza artificiale cambia soprattutto l’architettura. Al centro c’è un
 \gloss{llm}{modello linguistico di grandi dimensioni (LLM)}, addestrato a elaborare e generare
@@ -205,19 +155,7 @@ Per la stessa ragione le persone non sono assegnate a un progetto in modo stabil
 \emph{demand planning} condiviso ripartisce il \emph{team} sui clienti, e l’avanzamento di ciascun
 progetto si segue sulla \emph{board} di Jira e con un rapporto sullo \gloss{sal}{stato di
 avanzamento dei lavori (SAL)}, che riporta con un semaforo lo stato del progetto, le scadenze, i
-rischi e i punti aperti. La \figref{fig:ritmi} mette in fila questi momenti, dal più frequente al
-più raro.
-
-\begin{figure}[htbp]
-	\centering
-	\setstretch{1}
-	\input{figure/01-halue/ritmi.tex}
-        \caption{I momenti di coordinamento del lavoro in Halue, dal più frequente al più raro: la
-	riunione quotidiana, la \emph{sprint review} e la retrospettiva di ogni \emph{sprint}, il
-	\emph{demand planning} mensile, il rapporto SAL e la retrospettiva di chiusura di ogni progetto.
-	Ogni punto segna un’occorrenza, su una scala dei tempi schematica.}
-	\label{fig:ritmi}
-\end{figure}
+rischi e i punti aperti.
 
 Ogni mattina tutto il \emph{team} si collega su Google Meet per una riunione di allineamento:
 ciascuno espone su cosa ha lavorato il giorno prima e su cosa lavorerà quel giorno. La
@@ -227,30 +165,12 @@ Gli orari e il luogo di lavoro sono flessibili: i dipendenti lavorano in sede in
 il 30\% e il 40\% del tempo e da remoto per il resto, e ognuno gestisce la propria presenza in
 autonomia.
 
-Gli strumenti della \tabref{tbl:strumenti} sostengono sia il lavoro interno sia il rapporto con i
-clienti. Con questi ultimi il \emph{team} comunica su canali Slack dedicati a ciascun marchio, nelle
+Con i clienti il \emph{team} comunica su canali Slack dedicati a ciascun marchio, nelle
 \emph{sprint review}, con dimostrazioni del lavoro svolto, e con rapporti periodici di avanzamento;
 i resoconti delle attività e le variazioni contrattuali passano invece per \emph{email}. La
 conoscenza interna sta su Confluence e su Google Drive. Una persona nuova parte dalla documentazione
 e dalle procedure e comincia con piccoli \gloss{ticket}{\emph{ticket}}, le unità di lavoro che Jira
 registra con un identificativo, una descrizione e uno stato, su un progetto reale, con l’affiancamento di un collega.
-
-\begin{tabellatesi}{P{0.3}P{0.7}}
-	{Gli strumenti di lavoro di Halue e il loro uso.}
-	{tbl:strumenti}
-	\toprule
-	\rowcolor{TabellaIntestazione} \textbf{Strumento} & \textbf{Uso in Halue} \\
-	\midrule
-	Slack & Comunicazione interna e canali dedicati ai clienti \\
-	Google Meet & Riunioni quotidiane e \emph{call} \\
-	Jira & Tracciamento dei \emph{ticket}, \emph{board} e stime \\
-	Confluence & Documentazione e procedure \\
-	GitHub e Bitbucket & Versionamento del codice \\
-	Figma & Progetto grafico e passaggio agli sviluppatori \\
-	Granola & Appunti automatici delle \emph{call} \\
-	Postman & Prova delle API \\
-	\bottomrule
-\end{tabellatesi}
 
 \subsection{Dal \emph{ticket} al rilascio}
 
@@ -301,21 +221,6 @@ sviluppa le trova; quelle che valgono per tutto il progetto diventano \gloss{adr
 brevi che registrano il contesto, la scelta e la sua motivazione. Il ciclo si chiude con le
 retrospettive, a fine \emph{sprint} e alla chiusura di un progetto o di una \emph{release}
 importante, per portare le correzioni nei progetti successivi.
-
-La \figref{fig:ticket} riassume questo percorso, dalla richiesta del cliente al rilascio in
-produzione e alla manutenzione, mostrando i passaggi di analisi, sviluppo e verifica.
-
-\begin{figure}[htbp]
-	\centering
-	\setstretch{1}
-	\input{figure/01-halue/ticket.tex}
-        \caption{Il ciclo di vita di un \emph{ticket} in Halue, come diagramma di attività diviso per
-	fasi: dalla richiesta del cliente al
-	\emph{ticket} su Jira, attraverso i due \emph{refinement}, la stima, lo sviluppo con \emph{pull
-	request} e \emph{test}, il collaudo in \emph{staging}, fino al rilascio in produzione e alla
-	manutenzione.}
-	\label{fig:ticket}
-\end{figure}
 
 Il metodo di Halue è rigido dove la struttura si ripaga sempre, cioè nella tracciabilità dalla richiesta al codice e nelle stime, e flessibile dove i
 clienti sono diversi tra loro, come la copertura dei \emph{test} o i livelli di servizio, che si
