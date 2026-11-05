@@ -1,0 +1,44 @@
+%% Il ciclo di vita di un ticket in Halue, dalla richiesta alla manutenzione.
+%% Le frecce tra le fasi collegano i sottografi, così ogni fase resta verticale.
+flowchart LR
+	subgraph analisi["Analisi"]
+		direction TB
+		richiesta(["`Richiesta del cliente
+		*call*, *email*, *workshop*`"])
+		ticket["`*Ticket* su Jira
+		*Epic*, *Story*,
+		*Change Request*, *Bug*`"]
+		funzionale["`*Refinement* funzionale
+		completezza e fattibilità`"]
+		bug{"`È un *bug*?`"}
+		tecnico["`*Refinement* tecnico
+		svolto dagli sviluppatori`"]
+		stima["`Stima
+		*story point* per il *team*,
+		ore per il cliente`"]
+		richiesta --> ticket --> funzionale --> bug
+		bug -- No --> tecnico --> stima
+		bug -- Sì --> stima
+	end
+	subgraph sviluppo["Sviluppo"]
+		direction TB
+		branch["`Sviluppo su un *branch*
+		con la chiave del *ticket*`"]
+		pr["`*Pull request*
+		*test* automatici e manuali`"]
+		designer["`Revisione del *designer*`"]
+		branch --> pr --> designer
+	end
+	subgraph rilascio["Verifica e rilascio"]
+		direction TB
+		staging["`Collaudo del cliente
+		in *staging*`"]
+		produzione["`Rilascio in produzione
+		*deploy* automatizzato,
+		avviato da una persona`"]
+		manutenzione(["`Manutenzione
+		le segnalazioni
+		diventano nuovi *ticket*`"])
+		staging --> produzione --> manutenzione
+	end
+	analisi --> sviluppo --> rilascio
