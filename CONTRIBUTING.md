@@ -13,7 +13,7 @@ capitoli/           un file LaTeX per capitolo
 finali/             acronimi, glossario e riferimenti
 figure/
   comuni/           sigillo dell'università e segnaposto
-  01-halue/         figure del capitolo 1, con i sorgenti Mermaid e un diagramma TikZ
+  01-halue/         diagrammi TikZ del capitolo 1
 modelli/            esempi da copiare durante la stesura
 build/              anteprima, log e SyncTeX, esclusi da Git
 tesi.pdf            copia compilata destinata alla revisione
@@ -63,7 +63,7 @@ Il termine e il pedice G rimandano insieme alla voce. Nelle occorrenze successiv
 
 Conserva ogni figura nella cartella del capitolo, per esempio `figure/01-halue/ticket.tex`. Usa PNG o JPEG per le immagini raster. Non servono conversioni o comandi esterni durante la compilazione.
 
-Tutti i diagrammi si scrivono in TikZ, in un file `.tex` nella cartella del capitolo, largo quanto il testo, e si includono con `\input` dentro l'ambiente `figure`, dopo `\setstretch{1}`. Usano i colori `FiguraTesto`, `FiguraTenue` e `FiguraBordo` e il carattere `\FiguraSeminero` per i titoli, definiti in `config/stile.tex`; il modello è `figure/01-halue/ticket.tex`.
+Tutti i diagrammi si scrivono in TikZ, in un file `.tex` nella cartella del capitolo, largo quanto il testo, e si includono con `\input` dentro l'ambiente `figure`, dopo `\setstretch{1}`. `config/stile.tex` definisce ciò che hanno in comune: i colori `FiguraTesto`, `FiguraTenue`, `FiguraBordo` e `FiguraAccento`, il carattere `\FiguraSeminero` per i titoli, gli stili `partizione`, `intestazione`, `titolo` e `freccia` e il comando `\voce{titolo}{dettaglio}` per le voci con un titolo e un dettaglio grigio. I modelli sono in `figure/01-halue/`: `ticket.tex` per un diagramma di attività, `attivita.tex` e `ritmi.tex` per schemi più semplici.
 
 Copia l'ambiente di `modelli/figura.tex` e modifica percorso, didascalia e identificativo. Cita e spiega ogni inserto nel testo; indica nella didascalia la fonte delle immagini non originali. Il sigillo dell'università resta nel solo frontespizio.
 
