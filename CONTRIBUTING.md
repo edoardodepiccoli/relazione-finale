@@ -68,9 +68,9 @@ I diagrammi si scrivono in Mermaid, in un file `.mmd` nella cartella del capitol
 
 Copia l'ambiente di `modelli/figura.tex` e modifica percorso, didascalia e identificativo. Cita e spiega ogni inserto nel testo; indica nella didascalia la fonte delle immagini non originali. Il sigillo dell'università resta nel solo frontespizio.
 
-Per le tabelle copia `modelli/tabella.tex`. L'ambiente `tabellatesi` applica lo stile comune, gestisce le interruzioni di pagina e ripete l'intestazione. Le colonne `P{0.4}P{0.6}` occupano rispettivamente il 40% e il 60% della larghezza: le frazioni devono sommare a 1. Righe alternate, colori, spaziatura e dimensione del carattere si modificano in `config/stile.tex`.
+Le didascalie stanno sempre sotto figure, tabelle e codici sorgente. Per le tabelle copia `modelli/tabella.tex`. L'ambiente `tabellatesi` applica lo stile comune, gestisce le interruzioni di pagina e ripete l'intestazione; la didascalia va in `\endlastfoot`, così compare sotto la tabella. Le colonne `P{0.4}P{0.6}` occupano rispettivamente il 40% e il 60% della larghezza: le frazioni devono sommare a 1. Righe alternate, colori, spaziatura e dimensione del carattere si modificano in `config/stile.tex`.
 
-Per un frammento di codice con didascalia ed elenco automatico:
+Per un frammento di codice con didascalia ed elenco automatico (lo stile mette la didascalia sotto il codice, ovunque sia scritta):
 
 ```latex
 \begin{codelisting}

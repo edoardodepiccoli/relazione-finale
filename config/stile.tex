@@ -17,7 +17,7 @@
 \usepackage[table,dvipsnames]{xcolor}
 \usepackage{caption}
 \usepackage{float}
-\floatstyle{plaintop}
+\floatstyle{plain}
 \newfloat{codelisting}{htbp}{lol}[chapter]
 \floatname{codelisting}{Codice sorgente}
 \usepackage{listings}
@@ -30,6 +30,7 @@
 }
 
 % Tabelle su più pagine: stile comune e larghezza complessiva pari al testo.
+% La didascalia va in \endlastfoot, così compare sotto la tabella.
 % I margini standard delle colonne allineano sfondi e righe senza patch.
 \usepackage{longtable,booktabs,array}
 \usepackage{needspace}
@@ -46,7 +47,7 @@
 	\setlength{\aboverulesep}{0pt}%
 	\setlength{\belowrulesep}{0pt}%
 	\arrayrulecolor{black!25}%
-	\captionsetup{skip=6pt}%
+	\captionsetup{position=below,skip=6pt}%
 	\rowcolors{2}{white}{TabellaRiga}%
 	\begin{longtable}{#1}%
 }{%
