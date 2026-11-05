@@ -47,9 +47,12 @@ La \figref{fig:halue-attivita} riassume le linee di attività dell’azienda, in
 \begin{enumerate}
         \item l’\emph{e-commerce} su Shopify e su Salesforce Commerce Cloud, sia verso il
 	consumatore finale (\gloss{b2c}{B2C}) sia verso altre aziende (\gloss{b2b}{B2B});
-        \item l’integrazione di sistemi, cioè il collegamento del negozio con i gestionali aziendali
-	(\gloss{erp}{ERP}), la logistica e i servizi di terze parti, punto a punto o tramite piattaforme di
-	integrazione (\gloss{ipaas}{iPaaS});
+        \item l’integrazione di sistemi, cioè il collegamento del negozio con la logistica, con i
+	servizi di terze parti e con i sistemi gestionali (\gloss{erp}{ERP}), che riuniscono in un’unica
+	base di dati amministrazione, acquisti, magazzino e vendite e con cui il negozio sincronizza ordini
+	e disponibilità dei prodotti. Il collegamento può essere punto a punto, costruito per ogni coppia di
+	sistemi, oppure passare per una piattaforma di integrazione erogata come servizio
+	(\gloss{ipaas}{iPaaS}), che offre connettori già pronti e strumenti per trasformare i dati;
         \item i servizi di intelligenza artificiale, dalla valutazione di quanto un’azienda sia
 	pronta ad adottarla fino allo sviluppo di agenti su misura;
 	\item i sistemi CRM su Salesforce;
@@ -129,9 +132,10 @@ possono seguire due modalità di sviluppo. La prima usa i temi della piattaforma
 pagine a partire da modelli scritti in \gloss{liquid}{Liquid}, il suo linguaggio di \emph{templating},
 combinandoli con i dati del negozio. La seconda adotta un’architettura
 \gloss{headless}{\emph{headless}}, in cui l’interfaccia è un’applicazione separata che accede alle
-funzioni commerciali tramite \gloss{api}{API}, interfacce di comunicazione tra programmi. Per questa
-modalità Shopify offre \gloss{hydrogen}{Hydrogen}, un \emph{framework} basato su React, e Oxygen, il
-servizio che ospita l’applicazione; Hydrogen non è però l’unico strumento possibile per costruire
+funzioni commerciali tramite \gloss{api}{API}, cioè interfacce con cui un programma mette a
+disposizione di altri programmi dati e operazioni, secondo un contratto definito. Per questa modalità
+Shopify offre \gloss{hydrogen}{Hydrogen}, un \emph{framework} basato su React con componenti già
+predisposti per leggere i dati del negozio, e Oxygen, il servizio che ospita l’applicazione; Hydrogen non è però l’unico strumento possibile per costruire
 uno \emph{storefront headless}.
 
 Le Admin API permettono alle applicazioni di gestire i dati e le operazioni del negozio; le
@@ -171,10 +175,13 @@ loro impiego nel progetto di \emph{stage}. Per il mio progetto ho scelto i temi 
 Nei progetti di intelligenza artificiale cambia soprattutto l’architettura. Al centro c’è un
 \gloss{llm}{modello linguistico di grandi dimensioni (LLM)}, addestrato a elaborare e generare
 testo, di solito Claude. Halue lo collega ai dati del negozio tramite \gloss{mcp}{MCP}, un protocollo aperto che collega
-applicazioni basate su modelli linguistici a strumenti e dati esterni, e affianca al modello
-strumenti e istruzioni sviluppati internamente. Segue inoltre i nuovi protocolli per il commercio
-agentico, come \gloss{ucp}{UCP}, pensati per permettere a un agente di completare un acquisto per
-conto dell’utente. In ChatCart non mi sono affidato al \emph{server} MCP di Shopify, ma ho
+applicazioni basate su modelli linguistici a strumenti e dati esterni: un \emph{server} MCP espone
+strumenti e risorse, e l’applicazione che ospita il modello li invoca quando il modello lo richiede.
+Al modello Halue affianca strumenti e istruzioni sviluppati internamente. Segue inoltre i nuovi
+protocolli per il commercio agentico, come \gloss{ucp}{UCP}: mentre MCP è un meccanismo generale,
+valido per qualunque strumento, UCP riguarda il solo dominio commerciale e definisce modalità comuni
+con cui un agente scopre le capacità di un negozio e ne attraversa le fasi d’acquisto, dal carrello
+al pagamento, per conto dell’utente. In ChatCart non mi sono affidato al \emph{server} MCP di Shopify, ma ho
 sviluppato una ricerca nel catalogo su misura: è la scelta da cui nasce il contratto tra agente e
 \emph{widget} che descrivo nella \secref{sec:contratto}.
 
@@ -227,8 +234,8 @@ clienti. Con questi ultimi il \emph{team} comunica su canali Slack dedicati a ci
 \emph{sprint review}, con dimostrazioni del lavoro svolto, e con rapporti periodici di avanzamento;
 i resoconti delle attività e le variazioni contrattuali passano invece per \emph{email}. La
 conoscenza interna sta su Confluence e su Google Drive. Una persona nuova parte dalla documentazione
-e dalle procedure e comincia con piccole unità di lavoro (\gloss{ticket}{\emph{ticket}}) su un
-progetto reale, con l’affiancamento di un collega.
+e dalle procedure e comincia con piccoli \gloss{ticket}{\emph{ticket}}, le unità di lavoro che Jira
+registra con un identificativo, una descrizione e uno stato, su un progetto reale, con l’affiancamento di un collega.
 
 \begin{tabellatesi}{P{0.3}P{0.7}}
 	{Gli strumenti di lavoro di Halue e il loro uso.}
@@ -282,7 +289,9 @@ una copertura minima prefissata. Il controllo di qualità lo svolgono gli svilup
 sviluppo, e poi il cliente nel collaudo.
 
 Il rilascio attraversa tre ambienti: sviluppo, un ambiente di collaudo
-(\gloss{staging}{\emph{staging}} o \emph{preview}) e produzione. Il \emph{deploy} è automatizzato e
+(\gloss{staging}{\emph{staging}} o \emph{preview}) e produzione. L’ambiente di collaudo è separato da
+quello usato dai clienti finali ma ne riproduce le condizioni, così il cliente verifica le modifiche
+prima che arrivino agli utenti. Il \emph{deploy} è automatizzato e
 segue una procedura scritta, ma il passaggio in produzione lo esegue sempre una persona del
 \emph{team}. Dopo la consegna, i difetti e le richieste di modifica passano per i contratti di
 manutenzione: le segnalazioni arrivano su Jira, sul canale Slack del cliente o per \emph{email}, e
