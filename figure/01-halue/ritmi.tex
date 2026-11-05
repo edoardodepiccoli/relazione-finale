@@ -1,0 +1,23 @@
+% I momenti di coordinamento come tracce di un ritmo: più fitti i punti, più frequente il
+% momento. La scala dei tempi è schematica. Il disegno è largo quanto il testo (150 mm).
+\begin{tikzpicture}[every node/.style={text=FiguraTesto}]
+	\foreach \riga/\etichetta/\passo/\momento in {
+		0/{Ogni giorno}/3.25/{Riunione di allineamento},
+		1/{Ogni \emph{sprint}}/13/{\emph{Sprint review} e retrospettiva interna},
+		2/{Ogni mese}/32.5/{\emph{Demand planning} del \emph{team} sui clienti},
+		3/{Ogni progetto}/65/{Rapporto SAL e retrospettiva di chiusura}} {
+		\pgfmathsetlengthmacro\y{-\riga*8mm}
+		\ifodd\riga\else
+			\fill[TabellaRiga] (0, \y + 4mm) rectangle (150mm, \y - 4mm);
+		\fi
+		\node[anchor=west, inner sep=0pt, font=\fontsize{8.5}{10}\FiguraSeminero] at (2.5mm, \y) {\etichetta};
+		\draw[FiguraBordo] (26mm, \y) -- (91mm, \y);
+		\foreach \x in {0,\passo,...,65} {
+			\fill[FiguraAccento] (26mm + \x mm, \y) circle (0.75mm);
+		}
+		\node[anchor=west, inner sep=0pt, font=\fontsize{7.5}{9}\selectfont, text=FiguraTenue]
+			at (95mm, \y) {\momento};
+	}
+	\draw[freccia] (26mm, -28mm) -- node[below=0.5mm, font=\fontsize{7.5}{9}\selectfont,
+		text=FiguraTenue] {tempo, non in scala} (91mm, -28mm);
+\end{tikzpicture}
