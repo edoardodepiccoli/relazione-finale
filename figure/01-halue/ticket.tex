@@ -2,8 +2,6 @@
 % Le partizioni sono le tre fasi; il flusso va da sinistra a destra su due righe.
 % Il disegno è largo quanto il testo (150 mm): si include con \input, senza ridimensionarlo.
 
-% Ogni azione ha un titolo in grassetto e, sotto, un dettaglio più piccolo e grigio.
-\def\azione#1#2{{\fontsize{8.5}{10}\FiguraSeminero #1}\\[2pt]\color{FiguraTenue}#2}
 \begin{tikzpicture}[
 	every node/.style={text=FiguraTesto},
 	azione/.style={draw=FiguraTenue, fill=white, rounded corners=3pt, text width=18.7mm,
@@ -14,41 +12,38 @@
 	iniziale/.style={circle, fill=FiguraTesto, minimum size=3mm, inner sep=0pt},
 	finale/.style={circle, draw=FiguraTesto, fill=white, minimum size=3.6mm, inner sep=0pt,
 		path picture={\fill[FiguraTesto] (path picture bounding box.center) circle (1.05mm);}},
-	flusso/.style={draw=FiguraTenue, -{Stealth[length=1.8mm,width=1.4mm]}},
+	flusso/.style={freccia},
 	guardia/.style={font=\fontsize{7.5}{9}\selectfont, text=FiguraTenue, inner sep=1pt},
-	partizione/.style={draw=FiguraBordo, fill=TabellaRiga},
-	intestazione/.style={draw=FiguraBordo, fill=TabellaIntestazione},
-	titolo/.style={font=\footnotesize\bfseries},
 	node distance=4mm,
 ]
 	% Prima riga: analisi.
 	\node[iniziale] (inizio) at (4mm, -20mm) {};
 	\node[azione, right=of inizio] (richiesta)
-		{\azione{Richiesta}{del cliente per \emph{call}, \emph{email} o \emph{workshop}}};
+		{\voce{Richiesta}{del cliente per \emph{call}, \emph{email} o \emph{workshop}}};
 	\node[azione, right=of richiesta] (ticket)
-		{\azione{\emph{Ticket} su Jira}{\emph{Epic}, \emph{Story}, \emph{Change Request} o \emph{Bug}}};
+		{\voce{\emph{Ticket} su Jira}{\emph{Epic}, \emph{Story}, \emph{Change Request} o \emph{Bug}}};
 	\node[azione, right=of ticket] (funzionale)
-		{\azione{\emph{Refinement} funzionale}{completezza e fattibilità}};
+		{\voce{\emph{Refinement} funzionale}{completezza e fattibilità}};
 	\node[decisione, right=of funzionale] (bug) {};
 	\node[azione, right=7mm of bug] (tecnico)
-		{\azione{\emph{Refinement} tecnico}{svolto dagli sviluppatori}};
+		{\voce{\emph{Refinement} tecnico}{svolto dagli sviluppatori}};
 	\node[decisione, right=of tecnico] (unione) {};
 	\node[azione, right=of unione] (stima)
-		{\azione{Stima}{\emph{story point} per il \emph{team}, ore per il cliente}};
+		{\voce{Stima}{\emph{story point} per il \emph{team}, ore per il cliente}};
 
 	% Seconda riga: sviluppo, verifica e rilascio.
 	\node[azione] (branch) at (12.4mm, -52mm)
-		{\azione{Sviluppo}{su un \emph{branch} con la chiave del \emph{ticket}}};
+		{\voce{Sviluppo}{su un \emph{branch} con la chiave del \emph{ticket}}};
 	\node[azione, right=3.5mm of branch] (pr)
-		{\azione{\emph{Pull request}}{\emph{test} automatici e manuali}};
+		{\voce{\emph{Pull request}}{\emph{test} automatici e manuali}};
 	\node[azione, right=3.5mm of pr] (designer)
-		{\azione{Revisione}{del \emph{designer} prima del rilascio}};
+		{\voce{Revisione}{del \emph{designer} prima del rilascio}};
 	\node[azione, right=5mm of designer] (collaudo)
-		{\azione{Collaudo}{del cliente in \emph{staging}}};
+		{\voce{Collaudo}{del cliente in \emph{staging}}};
 	\node[azione, right=3.5mm of collaudo] (produzione)
-		{\azione{Rilascio in produzione}{\emph{deploy} avviato a mano}};
+		{\voce{Rilascio in produzione}{\emph{deploy} avviato a mano}};
 	\node[azione, right=3.5mm of produzione] (manutenzione)
-		{\azione{Manutenzione}{le segnalazioni diventano nuovi \emph{ticket}}};
+		{\voce{Manutenzione}{le segnalazioni diventano nuovi \emph{ticket}}};
 	\node[finale, right=3.5mm of manutenzione] (fine) {};
 
 	% Riferimenti per partizioni e percorsi a gomito.
