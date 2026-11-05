@@ -26,6 +26,15 @@
 
 \usepackage{graphicx}
 \usepackage[table,dvipsnames]{xcolor}
+
+% Diagrammi formali in TikZ, con gli stessi colori di tabelle e diagrammi Mermaid.
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,backgrounds,calc,fit,positioning,shapes.geometric}
+\definecolor{FiguraTesto}{HTML}{1F2328}
+\definecolor{FiguraTenue}{HTML}{59636E}
+\definecolor{FiguraBordo}{HTML}{BFBFBF}
+% Seminero di Latin Modern, più stretto del grassetto esteso, per i titoli nei diagrammi.
+\newfontfamily\FiguraSeminero{lmromandemi10-regular}[Extension=.otf, ItalicFont=lmromandemi10-oblique]
 \usepackage{caption}
 \captionsetup{font=small}
 \usepackage{float}
