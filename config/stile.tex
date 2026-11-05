@@ -16,6 +16,11 @@
 % Note a piè di pagina sempre in fondo alla pagina, anche quando il testo non la riempie.
 \usepackage[bottom]{footmisc}
 
+% Titolo dei capitoli su una riga, con il numero davanti e senza la parola «Capitolo».
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\normalfont\huge\bfseries}{\thechapter}{0.8em}{}
+\titlespacing*{\chapter}{0pt}{70pt}{40pt}
+
 \usepackage{graphicx}
 \usepackage[table,dvipsnames]{xcolor}
 \usepackage{caption}
