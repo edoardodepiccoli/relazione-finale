@@ -13,7 +13,7 @@ capitoli/           un file LaTeX per capitolo
 finali/             acronimi, glossario e riferimenti
 figure/
   comuni/           sigillo dell'università e segnaposto
-  01-halue/         figure del capitolo 1, con i sorgenti Mermaid
+  01-halue/         figure del capitolo 1, con i sorgenti Mermaid e un diagramma TikZ
 strumenti/          generazione dei diagrammi
 modelli/            esempi da copiare durante la stesura
 build/              anteprima, log e SyncTeX, esclusi da Git
@@ -62,9 +62,11 @@ Il termine e il pedice G rimandano insieme alla voce. Nelle occorrenze successiv
 
 ## Figure, tabelle e codice
 
-Conserva ogni figura nella cartella del capitolo, per esempio `figure/01-halue/attivita.pdf`. Per i diagrammi conserva accanto all'esportazione anche il sorgente modificabile, come SVG, Mermaid o un file del programma usato. Usa PDF per i diagrammi vettoriali e PNG o JPEG per le immagini raster; esporta gli SVG in PDF prima della compilazione. Non servono conversioni o comandi esterni durante la compilazione.
+Conserva ogni figura nella cartella del capitolo, per esempio `figure/01-halue/ticket.tex`. Per i diagrammi conserva accanto all'esportazione anche il sorgente modificabile, come SVG, Mermaid o un file del programma usato. Usa PDF per i diagrammi vettoriali e PNG o JPEG per le immagini raster; esporta gli SVG in PDF prima della compilazione. Non servono conversioni o comandi esterni durante la compilazione.
 
-I diagrammi si scrivono in Mermaid, in un file `.mmd` nella cartella del capitolo. `mise run diagrammi` li disegna con [Pele](https://pele.run) e scrive accanto a ogni sorgente un `.svg` e un `.pdf` vettoriale, stampato con Chrome in modalità *headless*; con `mise run diagrammi -- figure/01-halue/ticket.mmd` rigenera un solo file. Il comando richiede Google Chrome, oppure il percorso di un altro Chromium nella variabile `CHROME`, e installa Pele al primo utilizzo. Per il corsivo dei termini stranieri usa `*termine*` nelle etichette Markdown dei *flowchart* (`` "`...`" ``) e `<i>termine</i>` nei diagrammi `block`. Committa sorgente, SVG e PDF insieme.
+I diagrammi si scrivono in Mermaid, in un file `.mmd` nella cartella del capitolo. `mise run diagrammi` li disegna con [Pele](https://pele.run) e scrive accanto a ogni sorgente un `.svg` e un `.pdf` vettoriale, stampato con Chrome in modalità *headless*; con `mise run diagrammi -- figure/<capitolo>/<nome>.mmd` rigenera un solo file. Il comando richiede Google Chrome, oppure il percorso di un altro Chromium nella variabile `CHROME`, e installa Pele al primo utilizzo. Per il corsivo dei termini stranieri usa `*termine*` nelle etichette Markdown dei *flowchart* (`` "`...`" ``) e `<i>termine</i>` nei diagrammi `block`. Committa sorgente, SVG e PDF insieme.
+
+I diagrammi formali che richiedono un'impaginazione precisa, come i diagrammi di attività UML, si scrivono in TikZ, in un file `.tex` nella cartella del capitolo, largo quanto il testo, e si includono con `\input` dentro l'ambiente `figure`, dopo `\setstretch{1}`. Usano i colori `FiguraTesto`, `FiguraTenue` e `FiguraBordo` e il carattere `\FiguraSeminero` per i titoli, definiti in `config/stile.tex`; il modello è `figure/01-halue/ticket.tex`.
 
 Copia l'ambiente di `modelli/figura.tex` e modifica percorso, didascalia e identificativo. Cita e spiega ogni inserto nel testo; indica nella didascalia la fonte delle immagini non originali. Il sigillo dell'università resta nel solo frontespizio.
 
