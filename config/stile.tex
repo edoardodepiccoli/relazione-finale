@@ -38,17 +38,21 @@
 	showstringspaces=false
 }
 
-% Tabelle su più pagine: stile comune e larghezza complessiva pari al testo.
-% La didascalia va in \endlastfoot, così compare sotto la tabella.
+% Tabelle: stile comune e larghezza complessiva pari al testo.
+% Una tabella non si spezza mai tra due pagine: se non entra nello spazio rimasto,
+% passa intera alla pagina successiva. Didascalia e identificativo sono argomenti
+% dell'ambiente, così la didascalia compare sempre sotto la tabella.
 % I margini standard delle colonne allineano sfondi e righe senza patch.
-\usepackage{longtable,booktabs,array}
+\usepackage{booktabs,array}
 \usepackage{needspace}
 \definecolor{TabellaIntestazione}{HTML}{E2E5E9}
 \definecolor{TabellaRiga}{HTML}{F3F4F6}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{\dimexpr#1\linewidth-2\tabcolsep\relax}}
-\newenvironment{tabellatesi}[1]{%
-	\par\Needspace{12\baselineskip}%
-	\begingroup
+\newenvironment{tabellatesi}[3]{%
+	\def\TabellaDidascalia{#2}%
+	\def\TabellaEtichetta{#3}%
+	\begin{table}[H]%
+	\centering
 	\setstretch{1}\fontsize{11}{13.5}\selectfont
 	\setlength{\tabcolsep}{8pt}%
 	\renewcommand{\arraystretch}{1.3}%
@@ -58,10 +62,11 @@
 	\arrayrulecolor{black!25}%
 	\captionsetup{position=below,skip=6pt}%
 	\rowcolors{2}{white}{TabellaRiga}%
-	\begin{longtable}{#1}%
+	\begin{tabular}{#1}%
 }{%
-	\end{longtable}%
-	\endgroup
+	\end{tabular}%
+	\caption{\TabellaDidascalia}\label{\TabellaEtichetta}%
+	\end{table}%
 }
 
 \usepackage[unicode]{hyperref}
