@@ -1,5 +1,6 @@
 [tools]
 "github:tectonic-typesetting/tectonic" = "tectonic@0.17.0"
+node = "24"
 
 [tasks.anteprima]
 description = "Compila in build/tesi.pdf senza aggiornare il PDF condiviso"
@@ -12,3 +13,10 @@ tectonic --keep-logs --synctex --outdir build tesi.tex
 description = "Compila e aggiorna tesi.pdf per la revisione"
 depends = ["anteprima"]
 run = "cp build/tesi.pdf tesi.pdf"
+
+[tasks.diagrammi]
+description = "Genera SVG e PDF dei diagrammi Mermaid in figure/"
+run = """
+[ -d node_modules ] || npm ci --silent
+node strumenti/diagrammi.mjs
+"""
