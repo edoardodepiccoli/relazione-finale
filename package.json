@@ -1,9 +1,0 @@
-{
-  "name": "relazione-finale",
-  "private": true,
-  "type": "module",
-  "description": "Strumenti per generare le figure della relazione",
-  "devDependencies": {
-    "pele": "1.12.0"
-  }
-}
