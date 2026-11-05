@@ -22,8 +22,9 @@ mise trust
 mise install
 mise run anteprima  # build/tesi.pdf, per la scrittura
 mise run pdf        # aggiorna anche tesi.pdf, per la revisione
+mise run diagrammi  # rigenera SVG e PDF dei diagrammi Mermaid in figure/
 ```
 
-L'unico strumento di compilazione è Tectonic; al primo utilizzo scarica i pacchetti LaTeX necessari. Ogni comando compila l'intero documento e risolve automaticamente indice e rimandi.
+L'unico strumento di compilazione è Tectonic; al primo utilizzo scarica i pacchetti LaTeX necessari. I diagrammi sono già esportati in PDF: solo per modificarli servono Node.js e Google Chrome. Ogni comando compila l'intero documento e risolve automaticamente indice e rimandi.
 
 L'ordine dei contenuti è in [`tesi.tex`](tesi.tex), i dati del frontespizio in [`config/dati.tex`](config/dati.tex) e la formattazione in [`config/stile.tex`](config/stile.tex). La [guida alla scrittura](CONTRIBUTING.md) descrive struttura, figure, tabelle, glossario e configurazione dell'editor.
