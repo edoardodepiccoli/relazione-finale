@@ -10,6 +10,9 @@
 \usepackage{enumitem}
 \setlist[itemize,enumerate]{nosep}
 \setlength{\emergencystretch}{3em}
+% Nessuna riga isolata di un paragrafo in cima o in fondo alla pagina.
+% Si impostano a inizio documento perché un pacchetto le riporta a 3000.
+\AtBeginDocument{\widowpenalty=10000 \clubpenalty=10000 \displaywidowpenalty=10000}
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
 
