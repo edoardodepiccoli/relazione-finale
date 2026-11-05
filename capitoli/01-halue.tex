@@ -38,11 +38,9 @@ Oggi l’azienda conta dieci persone, con i seguenti ruoli:
 Halue è nata come società di consulenza sull’\gloss{e-commerce}{\emph{e-commerce}} e sui sistemi di
 \gloss{crm}{\emph{Customer Relationship Management} (CRM)}, con Shopify e Salesforce come
 piattaforme di riferimento. Il primo ambito riguarda la vendita di prodotti e servizi tramite canali
-digitali; il secondo, la gestione delle relazioni di un’azienda con i propri clienti. Halue dedica
+digitali; il secondo, la gestione delle relazioni delle aziende con i propri clienti. Halue dedica
 inoltre particolare attenzione allo sviluppo di soluzioni basate sull’intelligenza artificiale per
-il commercio digitale. In questo ambito, un \gloss{llm}{modello linguistico di grandi dimensioni
-(LLM)}, addestrato a elaborare e generare testo, può assistere il cliente nella consultazione di
-cataloghi complessi e nel percorso d’acquisto attraverso l’accesso ai dati del negozio.
+il commercio digitale.
 
 La \figref{fig:halue-attivita} riassume le linee di attività dell’azienda, in ordine di peso:
 
@@ -126,7 +124,7 @@ vuole vedere rispettata anche negli strumenti che aggiunge al negozio: ne discut
 
 Gli \gloss{storefront}{\emph{storefront}}, cioè le interfacce dei negozi Shopify rivolte ai clienti,
 possono seguire due modalità di sviluppo. La prima usa i temi della piattaforma: Shopify genera le
-pagine a partire da modelli scritti in \gloss{liquid}{Liquid}, il suo linguaggio di \emph{template},
+pagine a partire da modelli scritti in \gloss{liquid}{Liquid}, il suo linguaggio di \emph{templating},
 combinandoli con i dati del negozio. La seconda adotta un’architettura
 \gloss{headless}{\emph{headless}}, in cui l’interfaccia è un’applicazione separata che accede alle
 funzioni commerciali tramite \gloss{api}{API}, interfacce di comunicazione tra programmi. Per questa
@@ -136,14 +134,17 @@ uno \emph{storefront headless}.
 
 Le Admin API permettono alle applicazioni di gestire i dati e le operazioni del negozio; le
 Storefront API espongono catalogo, carrello e altre funzioni dell’esperienza d’acquisto. Entrambe
-offrono interfacce \gloss{graphql}{GraphQL}, un linguaggio di interrogazione con cui chi invia una
-richiesta specifica i campi da ottenere. I temi Liquid accedono invece ai dati anche tramite gli
+offrono interfacce \gloss{graphql}{GraphQL}, un linguaggio di interrogazione per API basato su uno
+schema tipizzato: il \emph{client} dichiara nella \emph{query} la struttura esatta dei dati da
+ottenere e il \emph{server} restituisce soltanto quei campi, anche da più risorse collegate, con
+un’unica richiesta a un solo \emph{endpoint}. I temi Liquid accedono invece ai dati anche tramite gli
 oggetti che Shopify rende disponibili durante la generazione delle pagine: non richiedono
 necessariamente chiamate esplicite a queste API. Per aggiungere funzionalità, Halue sviluppa
 applicazioni personalizzate in Node.js e TypeScript, integrabili con entrambe le modalità.
 
 La \tabref{tbl:tecnologie} distingue l’ambito di utilizzo delle tecnologie ricorrenti in Halue dal
-loro impiego nel progetto di \emph{stage}.
+loro impiego nel progetto di \emph{stage}. Per il mio progetto ho scelto i temi Liquid per la loro maggiore diffusione rispetto agli
+\emph{storefront} costruiti con Hydrogen.
 
 % DA RIVEDERE: l'ecosistema tecnologico, prima di confermare questa sezione.
 
@@ -167,20 +168,15 @@ loro impiego nel progetto di \emph{stage}.
 	\bottomrule
 \end{tabellatesi}
 
-Per il mio progetto ho scelto i temi Liquid per la loro maggiore diffusione rispetto agli
-\emph{storefront} costruiti con Hydrogen. Questa scelta permette di integrare ChatCart nei negozi
-esistenti senza sostituirne l’interfaccia.
-
-Nei progetti di intelligenza artificiale cambia soprattutto l’architettura. Halue collega un LLM, di
-solito Claude, ai dati del negozio tramite \gloss{mcp}{MCP}, un protocollo aperto che collega
+Nei progetti di intelligenza artificiale cambia soprattutto l’architettura. Al centro c’è un
+\gloss{llm}{modello linguistico di grandi dimensioni (LLM)}, addestrato a elaborare e generare
+testo, di solito Claude. Halue lo collega ai dati del negozio tramite \gloss{mcp}{MCP}, un protocollo aperto che collega
 applicazioni basate su modelli linguistici a strumenti e dati esterni, e affianca al modello
 strumenti e istruzioni sviluppati internamente. Segue inoltre i nuovi protocolli per il commercio
 agentico, come \gloss{ucp}{UCP}, pensati per permettere a un agente di completare un acquisto per
-conto dell’utente. La stessa preferenza per strumenti propri ha orientato il mio progetto: quando
-lo abbiamo definito, il \emph{tutor} mi ha consigliato di non affidarmi al \emph{server} MCP di
-Shopify, che considerava ancora troppo semplice, e di sviluppare una ricerca nel catalogo su misura.
-È la scelta da cui nasce il contratto tra agente e \emph{widget} che descrivo nella
-\secref{sec:contratto}.
+conto dell’utente. In ChatCart non mi sono affidato al \emph{server} MCP di Shopify, ma ho
+sviluppato una ricerca nel catalogo su misura: è la scelta da cui nasce il contratto tra agente e
+\emph{widget} che descrivo nella \secref{sec:contratto}.
 
 \section{Processi di sviluppo e gestione dei progetti}
 
@@ -216,13 +212,13 @@ più raro.
 	\label{fig:ritmi}
 \end{figure}
 
-Ogni mattina tutto il \emph{team}, me compreso, si collega su Google Meet per una riunione di
-allineamento: ciascuno dice su cosa ha lavorato il giorno prima e su cosa lavorerà quel giorno. La
+Ogni mattina tutto il \emph{team} si collega su Google Meet per una riunione di allineamento:
+ciascuno espone su cosa ha lavorato il giorno prima e su cosa lavorerà quel giorno. La
 riunione dura di solito tra i quindici e i venti minuti, al massimo mezz’ora.
 
-Gli orari e il luogo di lavoro sono flessibili: i colleghi lavorano in sede per circa il 70\% del
-tempo e da remoto per il resto, e ognuno gestisce la propria presenza in autonomia. Io sono stato in
-sede in media un giorno a settimana, come previsto dal piano di lavoro.
+Gli orari e il luogo di lavoro sono flessibili: i dipendenti lavorano in sede indicativamente tra
+il 30\% e il 40\% del tempo e da remoto per il resto, e ognuno gestisce la propria presenza in
+autonomia.
 
 Gli strumenti della \tabref{tbl:strumenti} sostengono sia il lavoro interno sia il rapporto con i
 clienti. Con questi ultimi il \emph{team} comunica su canali Slack dedicati a ciascun marchio, nelle
@@ -270,7 +266,7 @@ mobili e per \emph{desktop}. Il passaggio agli sviluppatori avviene in Figma ste
 specifiche e con un confronto diretto con il \emph{designer} sui punti meno chiari, e il
 \emph{designer} rivede l’implementazione prima del rilascio. Ogni marchio ha il proprio
 \gloss{design-system}{\emph{design system}}, cioè l’insieme di componenti e stili che rende coerenti
-le sue pagine: è il motivo per cui, nel mio progetto, adattare l’aspetto del \emph{widget} al
+le sue pagine: è il motivo per cui, nel mio progetto, adattare automaticamente l’aspetto del \emph{widget} al
 negozio si è rivelato così difficile (\secref{sec:sperimentazioni}).
 
 Nello sviluppo ogni \emph{ticket} corrisponde a una \gloss{pull-request}{\emph{pull request}}, una
@@ -310,26 +306,25 @@ produzione e alla manutenzione, mostrando i passaggi di analisi, sviluppo e veri
 	\label{fig:ticket}
 \end{figure}
 
-Nel complesso, il metodo di Halue è rigido dove la struttura si ripaga sempre, cioè nella tracciabilità dalla richiesta al codice e nelle stime, e flessibile dove i
+Il metodo di Halue è rigido dove la struttura si ripaga sempre, cioè nella tracciabilità dalla richiesta al codice e nelle stime, e flessibile dove i
 clienti sono diversi tra loro, come la copertura dei \emph{test} o i livelli di servizio, che si
 decidono progetto per progetto. La stessa impostazione ha guidato il mio \emph{stage}, per esempio
-nella scelta di concentrare i \emph{test} automatici dove servivano davvero (\secref{sec:verifica}).
+nella scelta di concentrare i \emph{test} automatici solo dove servivano (\secref{sec:verifica}).
 
 \section{Innovazione e intelligenza artificiale}
 \label{sec:innovazione}
 
 Halue pratica uno \emph{scouting} tecnologico continuo, riduce il debito tecnico allungando la vita
 delle piattaforme e dedica oltre il 10\% del tempo a progetti di ricerca e sviluppo, tra cui quelli
-di intelligenza artificiale. I colleghi dedicano molto tempo allo studio, che considerano un modo
-per crescere come professionisti, non soltanto come dipendenti dell’azienda. Halue organizza inoltre una formazione
+di intelligenza artificiale. I dipendenti dedicano molto tempo allo studio, che considerano un modo
+per crescere come professionisti, non soltanto all’interno dell’azienda. Halue organizza inoltre una formazione
 interna sui metodi agili, sulle piattaforme e sulla tecnologia, e ogni anno qualche evento formativo
 per i clienti.
 
 L’intelligenza artificiale è lo strumento in cui questa propensione si vede di più. Il \emph{team}
 usa ampiamente strumenti di sviluppo basati sull’IA e segue da vicino le novità del settore: adotta
 \emph{workflow} di \emph{code review} automatica, legge i \emph{changelog} delle tecnologie in uso,
-esegue \emph{routine} ricorrenti con Claude Cowork e Claude Code e prova altri agenti, come Codex di
-OpenAI. L’uso quotidiano dell’IA comprende anche la
+esegue \emph{routine} ricorrenti con Claude Cowork e Claude Code e testa regolarmente altri agenti. L’uso quotidiano dell’IA comprende anche la
 scrittura della documentazione e dei \emph{ticket}, la gestione dei progetti, per i rapporti e le
 stime, e il progetto grafico. Per i processi ricorrenti l’azienda ha scritto
 \gloss{skill}{\emph{skill}} interne, istruzioni riusabili che codificano un processo per un
@@ -338,8 +333,8 @@ assistente basato su IA.
 La regola di fondo è che l’IA propone e la persona decide. L’azienda riscontra una riduzione dei
 tempi, ma non dispone ancora di misure precise su questo beneficio e sull’impatto sulla qualità. Nel
 \emph{team} è condivisa un’opinione su cui torno nella \secref{sec:maturazione}: nelle mani di un
-programmatore esperto l’IA è un buon programmatore \emph{junior}, ma non sostituisce un
-\emph{senior}, e chi sa cosa sta facendo ottiene risultati migliori di quelli dell’IA da sola.
+programmatore esperto l’IA è un buon programmatore \emph{junior}, ma non può ancora sostituire un
+\emph{senior}.
 
 Nei progetti di IA per i clienti Halue adotta alcune regole che valgono anche per il mio progetto. I
 dati vengono sempre dal catalogo reale, tramite strumenti e ricerca, e mai dalla memoria del
