@@ -1,0 +1,19 @@
+% La quota del tempo di Halue dedicata a ricerca e sviluppo, come grafico a torta.
+% La fetta in bordeaux vale il 10%, il minimo dichiarato dall'azienda.
+
+\begin{tikzpicture}[every node/.style={text=FiguraTesto}]
+	\def\raggio{15mm}
+	% Il resto del tempo, poi la fetta di ricerca e sviluppo (36 gradi, il 10%), staccata di poco.
+	\fill[TabellaIntestazione, draw=FiguraBordo] (0, 0) -- (18:\raggio) arc[start angle=18,
+		end angle=342, radius=\raggio] -- cycle;
+	\fill[FiguraAccento, draw=white, line width=0.6pt, shift={(0:1mm)}] (0, 0) -- (-18:\raggio)
+		arc[start angle=-18, end angle=18, radius=\raggio] -- cycle;
+
+	% Etichette, a destra della torta.
+	\draw[FiguraTenue] (0:\raggio + 1.5mm) -- (0:\raggio + 7mm);
+	\node[anchor=west, align=left, font=\fontsize{7.5}{9}\selectfont]
+		at (\raggio + 8mm, 0) {\voce{Ricerca e sviluppo}{oltre il 10\% del tempo}};
+	\draw[FiguraTenue] (150:\raggio * 0.55) -- (150:\raggio + 7mm) -- ++(-5mm, 0);
+	\node[anchor=east, align=right, font=\fontsize{7.5}{9}\selectfont]
+		at ($(150:\raggio + 7mm) + (-6mm, 0)$) {\voce{Progetti per i clienti}{e altre attività}};
+\end{tikzpicture}

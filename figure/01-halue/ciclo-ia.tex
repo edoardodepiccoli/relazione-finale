@@ -1,0 +1,41 @@
+% Il lavoro con gli strumenti di IA in Halue, come diagramma di attività UML: l'IA produce una
+% proposta, la persona la rivede e, finché non è adeguata, la corregge con nuove indicazioni.
+% Il disegno è largo quanto il testo (150 mm): si include con \input, senza ridimensionarlo.
+
+\begin{tikzpicture}[
+	every node/.style={text=FiguraTesto},
+	azione/.style={draw=FiguraTenue, fill=white, rounded corners=3pt, text width=#1-2mm,
+		minimum width=#1, minimum height=15mm, align=center, inner sep=1.5pt,
+		font=\fontsize{7.5}{9}\selectfont,
+		execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+	azione/.default=24mm,
+	decisione/.style={draw=FiguraTenue, fill=white, diamond, minimum size=6mm, inner sep=0pt},
+	iniziale/.style={circle, fill=FiguraTesto, minimum size=3mm, inner sep=0pt},
+	finale/.style={circle, draw=FiguraTesto, fill=white, minimum size=3.6mm, inner sep=0pt,
+		path picture={\fill[FiguraTesto] (path picture bounding box.center) circle (1.05mm);}},
+	guardia/.style={font=\fontsize{7.5}{9}\selectfont, text=FiguraTenue, inner sep=1pt},
+]
+	\node[iniziale] (inizio) at (2mm, 0) {};
+	\node[azione=26mm] (compito) at (20mm, 0)
+		{\voce{Compito}{codice, documentazione, \emph{ticket}, rapporti, stime, grafica}};
+	\node[azione] (proposta) at (51mm, 0)
+		{\voce{Proposta dell’IA}{bozza prodotta dall’assistente}};
+	\node[azione] (revisione) at (80mm, 0)
+		{\voce{Revisione}{della persona: correttezza e qualità}};
+	\node[decisione] (adeguata) at (102mm, 0) {};
+	\node[azione] (risultato) at (126mm, 0)
+		{\voce{Risultato}{pronto per il progetto}};
+	\node[finale] (fine) at (146mm, 0) {};
+	\node[azione=30mm, minimum height=11mm] (indicazioni) at (76.5mm, -22mm)
+		{\voce{Nuove indicazioni}{correzioni e richieste più precise}};
+
+	\draw[freccia] (inizio) -- (compito);
+	\draw[freccia] (compito) -- (proposta);
+	\draw[freccia] (proposta) -- (revisione);
+	\draw[freccia] (revisione) -- (adeguata);
+	\draw[freccia] (adeguata) -- node[guardia, above] {[sì]} (risultato);
+	\draw[freccia] (risultato) -- (fine);
+	\node[guardia, above=1mm of adeguata] {È adeguata?};
+	\draw[freccia] (adeguata.south) |- node[guardia, pos=0.25, right] {[no]} (indicazioni.east);
+	\draw[freccia] (indicazioni.west) -| (proposta.south);
+\end{tikzpicture}
