@@ -1,0 +1,62 @@
+% L'architettura di un progetto di intelligenza artificiale in Halue: l'applicazione dell'agente
+% sta tra l'utente, il modello e i servizi esterni da cui arrivano dati e azioni.
+% In bordeaux le parti sviluppate per ogni progetto.
+% Il disegno è largo quanto il testo (150 mm): si include con \input, senza ridimensionarlo.
+
+\begin{tikzpicture}[
+	every node/.style={text=FiguraTesto},
+	blocco/.style={draw=FiguraTenue, fill=white, rounded corners=3pt, text width=#1-2mm,
+		minimum width=#1, minimum height=11mm, align=center, inner sep=1.5pt,
+		font=\fontsize{7.5}{9}\selectfont,
+		execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+	blocco/.default=40mm,
+	interno/.style={draw=FiguraAccento, line width=0.8pt},
+	doppia/.style={freccia, {Stealth[length=1.8mm,width=1.4mm]}-{Stealth[length=1.8mm,width=1.4mm]}},
+	etichetta/.style={font=\fontsize{7.5}{9}\selectfont, text=FiguraTenue, inner sep=1pt,
+		align=center},
+]
+	% L'applicazione dell'agente e i servizi esterni, come contenitori sullo sfondo.
+	\begin{scope}[on background layer]
+		\path[partizione] (32mm, -24mm) rectangle (98mm, -76mm);
+		\path[intestazione] (32mm, -24mm) rectangle (98mm, -30mm);
+		\node[titolo] at (65mm, -27mm) {Applicazione dell’agente};
+		\path[partizione] (106mm, -24mm) rectangle (150mm, -76mm);
+		\path[intestazione] (106mm, -24mm) rectangle (150mm, -30mm);
+		\node[titolo] at (128mm, -27mm) {Servizi esterni};
+	\end{scope}
+
+	% Il modello, fuori dall'applicazione che lo usa.
+	\node[blocco=66mm] (llm) at (65mm, -6.5mm)
+		{\voce{Modello linguistico (LLM)}{servizio del fornitore, di solito Claude}};
+
+	% Dentro l'applicazione.
+	\node[blocco=54mm, interno] (istruzioni) at (65mm, -38.5mm)
+		{\voce{Istruzioni}{compito, regole, tono del marchio}};
+	\node[blocco=54mm, interno] (strumenti) at (65mm, -52.5mm)
+		{\voce{Strumenti interni}{ricerche e azioni su misura del progetto}};
+	\node[blocco=54mm] (client) at (65mm, -66.5mm)
+		{\voce{\emph{Client} MCP}{scopre e invoca gli strumenti dei \emph{server}}};
+
+	% Fuori dall'applicazione.
+	\node[blocco=22mm, minimum height=16mm] (utente) at (11mm, -52.5mm)
+		{\voce{Utente}{scrive in linguaggio naturale}};
+	\node[blocco=40mm] (ucp) at (128mm, -38.5mm)
+		{\voce{Negozio con UCP}{carrello, \emph{checkout}, pagamento}};
+	\node[blocco=40mm] (api) at (128mm, -52.5mm)
+		{\voce{API della piattaforma}{Shopify, Salesforce, gestionali}};
+	\node[blocco=40mm] (mcp) at (128mm, -66.5mm)
+		{\voce{\emph{Server} MCP}{della piattaforma o di terze parti}};
+
+	% Il ciclo tra applicazione e modello.
+	\draw[freccia] (58mm, -24mm) -- (58mm, -12mm);
+	\draw[freccia] (72mm, -12mm) -- (72mm, -24mm);
+	\node[etichetta, anchor=east] at (56.5mm, -18mm) {conversazione, istruzioni,\\descrizione degli strumenti};
+	\node[etichetta, anchor=west] at (73.5mm, -18mm) {testo, oppure\\strumento da invocare};
+
+	% Collegamenti con l'esterno.
+	\draw[doppia] (utente.east) -- (32mm, -52.5mm);
+	\draw[freccia] (strumenti.east) -- (api.west);
+	\draw[freccia] (102mm, -52.5mm) |- (ucp.west);
+	\fill[FiguraTenue] (102mm, -52.5mm) circle (0.5mm);
+	\draw[freccia] (client.east) -- (mcp.west);
+\end{tikzpicture}

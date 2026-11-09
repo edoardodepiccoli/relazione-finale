@@ -102,16 +102,35 @@ TypeScript, integrabili con entrambe le modalità.
 
 Nei progetti di intelligenza artificiale cambia soprattutto l’architettura. Al centro c’è un
 \gloss{llm}{modello linguistico di grandi dimensioni (LLM)}, addestrato a elaborare e generare
-testo, di solito Claude. Halue lo collega ai dati del negozio tramite \gloss{mcp}{MCP}, un protocollo aperto che collega
-applicazioni basate su modelli linguistici a strumenti e dati esterni: un \emph{server} MCP espone
-strumenti e risorse, e l’applicazione che ospita il modello li invoca quando il modello lo richiede.
-Al modello Halue affianca strumenti e istruzioni sviluppati internamente. Segue inoltre i nuovi
-protocolli per il commercio agentico, come \gloss{ucp}{UCP}: mentre MCP è un meccanismo generale,
-valido per qualunque strumento, UCP riguarda il solo dominio commerciale e definisce modalità comuni
-con cui un agente scopre le capacità di un negozio e ne attraversa le fasi d’acquisto, dal carrello
-al pagamento, per conto dell’utente. In ChatCart non mi sono affidato al \emph{server} MCP di Shopify, ma ho
-sviluppato una ricerca nel catalogo su misura: è la scelta da cui nasce il contratto tra agente e
-\emph{widget} che descrivo nella \secref{sec:contratto}.
+testo, di solito Claude. Il modello non accede da solo ai dati del negozio: può soltanto chiedere
+all’applicazione che lo usa, l’agente, di invocare uno degli strumenti che questa gli mette a
+disposizione. L’applicazione esegue lo strumento e gli restituisce il risultato, e il ciclo si
+ripete finché il modello non formula la risposta per l’utente. Halue scrive su misura gli strumenti
+e le istruzioni che guidano il modello, e lo collega ai dati delle piattaforme anche tramite
+\gloss{mcp}{MCP}, un protocollo aperto con cui un \emph{server} espone strumenti e risorse a
+qualunque applicazione basata su modelli linguistici. Segue inoltre i nuovi protocolli per il
+commercio agentico, come \gloss{ucp}{UCP}: mentre MCP è un meccanismo generale, valido per
+qualunque strumento, UCP riguarda il solo dominio commerciale e definisce modalità comuni con cui un
+agente scopre le capacità di un negozio e ne attraversa le fasi d’acquisto, dal carrello al
+pagamento, per conto dell’utente. La \figref{fig:agente} colloca questi elementi rispetto
+all’applicazione.
+
+In ChatCart non mi sono affidato al \emph{server} MCP di Shopify, ma ho sviluppato una ricerca nel
+catalogo su misura: è la scelta da cui nasce il contratto tra agente e \emph{widget} che descrivo
+nella \secref{sec:contratto}.
+
+\begin{figure}[htbp]
+	\centering
+	\setstretch{1}
+	\input{figure/01-halue/agente.tex}
+	\caption[L’architettura di un progetto di intelligenza artificiale in Halue]{L’architettura di un
+	progetto di intelligenza artificiale in Halue. In bordeaux le
+	parti scritte per ogni progetto. Il modello non conserva memoria tra una richiesta e la
+	successiva: a ogni passo del ciclo l’applicazione gli invia di nuovo l’intera conversazione,
+	compresi i risultati degli strumenti già eseguiti. Uno stesso servizio può essere raggiunto da
+	uno strumento interno o, se la piattaforma lo offre, da un \emph{server} MCP.}
+	\label{fig:agente}
+\end{figure}
 
 \section{Processi di sviluppo e gestione dei progetti}
 
