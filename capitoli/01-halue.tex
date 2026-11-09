@@ -103,10 +103,10 @@ TypeScript, integrabili con entrambe le modalità.
 Nei progetti di intelligenza artificiale cambia soprattutto l’architettura. Al centro c’è un
 \gloss{llm}{modello linguistico di grandi dimensioni (LLM)}, addestrato a elaborare e generare
 testo, che chiede all’agente che lo ospita di invocare uno strumento, ne riceve il risultato e
-ripete il ciclo finché non formula la risposta (\figref{fig:agente}). Halue scrive su misura
-strumenti e istruzioni e collega il modello ai dati anche tramite \gloss{mcp}{MCP}, un protocollo
-aperto con cui un \emph{server} espone strumenti e risorse a qualunque applicazione basata su
-modelli linguistici.
+ripete il ciclo finché non formula la risposta (\figref{fig:agente}). Gli strumenti si possono
+scrivere su misura per il progetto oppure ottenere tramite \gloss{mcp}{MCP}, un protocollo aperto
+con cui un \emph{server} espone strumenti e risorse, come il catalogo di un negozio, a qualunque
+agente lo supporti, senza un’integrazione dedicata per ciascuno.
 
 In ChatCart ho sviluppato una ricerca nel catalogo su misura al posto del \emph{server} MCP di
 Shopify: da questa scelta nasce il contratto tra agente e \emph{widget} che descrivo nella
@@ -116,9 +116,7 @@ Shopify: da questa scelta nasce il contratto tra agente e \emph{widget} che desc
 	\centering
 	\setstretch{1}
 	\input{figure/01-halue/agente.tex}
-	\caption[L’architettura di un progetto di intelligenza artificiale in Halue]{L’architettura di un
-	progetto di intelligenza artificiale in Halue. Il modello non conserva memoria tra una richiesta e
-	l’altra: a ogni passo del ciclo l’agente gli rinvia l’intera conversazione.}
+	\caption{Esempio di architettura di un progetto di intelligenza artificiale.}
 	\label{fig:agente}
 \end{figure}
 
