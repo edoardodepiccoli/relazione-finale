@@ -8,7 +8,10 @@
 \setstretch{1.25}
 \usepackage{parskip}
 \usepackage{enumitem}
-\setlist[itemize,enumerate]{nosep}
+% Elenchi compatti e indivisibili: se non entrano nella pagina passano interi alla successiva.
+\makeatletter
+\setlist[itemize,enumerate]{nosep, before={\interlinepenalty=10000\relax\@itempenalty=10000\relax}}
+\makeatother
 \setlength{\emergencystretch}{3em}
 % Nessuna riga isolata di un paragrafo in cima o in fondo alla pagina.
 % Si impostano a inizio documento perché un pacchetto le riporta a 3000.
