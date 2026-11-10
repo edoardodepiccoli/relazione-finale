@@ -1,4 +1,17 @@
-% Impostazioni comuni: pagina, caratteri, spaziatura e collegamenti.
+% Dati, stile e comandi della tesi, in un solo posto.
+
+% Dati del documento e del frontespizio.
+\newcommand{\TitoloTesi}{ChatCart: agente conversazionale con interfaccia generativa}
+\newcommand{\AutoreTesi}{Edoardo De Piccoli}
+\newcommand{\Matricola}{2101055}
+\newcommand{\Relatore}{Prof.\ Tullio Vardanega}
+\newcommand{\AnnoAccademico}{2025-2026}
+
+\title{\TitoloTesi}
+\author{\AutoreTesi}
+\date{}
+
+% Pagina, caratteri e spaziatura.
 \usepackage[margin=3cm]{geometry}
 \usepackage{fontspec}
 \usepackage{lmodern}
@@ -31,24 +44,7 @@
 \usepackage{graphicx}
 \usepackage[table,dvipsnames]{xcolor}
 
-% Diagrammi in TikZ, con gli stessi colori delle tabelle.
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,backgrounds,calc,fit,positioning,shapes.geometric}
-\definecolor{FiguraTesto}{HTML}{1F2328}
-\definecolor{FiguraTenue}{HTML}{59636E}
-\definecolor{FiguraBordo}{HTML}{BFBFBF}
-\definecolor{FiguraAccento}{HTML}{8C1C2B}
-% Seminero di Latin Modern, più stretto del grassetto esteso, per i titoli nei diagrammi.
-\newfontfamily\FiguraSeminero{lmromandemi10-regular}[Extension=.otf, ItalicFont=lmromandemi10-oblique]
-% Stili comuni: riquadri di raggruppamento con intestazione come nelle tabelle e frecce.
-\tikzset{
-	partizione/.style={draw=FiguraBordo, fill=TabellaRiga},
-	intestazione/.style={draw=FiguraBordo, fill=TabellaIntestazione},
-	titolo/.style={font=\footnotesize\bfseries, text=FiguraTesto},
-	freccia/.style={draw=FiguraTenue, -{Stealth[length=1.8mm,width=1.4mm]}},
-}
-% Una voce di diagramma: titolo in seminero e, sotto, un dettaglio più piccolo e grigio.
-\newcommand{\voce}[2]{{\fontsize{8.5}{10}\FiguraSeminero #1}\\[2pt]\color{FiguraTenue}#2}
+% Le figure sono file finiti in assets/, inclusi con \includegraphics alla loro larghezza.
 \usepackage{caption}
 \captionsetup{font=small}
 \usepackage{float}
@@ -107,4 +103,27 @@
 	linkcolor=Maroon,
 	citecolor=Blue,
 	urlcolor=Blue
+}
+
+% Comandi per rimandi e glossario.
+% Riferimenti: il nome e il numero sono un unico collegamento cliccabile.
+\newcommand{\figref}[1]{\hyperref[#1]{figura~\ref*{#1}}}
+\newcommand{\tabref}[1]{\hyperref[#1]{tabella~\ref*{#1}}}
+\newcommand{\secref}[1]{\hyperref[#1]{sezione~\ref*{#1}}}
+\newcommand{\codref}[1]{\hyperref[#1]{codice~\ref*{#1}}}
+\newcommand{\listoflistings}{\listof{codelisting}{Elenco dei codici sorgente}}
+
+% Capitoli finali senza numero, presenti nell'indice e nei segnalibri PDF.
+\newcommand{\capitolononnumerato}[1]{%
+	\chapter*{#1}%
+	\phantomsection
+	\addcontentsline{toc}{chapter}{#1}%
+}
+
+% Il pedice G si inserisce esplicitamente solo alla prima occorrenza.
+% Termine e pedice fanno parte dello stesso collegamento.
+\newcommand{\gloss}[2]{\hyperref[glossario-#1]{#2\textsubscript{G}}}
+\newcommand{\rimandoglossario}[2]{\hyperref[glossario-#1]{#2}}
+\newcommand{\voceglossario}[3]{%
+	\item[\protect\phantomsection\label{glossario-#1}#2] #3%
 }

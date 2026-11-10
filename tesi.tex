@@ -1,18 +1,16 @@
 % !TeX program = xelatex
 \documentclass[a4paper,12pt,oneside]{report}
 
-\input{config/dati}
-\input{config/stile}
-\input{config/comandi}
+\input{stile}
 
 \begin{document}
 
 \hypersetup{pageanchor=false}
-\input{preliminari/frontespizio}
+\input{capitoli/00-frontespizio}
 
 \pagenumbering{roman}
 \hypersetup{pageanchor=true}
-\input{preliminari/sommario}
+\input{capitoli/00-sommario}
 \tableofcontents
 \listoffigures
 \listoftables
@@ -20,14 +18,13 @@
 \clearpage
 
 \pagenumbering{arabic}
-% L'ordine dei capitoli è esplicito: i nomi dei file non determinano la compilazione.
 \include{capitoli/01-halue}
-\include{capitoli/02-ragioni-dello-stage}
+\include{capitoli/02-oltre-la-conversazione}
 \include{capitoli/03-progetto-e-sviluppo}
 \include{capitoli/04-valutazione-retrospettiva}
 
-\input{finali/acronimi}
-\input{finali/glossario}
-\input{finali/riferimenti}
+\input{capitoli/05-acronimi}
+\input{capitoli/06-glossario}
+\input{capitoli/07-riferimenti}
 
 \end{document}
