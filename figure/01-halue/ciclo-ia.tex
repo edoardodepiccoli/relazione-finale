@@ -5,11 +5,11 @@
 \begin{tikzpicture}[
 	every node/.style={text=FiguraTesto},
 	azione/.style={draw=FiguraTenue, fill=white, rounded corners=3pt, text width=#1-2mm,
-		minimum width=#1, minimum height=15mm, align=center, inner sep=1.5pt,
-		font=\fontsize{7.5}{9}\selectfont,
+		minimum width=#1, minimum height=27mm, align=center, inner sep=2.5pt,
+		font=\fontsize{7.5}{10}\selectfont,
 		execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
 	azione/.default=24mm,
-	decisione/.style={draw=FiguraTenue, fill=white, diamond, minimum size=6mm, inner sep=0pt},
+	decisione/.style={draw=FiguraTenue, fill=white, diamond, minimum size=8mm, inner sep=0pt},
 	iniziale/.style={circle, fill=FiguraTesto, minimum size=3mm, inner sep=0pt},
 	finale/.style={circle, draw=FiguraTesto, fill=white, minimum size=3.6mm, inner sep=0pt,
 		path picture={\fill[FiguraTesto] (path picture bounding box.center) circle (1.05mm);}},
@@ -26,7 +26,7 @@
 	\node[azione] (risultato) at (126mm, 0)
 		{\voce{Risultato}{pronto per il progetto}};
 	\node[finale] (fine) at (146mm, 0) {};
-	\node[azione=30mm, minimum height=11mm] (indicazioni) at (76.5mm, -22mm)
+	\node[azione=36mm, minimum height=17mm] (indicazioni) at (76.5mm, -48mm)
 		{\voce{Nuove indicazioni}{correzioni e richieste più precise}};
 
 	\draw[freccia] (inizio) -- (compito);
