@@ -9,12 +9,15 @@ config/
   stile.tex         pagina, caratteri, spaziatura, colori, tabelle e codici
   comandi.tex       rimandi e voci di glossario
 preliminari/        frontespizio e sommario
-capitoli/           un file LaTeX per capitolo
+capitoli/
+  01-halue.tex      titolo e sommario del capitolo, poi una riga \input per sezione
+  01-halue/         un file per sezione, numerato nell'ordine del capitolo
 finali/             acronimi, glossario e riferimenti
 figure/
   comuni/           sigillo dell'università e segnaposto
   01-halue/         diagrammi TikZ del capitolo 1
-modelli/            esempi da copiare durante la stesura
+  02-ragioni/       figure del capitolo 2
+modelli/            esempi da copiare: capitolo, sezione, figura, tabella
 build/              anteprima, log e SyncTeX, esclusi da Git
 tesi.pdf            copia compilata destinata alla revisione
 ```
@@ -24,11 +27,9 @@ Il documento contiene anche le sezioni ancora da scrivere: i paragrafi di intent
 
 ## Capitoli e sezioni
 
-Modifica direttamente il file del capitolo in `capitoli/`. Usa `\chapter`, `\section` e `\subsection`; lascia allo stile comune dimensioni, numerazione e spaziature. Scrivi in UTF-8, con le lettere accentate direttamente nel testo. Separa i paragrafi con una riga vuota e usa il tab per indentare gli ambienti.
+Ogni capitolo ha un file in `capitoli/` con il titolo e il breve sommario che precede la prima sezione, seguiti da una riga `\input{capitoli/capitolo/sezione}` per ogni sezione. Ogni sezione sta in un file a sé nella cartella del capitolo, con un numero che ne ricorda la posizione (`02-clientela.tex`); le sottosezioni restano nel file della sezione. Usa `\chapter`, `\section` e `\subsection`; lascia allo stile comune dimensioni, numerazione e spaziature. Scrivi in UTF-8, con le lettere accentate direttamente nel testo. Separa i paragrafi con una riga vuota e usa il tab per indentare gli ambienti.
 
-Per aggiungere un capitolo, copia `modelli/capitolo.tex` in `capitoli/` e aggiungi il relativo `\include{capitoli/nome}` in `tesi.tex`. La compilazione non cerca automaticamente i file della cartella: un esempio o una bozza non entrano nel documento per errore.
-
-Se un capitolo diventa difficile da gestire, puoi spostarne le sezioni in una sottocartella e richiamarle dal file del capitolo con `\input{capitoli/nome/sezione}`. Tutti i percorsi partono dalla radice del repository.
+Per aggiungere una sezione, crea il file nella cartella del capitolo e aggiungi il suo `\input` al file del capitolo, nella posizione voluta. Per aggiungere un capitolo, copia `modelli/capitolo.tex` in `capitoli/`, crea la cartella delle sue sezioni e aggiungi il relativo `\include{capitoli/nome}` in `tesi.tex`. La compilazione non cerca automaticamente i file delle cartelle: un esempio o una bozza non entrano nel documento per errore. Tutti i percorsi partono dalla radice del repository.
 
 ## Rimandi e glossario
 
