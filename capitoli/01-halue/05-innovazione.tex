@@ -1,0 +1,54 @@
+% !TeX root = ../../tesi.tex
+
+\section{Innovazione e intelligenza artificiale}
+\label{sec:innovazione}
+
+Halue pratica uno \emph{scouting} tecnologico continuo e dedica una quota del tempo a progetti di
+ricerca e sviluppo, tra cui quelli di intelligenza artificiale (\figref{fig:ricerca}). I dipendenti
+dedicano allo studio una parte rilevante del proprio tempo.
+
+\begin{figure}[htbp]
+	\centering
+	\setstretch{1}
+	\input{figure/01-halue/ricerca.tex}
+	\caption{La quota del tempo che Halue dedica alla ricerca e sviluppo.}
+	\label{fig:ricerca}
+\end{figure}
+
+L’intelligenza artificiale è il campo in cui questa propensione si vede di più. Il \emph{team}
+segue da vicino le novità del settore, testa regolarmente nuovi strumenti di automazione basati
+sull’IA e li porta nel lavoro di ogni giorno. Nello sviluppo l’IA esegue una prima revisione
+automatica del codice e analizza i \emph{changelog} delle tecnologie in uso. Per i processi
+ricorrenti l’azienda usa agenti di IA guidati da \gloss{skill}{\emph{skill}} interne, cioè
+documenti di istruzioni, a volte accompagnati da \emph{script} e modelli, che descrivono come
+svolgere un processo e che l’agente consulta quando il compito lo richiede. In tutti questi usi vale la stessa regola: l’IA propone
+e la persona decide (\figref{fig:ciclo-ia}).
+
+\begin{figure}[htbp]
+	\centering
+	\setstretch{1}
+	\input{figure/01-halue/ciclo-ia.tex}
+	\caption{Il ciclo di lavoro con gli strumenti di intelligenza artificiale in Halue.}
+	\label{fig:ciclo-ia}
+\end{figure}
+
+L’azienda riscontra una riduzione dei tempi, ma non dispone ancora di misure precise su questo
+beneficio e sull’impatto sulla qualità. Nel \emph{team} è condivisa un’opinione su cui torno nella
+\secref{sec:maturazione}: nelle mani di un programmatore esperto l’IA è un buon programmatore
+\emph{junior}, ma non può ancora sostituire un \emph{senior}.
+
+Nei progetti di IA per i clienti Halue adotta alcune regole che valgono anche per il mio progetto:
+
+\begin{itemize}
+	\item i dati vengono sempre dal catalogo reale, tramite strumenti e ricerca, senza affidarsi alla
+	memoria del modello;
+	\item le azioni con effetti esterni restano sotto controllo umano;
+	\item la qualità delle risposte si valuta con \emph{test} manuali su casi d’uso reali;
+	\item il modello si sceglie in base al compito, in modo da tenere sotto controllo il consumo dei
+	\gloss{token}{\emph{token}}, i frammenti di testo in cui il modello scompone ciò che legge e
+	scrive e su cui si calcola il costo del suo utilizzo.
+\end{itemize}
+
+Questa propensione all’innovazione passa anche dagli \emph{stage}, che Halue usa per esplorare temi
+che i progetti per i clienti non lasciano il tempo di approfondire. Approfondisco questo ruolo nella
+\secref{sec:stage-strategia}.

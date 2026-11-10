@@ -1,0 +1,29 @@
+% !TeX root = ../../tesi.tex
+
+\section{Realizzazione}
+
+\subsection{L’agente conversazionale}
+
+Descrivo il processo con cui l’agente costruisce una risposta: un ciclo in cui il modello invoca gli
+strumenti per consultare il catalogo, finché non seleziona un componente da mostrare. Discuto come
+ho ripartito il controllo del comportamento tra le istruzioni al modello e le regole fisse nel
+codice, come ho generato i tre messaggi suggeriti e come ho scelto il modello e il livello di
+ragionamento, confrontandone velocità e accuratezza. Un diagramma di sequenza segue il percorso di
+un messaggio dall’utente alla risposta. Questa parte risponde agli obiettivi OB2 e OB3.
+
+\subsection{Il \emph{widget} e l’integrazione con il tema del negozio}
+
+Presento il \emph{widget}: i componenti (schede prodotto con selezione della variante, schede con le
+risposte tratte dalle pagine del negozio, collegamenti alle collezioni), il supporto a più lingue e
+valute e, in particolare, la sincronizzazione del carrello con il tema del negozio. Analizzo perché
+ogni tema Shopify gestisce il carrello in modo diverso e come ho affrontato il problema con un
+\emph{adapter} per ciascun tema e una soluzione di ripiego. Questa parte risponde agli obiettivi
+OB1, OB4 e DE1.
+
+\subsection{Metriche di utilizzo e analisi delle conversazioni}
+
+Descrivo gli eventi che il \emph{widget} registra, il \emph{funnel} che la \emph{dashboard} presenta
+al commerciante e l’analisi delle conversazioni con Jev, un modello decisionale di TypeSafe AI
+uscito durante lo \emph{stage}: a differenza di un modello linguistico generativo, non produce testo
+ma restituisce decisioni tipizzate con la loro probabilità. Da qui apro il confronto tra i due tipi
+di modello nei compiti decisionali. Questa parte risponde all’obiettivo OB5.
