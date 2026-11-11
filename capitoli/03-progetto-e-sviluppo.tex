@@ -177,11 +177,93 @@ assistenti IA abbia cambiato il mio modo di programmare.
 \subsection{L’ecosistema delle applicazioni Shopify}
 \label{sec:ecosistema-applicazioni}
 
-Descrivo la fase iniziale dello \emph{stage}, dedicata allo studio del funzionamento di
-un’applicazione Shopify (autenticazione, \emph{app proxy}, estensioni del tema, differenze tra
-Storefront API e Admin API) e degli strumenti per la costruzione di agenti. Distinguo le conoscenze
-che avevo già acquisito lavorando sui temi Liquid da quelle che ho dovuto costruire per la prima
-volta.
+Prima dello \emph{stage} conoscevo Shopify dal lato dei temi, su cui avevo lavorato per Dr Kampes,
+ma non avevo mai costruito un’applicazione. Per progettare ChatCart dovevo prima rispondere a tre
+domande: dove viene eseguito un programma che estende un negozio, come raggiunge le pagine viste dal
+cliente e con quali credenziali ne legge i dati. Ho dedicato la prima settimana soprattutto alla
+documentazione ufficiale e il 22 settembre ho creato il progetto dal modello ufficiale di Shopify
+per React Router\textsuperscript{\ref{rif:shopify-templates}}, che risolve già autenticazione,
+gestione delle sessioni e integrazione nell’amministrazione. Partendo da quella base, ho tolto gli
+esempi e vi ho inserito il \emph{widget}, concentrandomi sul prodotto anziché sull’infrastruttura
+dell’applicazione.
+
+Shopify non esegue il codice delle applicazioni. Il \emph{server} di un’applicazione è ospitato
+altrove, e la piattaforma ne conosce soltanto l’indirizzo, i permessi e le estensioni, descritti in
+una configurazione che pubblico con la Shopify CLI. Nel rilascio finale il \emph{server} di ChatCart
+è ospitato da Vercel, un servizio che esegue applicazioni web senza richiedere la gestione di una
+macchina propria, mentre Shopify conserva la configurazione e i file dell’estensione. Tra i modelli
+di distribuzione ho scelto quello \emph{custom}, riservato a un solo
+negozio\textsuperscript{\ref{rif:shopify-distribution}}, perché corrisponde al servizio su misura
+che Halue ipotizzava di offrire ai propri clienti.
+
+Il secondo problema era portare il \emph{widget} nelle pagine del negozio senza intervenire sul
+tema, che appartiene al commerciante e che il commerciante può aggiornare indipendentemente da
+ChatCart. Per questo ho usato una \gloss{theme-app-extension}{\emph{theme app extension}},
+un’estensione che aggiunge elementi al tema senza modificarne i
+file\textsuperscript{\ref{rif:shopify-theme-extensions}}. Il suo blocco \emph{app embed} compare su
+tutte le pagine quando il commerciante lo attiva nell’\emph{editor}, carica i file del \emph{widget}
+e gli consegna il contesto della pagina; disattivarlo rimuove l’inserimento senza lasciare tracce
+nel tema. Restano escluse le pagine di pagamento, che Shopify gestisce in un ambiente separato.
+
+Il terzo problema riguardava l’accesso ai dati. Il commerciante apre l’applicazione dentro
+l’amministrazione del negozio, dove la \gloss{dashboard}{\emph{dashboard}}, una pagina di riepilogo
+delle misure e delle conversazioni, occupa un riquadro incorporato. In quel momento Shopify attesta
+l’identità di chi la apre, e il \emph{server} la scambia con un \gloss{token-accesso}{\emph{token}
+di accesso}, cioè una credenziale limitata ai permessi approvati all’installazione. Ho richiesto
+soltanto i permessi necessari a leggere i contenuti pubblici del negozio e a configurare il
+collegamento con il \emph{widget}, così che ChatCart non possa modificare dati che non usa.
+
+La \figref{fig:accesso-shopify} sintetizza questo \emph{token
+exchange}\textsuperscript{\ref{rif:shopify-token-exchange}}. Il flusso applica \gloss{oauth}{OAuth},
+lo standard che concede a un’applicazione un accesso limitato ai dati senza consegnarle la password
+dell’utente; l’identità arriva in un JWT, \emph{JSON Web Token}, un dato firmato da Shopify che il
+\emph{server} verifica prima di procedere. Nella base di dati conservo una sessione \emph{offline},
+legata al negozio anziché al commerciante, perché l’agente deve leggere il catalogo anche quando
+nessuno è collegato all’amministrazione.
+
+Restava da collegare il \emph{widget} al \emph{server} senza esporre questa credenziale al
+\emph{browser} del cliente. La soluzione è l’\gloss{app-proxy}{\emph{app proxy}}, un percorso nel
+dominio del negozio attraverso cui Shopify inoltra le richieste all’applicazione, aggiungendo una
+firma\textsuperscript{\ref{rif:shopify-app-proxy}}. Il \emph{widget} chiama quindi lo stesso dominio
+della pagina, e il \emph{server} verifica la firma, riconosce il negozio e recupera la sessione con
+cui interrogare il catalogo; una richiesta con firma errata o senza una sessione valida non
+raggiunge l’agente.
+
+Attraverso lo stesso \emph{proxy} passa lo \gloss{streaming}{\emph{streaming}}, l’invio della
+risposta in frammenti mentre il modello la produce. Una risposta dell’agente può richiedere più
+letture del negozio prima di concludersi, e mostrarla progressivamente fa comparire le prime parole
+prima che la risposta sia completa e segnala al cliente che l’agente sta lavorando.
+Ho usato \gloss{sse}{SSE}, \emph{Server-Sent Events}, il formato con cui un \emph{server} trasmette
+una sequenza di eventi sulla stessa risposta HTTP, e ho verificato che i frammenti attraversassero
+il \emph{proxy} senza essere trattenuti, sia nell’ambiente locale sia nel rilascio finale.
+
+Infine dovevo scegliere con quali API leggere i dati e modificare il carrello
+(\tabref{tbl:api-chatcart}). Il \emph{server} legge prodotti, collezioni e pagine con le Storefront
+API, che restituiscono i contenuti pubblici del negozio nel paese e nella lingua del
+cliente\textsuperscript{\ref{rif:shopify-storefront-api}}. Il \emph{widget} modifica invece il
+carrello con la AJAX Cart API, la stessa usata dal tema, che opera sul carrello identificato dal
+\emph{cookie} del cliente e può restituire nella stessa risposta le sezioni HTML da
+aggiornare\textsuperscript{\ref{rif:ajax-cart}}. Usare l’API del tema mi ha evitato di creare un
+secondo carrello da mantenere allineato con il primo.
+
+\begin{tabellalunga}{P{0.23}P{0.38}P{0.39}}
+	{\textbf{API} & \textbf{Funzione} & \textbf{Uso in ChatCart}}
+	{I punti di accesso ai dati e al carrello di Shopify.}
+	{tbl:api-chatcart}
+	Storefront API & Catalogo, collezioni e pagine rivolte al cliente. & Il \emph{server} legge
+	i dati nel paese e nella lingua del cliente. \\
+	AJAX Cart API & Lettura e scrittura del carrello associato al \emph{browser}. & Tema e
+	\emph{widget} lavorano sullo stesso carrello. \\
+	Section Rendering API & HTML aggiornato delle sezioni del tema. & Gli adattatori aggiornano
+	l’interfaccia del tema dopo una scrittura della chat. \\
+	Admin API & Gestione e configurazione del negozio. & L’ho usata nelle prove di
+	personalizzazione e per preparare i dati; il prodotto finale non la interroga. \\
+\end{tabellalunga}
+
+Lo studio della piattaforma ha separato il lavoro nuovo da ciò che già sapevo. Per l’estensione e
+il carrello ho riusato Liquid e la conoscenza dei temi, mentre ho dovuto imparare l’autenticazione
+delle applicazioni, la gestione delle sessioni e il collegamento tra negozio e \emph{server},
+conoscenze che ho poi usato anche per dare agli assistenti IA l’accesso al negozio di prova.
 
 \subsection{Un’analisi dei requisiti iterativa}
 \label{sec:requisiti}

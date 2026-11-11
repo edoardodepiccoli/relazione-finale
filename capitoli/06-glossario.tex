@@ -18,6 +18,13 @@ corpo della relazione, il termine e il pedice G rimandano alla voce corrisponden
 	Storefront API espone le funzioni rivolte all’esperienza d’acquisto.
 }
 
+\voceglossario{app-proxy}{\emph{App proxy}}{
+	Funzione di Shopify che espone un percorso dell’applicazione sotto il dominio del negozio e
+	inoltra le richieste al \emph{server} dell’applicazione aggiungendo una firma che ne attesta la
+	provenienza. Permette a un \emph{widget} di chiamare il proprio \emph{server} senza uscire dal
+	dominio del negozio.
+}
+
 \voceglossario{b-impact-assessment}{\emph{B Impact Assessment}}{
 	Questionario gratuito con cui un’azienda misura il proprio impatto sociale e ambientale in cinque
 	aree: \emph{governance}, lavoratori, clienti, comunità e ambiente. Il punteggio che ne risulta è
@@ -67,6 +74,12 @@ corpo della relazione, il termine e il pedice G rimandano alla voce corrisponden
 \voceglossario{crm}{CRM}{
 	Insieme di pratiche e sistemi per gestire le relazioni di un’azienda con i propri clienti.
 	Un sistema CRM raccoglie, per esempio, contatti, interazioni commerciali e richieste di assistenza.
+}
+
+\voceglossario{dashboard}{\emph{Dashboard}}{
+	Pagina che riassume in un’unica vista dati e indicatori utili a chi la consulta. La
+	\emph{dashboard} di ChatCart è incorporata nell’amministrazione del negozio e mostra al
+	commerciante il \emph{funnel}, le conversazioni e la loro analisi.
 }
 
 \voceglossario{design-pattern}{\emph{Design pattern}}{
@@ -157,6 +170,13 @@ corpo della relazione, il termine e il pedice G rimandano alla voce corrisponden
 	Protocollo aperto che standardizza la comunicazione tra applicazioni basate su modelli
 	linguistici e servizi esterni. Un \emph{server} MCP può esporre strumenti, risorse e istruzioni; è
 	l’applicazione che ospita il modello a gestire il collegamento e l’esecuzione delle richieste.
+}
+
+\voceglossario{oauth}{OAuth}{
+	Standard aperto per l’autorizzazione delegata: permette a un servizio di concedere a
+	un’applicazione un accesso limitato e revocabile ai dati di un utente, con \emph{token} di
+	accesso al posto della password. Definisce più flussi (\emph{grant}), tra cui l’\emph{authorization
+	code}, le \emph{client credentials} e il \emph{token exchange}, adatti a casi d’uso diversi.
 }
 
 \voceglossario{project-management-assistant}{\emph{Project Management Assistant}}{
@@ -256,6 +276,13 @@ corpo della relazione, il termine e il pedice G rimandano alla voce corrisponden
 	permettono di adattare il prodotto e il modo di lavorare al ciclo successivo.
 }
 
+\voceglossario{sse}{SSE}{
+	\emph{Server-Sent Events}: standard del \emph{web} con cui un \emph{server} mantiene aperta la
+	risposta a una richiesta HTTP e vi invia una sequenza di eventi testuali. È unidirezionale, dal
+	\emph{server} al \emph{client}, e attraversa i comuni \emph{proxy}, purché non accumulino la
+	risposta prima di inoltrarla.
+}
+
 \voceglossario{staging}{\emph{Staging}}{
 	Ambiente separato dalla produzione in cui collaudare una versione dell’applicazione prima di
 	renderla disponibile agli utenti. Riproduce le condizioni di esercizio per quanto necessario alla
@@ -287,9 +314,23 @@ corpo della relazione, il termine e il pedice G rimandano alla voce corrisponden
 	obbligo di Scrum.
 }
 
+\voceglossario{streaming}{\emph{Streaming}}{
+	Trasmissione di una risposta in frammenti successivi, inviati man mano che vengono prodotti,
+	così che chi la riceve possa mostrarla prima che sia completa. In un assistente basato su un
+	modello linguistico permette di mostrare il testo mentre il modello lo genera.
+}
+
 \voceglossario{team-lead}{\emph{Team lead}}{
 	Responsabilità di guida tecnica di un gruppo di lavoro. In Halue comprende l’analisi
 	funzionale, le stime per il cliente e il coordinamento tecnico degli sviluppatori.
+}
+
+\voceglossario{theme-app-extension}{\emph{Theme app extension}}{
+	Estensione con cui un’applicazione Shopify aggiunge elementi a un tema senza modificarne il
+	codice. I file dell’estensione sono serviti dalla rete di Shopify e un solo rilascio raggiunge
+	tutti i negozi che usano l’applicazione. Comprende blocchi che il commerciante posiziona in una
+	sezione e blocchi \emph{app embed}, inseriti una volta in ogni pagina e attivati dall’editor del
+	tema.
 }
 
 \voceglossario{ticket}{\emph{Ticket}}{
@@ -302,6 +343,13 @@ corpo della relazione, il termine e il pedice G rimandano alla voce corrisponden
 	Unità minima di testo elaborata da un modello linguistico: una parola breve, una parte di
 	parola, un segno di punteggiatura. Il modello legge e genera testo un \emph{token} alla volta;
 	la lunghezza del contesto e il costo di utilizzo si misurano in \emph{token}.
+}
+
+\voceglossario{token-accesso}{\emph{Token} di accesso}{
+	Credenziale che un’applicazione presenta a ogni richiesta a un’API per dimostrare di essere
+	autorizzata, con i permessi (\emph{scope}) che le sono stati concessi. Può essere permanente o
+	avere una scadenza, nel qual caso si rinnova con un secondo \emph{token} (\emph{refresh token}).
+	Da non confondere con il \emph{token} dei modelli linguistici.
 }
 
 \voceglossario{tool-calling}{\emph{Tool calling}}{
