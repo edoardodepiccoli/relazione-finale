@@ -31,39 +31,49 @@ cui non ha ancora un’esperienza consolidata, e un \emph{tutor} che li segue og
 scopo spiega perché lo stagista partecipa ai momenti di coordinamento del \emph{team} e ne adotta gli
 strumenti, dato che l’azienda valuta il suo modo di lavorare oltre ai risultati che produce.
 
-Alcuni degli \emph{stage} che hanno preceduto il mio riguardavano già l’intelligenza artificiale
-applicata alla conversazione con il cliente. Uno di questi, di qualche anno fa, aveva progettato un
-assistente basato su flussi di conversazione predefiniti: chi costruiva l’assistente disegnava in
-anticipo i percorsi possibili, e a ogni passo l’assistente proponeva all’utente messaggi già pronti
-per condurlo verso una risposta o un’azione. Da allora il quadro è cambiato in due modi. Gli agenti
-basati su modelli linguistici decidono da soli, a ogni turno, quali strumenti usare e come
-rispondere, perciò il loro comportamento non segue più un percorso fissato in anticipo e diventa
-non deterministico: la stessa domanda può ricevere risposte diverse. Gli strumenti di sviluppo
-basati sull’IA, inoltre, hanno ampliato ciò che una sola persona riesce a costruire nella durata di
-uno \emph{stage}. Lo stesso ambito, ripreso a qualche anno di distanza, si presta così a un
-progetto più ambizioso.
+Alcuni degli \emph{stage} che hanno preceduto il mio riguardavano già gli assistenti
+conversazionali. Uno di questi, svolto alcuni anni prima, aveva progettato un assistente basato su
+flussi di conversazione predefiniti. In un sistema di questo tipo il progettista definisce in
+anticipo gli stati della conversazione e i passaggi tra l’uno e l’altro. A ogni stato l’assistente
+riconosce, con un modello addestrato a classificare le frasi, l’intenzione espressa dall’utente, la
+associa a uno dei passaggi previsti e gli propone messaggi predefiniti che lo conducono verso una
+risposta o un’azione. Il comportamento è deterministico, perché a parità di richiesta l’assistente
+segue sempre lo stesso percorso, e una richiesta che il progettista non ha previsto riceve soltanto
+una risposta di ripiego.
+
+Un agente basato su un modello linguistico funziona in un altro modo. Il progettista definisce gli
+strumenti a disposizione e le istruzioni da seguire, e il modello decide a ogni turno quali
+strumenti invocare e come comporre la risposta. Il comportamento diventa non deterministico, perché
+la stessa richiesta può ricevere risposte diverse, ma l’agente affronta anche richieste che nessuno
+ha previsto. Questo cambiamento, insieme agli strumenti di sviluppo basati sull’IA, ha esteso ciò
+che una persona può realizzare nelle ore di uno \emph{stage}. Rispetto a quel progetto, ChatCart
+non segue percorsi stabiliti: cerca nel catalogo, compone l’interfaccia e modifica il carrello in
+base alla conversazione.
 % DA CONFERMARE: lo stage precedente era di Halue? Di che anno?
 
 Ogni \emph{stage} si inserisce in un percorso che lo precede e lo segue. Il tema nasce da
 un’esigenza interna oppure dall’interesse che può avere per un laureando in informatica. Nel mio
 caso il percorso è iniziato con la candidatura a luglio 2026 e con un colloquio conoscitivo ad
-agosto con il \emph{tutor} e con il fondatore. Dopo il colloquio Halue mi ha proposto due temi,
-entrambi di intelligenza artificiale:
+agosto con il \emph{tutor} e con il fondatore. Dopo il colloquio Halue mi ha proposto alcuni temi,
+tutti di intelligenza artificiale, tra cui:
 
 \begin{itemize}
-	\item l’interfaccia generativa, cioè un assistente che risponde anche con elementi
-	dell’interfaccia oltre che con il testo, da cui è nato ChatCart;
-	\item la gestione del contesto di un agente, cioè un sistema di
-	\gloss{ricerca-semantica}{ricerca semantica} nei documenti e negli strumenti interni
-	dell’azienda, che recupera le informazioni in base al loro significato e non soltanto alle parole
-	che contengono, per fornire all’agente ciò che gli serve durante il lavoro.
+	\item uno \emph{storefront} con interfaccia generativa, in cui un agente costruisce la pagina del
+	negozio in tempo reale in base a ciò che il cliente cerca;
+	\item la gestione del contesto di una base di conoscenza agentica interna all’azienda, cioè un
+	archivio di documenti e informazioni aziendali che gli agenti di IA consultano durante il lavoro,
+	con un sistema di \gloss{ricerca-semantica}{ricerca semantica} che recupera le informazioni in
+	base al loro significato e non soltanto alle parole che contengono;
+	\item il monitoraggio dei sistemi di IA in produzione, cioè il controllo del comportamento degli
+	agenti già in uso presso l’azienda o i suoi clienti.
 \end{itemize}
 
-I due temi guardano in direzioni opposte: il primo verso i clienti dei clienti di Halue, cioè chi
-acquista nei negozi, il secondo verso i processi interni, dove l’azienda usa già agenti di IA
-(\secref{sec:innovazione}). Ho scelto il primo, per le ragioni che espongo nella
-\secref{sec:obiettivi-personali}, e ho scritto con il \emph{tutor} il piano di lavoro, che Halue ha
-riportato su carta intestata per indicare che ne prendeva in carico la proposta.
+I temi coprono tutto il ciclo di un sistema di IA: l’esperienza di chi acquista nei negozi dei
+clienti di Halue, i processi interni, in cui l’azienda usa già agenti di IA
+(\secref{sec:innovazione}), e il funzionamento dei sistemi dopo il rilascio. Ho scelto il primo e
+l’ho declinato in un assistente di chat, per le ragioni che espongo nella
+\secref{sec:obiettivi-personali}. Ho poi scritto con il \emph{tutor} il piano di lavoro, che Halue
+ha riportato su carta intestata per indicare che ne prendeva in carico la proposta.
 
 Al termine lo stagista presenta il lavoro a tutto il \emph{team} e partecipa a una retrospettiva,
 la stessa pratica con cui Halue chiude gli \emph{sprint} e i progetti per i clienti. Il lavoro può
@@ -370,7 +380,7 @@ questa preferenza e aveva tre vantaggi:
 	decisiva, perché la sede dista circa un’ora e mezza di auto da casa mia.
 \end{itemize}
 
-Tra i due temi proposti ho scelto l’interfaccia generativa. La gestione del contesto mi
+Tra i temi proposti ho scelto l’interfaccia generativa. La gestione del contesto mi
 interessava molto e apriva diverse strade di integrazione con altri strumenti e sistemi, ma
 comportava un rischio. I grandi fornitori di modelli linguistici aggiornano i propri assistenti a
 ritmo serrato, e funzioni come la ricerca nei documenti e negli strumenti di un’azienda entrano in
@@ -379,12 +389,15 @@ da un aggiornamento di un assistente generico. Un assistente di vendita dentro i
 marchio dipende invece da elementi che solo quel negozio possiede, cioè il suo catalogo, il suo
 tema e il suo carrello, ed è quindi un bisogno che un assistente generico copre con più difficoltà.
 
-L’idea dell’interfaccia generativa è di Halue. Quando l’azienda me l’ha proposta vi ho riconosciuto
-l’esigenza di Dr Kampes, che mi aveva parlato di un assistente capace di dare assistenza ai
-visitatori del negozio e di indirizzarli verso l’acquisto. Ho quindi proposto di declinare il tema
-in un assistente che sceglie e popola componenti dell’interfaccia con i dati del negozio, come
-schede prodotto, tabelle di confronto, guide alle taglie e lo stato di un ordine, per accompagnare
-il cliente dalla scoperta dei prodotti all’assistenza dopo la vendita.
+L’idea dell’interfaccia generativa è di Halue, che la proponeva come uno \emph{storefront}
+costruito in tempo reale da un agente. Vi ho riconosciuto l’esigenza di Dr Kampes, che mi aveva
+parlato di un assistente capace di dare assistenza ai visitatori del negozio e di indirizzarli
+verso l’acquisto. Ho quindi proposto di declinare il tema in un assistente di chat che sceglie e
+popola componenti dell’interfaccia con i dati del negozio, come schede prodotto, tabelle di
+confronto, guide alle taglie e lo stato di un ordine, per accompagnare il cliente dalla scoperta
+dei prodotti all’assistenza dopo la vendita. Un assistente di questo tipo si aggiunge al tema di
+un negozio esistente invece di sostituirlo, e si può quindi applicare anche ai negozi che Halue e io
+seguiamo già.
 
 Il tema toccava anche altri miei interessi:
 
