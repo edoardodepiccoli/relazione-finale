@@ -9,10 +9,10 @@ strategia di Halue, gli obiettivi e i vincoli fissati dal piano di lavoro e le m
 \section{Il ruolo degli \emph{stage} nella strategia aziendale}
 \label{sec:stage-strategia}
 
-Halue ospita in media tre o quattro \emph{stage} all’anno. Gli stagisti provengono soprattutto
-dall’Università di Padova, dai corsi di laurea triennale e magistrale, e alcuni degli \emph{stage}
-che hanno preceduto il mio riguardavano già l’intelligenza artificiale. L’azienda attribuisce a
-queste esperienze due scopi:
+Halue ospita in media tre o quattro \emph{stage} all’anno, ed è soprattutto attraverso gli
+\emph{stage} che collabora con le università. Gli stagisti provengono per lo più dall’Università di
+Padova, dai corsi di laurea triennale e magistrale. L’azienda attribuisce a queste esperienze due
+scopi:
 
 \begin{itemize}
 	\item svolgere ricerca e sviluppo su temi che i progetti per i clienti non lasciano il tempo di
@@ -24,23 +24,59 @@ queste esperienze due scopi:
 Il primo scopo spiega la forma che gli \emph{stage} assumono. Uno stagista lavora a tempo pieno su
 un solo tema per circa due mesi, da 300 a 320 ore lavorative, con una continuità che i dipendenti
 non hanno, perché l’azienda li ripartisce ogni mese tra più clienti
-(\secref{sec:organizzazione-halue}). Halue affida quindi agli stagisti temi nuovi, su cui non ha
-ancora un’esperienza consolidata, e un \emph{tutor} che li segue ogni giorno. Il secondo scopo
-spiega perché lo stagista partecipa ai momenti di coordinamento del \emph{team} e ne adotta gli
+(\secref{sec:organizzazione-halue}). La quota di tempo che Halue dedica alla ricerca e sviluppo
+(\secref{sec:innovazione}) è frammentata, per i dipendenti, tra un progetto e l’altro; in uno
+\emph{stage} si concentra invece su un unico tema. Halue affida quindi agli stagisti temi nuovi, su
+cui non ha ancora un’esperienza consolidata, e un \emph{tutor} che li segue ogni giorno. Il secondo
+scopo spiega perché lo stagista partecipa ai momenti di coordinamento del \emph{team} e ne adotta gli
 strumenti, dato che l’azienda valuta il suo modo di lavorare oltre ai risultati che produce.
 
+Alcuni degli \emph{stage} che hanno preceduto il mio riguardavano già l’intelligenza artificiale
+applicata alla conversazione con il cliente. Uno di questi, di qualche anno fa, aveva progettato un
+assistente basato su flussi di conversazione predefiniti: chi costruiva l’assistente disegnava in
+anticipo i percorsi possibili, e a ogni passo l’assistente proponeva all’utente messaggi già pronti
+per condurlo verso una risposta o un’azione. Da allora il quadro è cambiato in due modi. Gli agenti
+basati su modelli linguistici decidono da soli, a ogni turno, quali strumenti usare e come
+rispondere, perciò il loro comportamento non segue più un percorso fissato in anticipo e diventa
+non deterministico: la stessa domanda può ricevere risposte diverse. Gli strumenti di sviluppo
+basati sull’IA, inoltre, hanno ampliato ciò che una sola persona riesce a costruire nella durata di
+uno \emph{stage}. Lo stesso ambito, ripreso a qualche anno di distanza, si presta così a un
+progetto più ambizioso.
+% DA CONFERMARE: lo stage precedente era di Halue? Di che anno?
+
 Ogni \emph{stage} si inserisce in un percorso che lo precede e lo segue. Il tema nasce da
-un’esigenza interna oppure dall’interesse che può avere per un laureando in informatica, e nel mio
-caso da entrambi, come illustro nella \secref{sec:obiettivi}. Al termine lo stagista presenta il
-lavoro a tutto il \emph{team} e partecipa a una retrospettiva, la stessa pratica con cui Halue
-chiude gli \emph{sprint} e i progetti per i clienti. Il lavoro può quindi avere due esiti:
+un’esigenza interna oppure dall’interesse che può avere per un laureando in informatica. Nel mio
+caso il percorso è iniziato con la candidatura a luglio 2026 e con un colloquio conoscitivo ad
+agosto con il \emph{tutor} e con il fondatore. Dopo il colloquio Halue mi ha proposto due temi,
+entrambi di intelligenza artificiale:
+
+\begin{itemize}
+	\item l’interfaccia generativa, cioè un assistente che risponde anche con elementi
+	dell’interfaccia oltre che con il testo, da cui è nato ChatCart;
+	\item la gestione del contesto di un agente, cioè un sistema di
+	\gloss{ricerca-semantica}{ricerca semantica} nei documenti e negli strumenti interni
+	dell’azienda, che recupera le informazioni in base al loro significato e non soltanto alle parole
+	che contengono, per fornire all’agente ciò che gli serve durante il lavoro.
+\end{itemize}
+
+I due temi guardano in direzioni opposte: il primo verso i clienti dei clienti di Halue, cioè chi
+acquista nei negozi, il secondo verso i processi interni, dove l’azienda usa già agenti di IA
+(\secref{sec:innovazione}). Ho scelto il primo, per le ragioni che espongo nella
+\secref{sec:obiettivi-personali}, e ho scritto con il \emph{tutor} il piano di lavoro, che Halue ha
+riportato su carta intestata per indicare che ne prendeva in carico la proposta.
+
+Al termine lo stagista presenta il lavoro a tutto il \emph{team} e partecipa a una retrospettiva,
+la stessa pratica con cui Halue chiude gli \emph{sprint} e i progetti per i clienti. Il lavoro può
+quindi avere due esiti:
 
 \begin{itemize}
 	\item l’azienda lo archivia come base di conoscenza sul tema;
 	\item l’azienda lo rivede e ne riusa una parte nel codice e nei progetti di produzione.
 \end{itemize}
 
-La scelta dipende dal tipo di progetto e dalla qualità del prodotto.
+La scelta dipende dal tipo di progetto e dalla qualità del prodotto. Per ChatCart non è ancora
+stata presa, e nella \secref{sec:commercio-agentico} descrivo la direzione in cui Halue intende
+usarlo.
 
 \section{I limiti degli assistenti conversazionali testuali}
 \label{sec:limiti-assistenti}
@@ -98,14 +134,40 @@ parte del problema:
 \end{itemize}
 
 Nessuna di queste soluzioni soddisfa insieme i tre requisiti a cui i clienti di Halue attribuiscono
-più valore, cioè l’identità visiva del marchio, i dati specifici del suo catalogo e un’esperienza
-d’acquisto che si svolge interamente nel negozio. Un prodotto preconfezionato deve adattarsi a
-tutti i commercianti, e per questo lascia poco spazio alla personalizzazione. Halue costruisce
-soluzioni per il singolo cliente, perciò ha scelto di esplorare un assistente su misura basato su
-un’\gloss{interfaccia-generativa}{interfaccia generativa}, in cui l’agente risponde con testo
-oppure sceglie un componente da una libreria predefinita, come una scheda prodotto, e lo popola in
-tempo reale con i dati del negozio. Il marchio conserva il controllo sull’aspetto dei componenti,
-e il modello decide soltanto quale mostrare e con quali dati.
+più valore:
+
+\begin{itemize}
+	\item l’identità visiva del marchio, perché l’assistente fa parte del negozio e deve avere il suo
+	stesso aspetto;
+	\item i dati specifici del catalogo, con le varianti, le collezioni e le informazioni che
+	distinguono i prodotti di quel marchio;
+	\item un’esperienza d’acquisto che si svolge interamente nel negozio, dalla domanda al carrello.
+\end{itemize}
+
+Un prodotto preconfezionato deve adattarsi a tutti i commercianti, e per questo lascia poco spazio
+alla personalizzazione. Halue costruisce soluzioni per il singolo cliente, perciò ha scelto di
+esplorare un assistente su misura basato su un’\gloss{interfaccia-generativa}{interfaccia
+generativa}, cioè un’interfaccia che il modello compone durante la conversazione invece di restare
+fissata da chi la sviluppa. Il termine comprende approcci che si distinguono per quanto controllo
+lasciano al modello:
+
+\begin{itemize}
+	\item il modello risponde soltanto con testo, e l’interfaccia resta quella fissa della chat;
+	\item il modello sceglie un componente da una libreria predefinita, come una scheda prodotto, e
+	lo popola in tempo reale con i dati del negozio, mentre aspetto e comportamento del componente
+	restano decisi da chi lo sviluppa;
+	\item il modello genera da sé la struttura dell’interfaccia, per esempio sotto forma di codice o
+	di una descrizione degli elementi da disporre, e può quindi produrre forme che nessuno ha
+	previsto.
+\end{itemize}
+
+Halue ha scelto il secondo approccio. Il marchio conserva il controllo sull’aspetto dei
+componenti, e il modello decide soltanto quale mostrare e con quali dati. Le scelte del modello
+restano non deterministiche, ma ognuna produce un componente progettato e verificato in anticipo:
+un errore riguarda al più il componente o i dati scelti, mentre la grafica e il funzionamento dei
+pulsanti restano quelli previsti. Il terzo approccio offre più libertà, ma rende difficile garantire
+la coerenza con il tema del negozio e la correttezza di prezzi, varianti e pulsanti d’acquisto, che
+in un negozio hanno conseguenze dirette sulle vendite.
 
 \section{Il commercio agentico nella visione di Halue}
 \label{sec:commercio-agentico}
@@ -122,16 +184,38 @@ nell’acquisto di un prodotto. Si sta sviluppando in due direzioni:
 \end{itemize}
 
 Le piattaforme promuovono la prima direzione, che un commerciante può adottare senza alcuno
-sviluppo dedicato. La seconda richiede un progetto su misura, ed è quella in cui un’azienda come
-Halue può offrire un servizio ai propri clienti. ChatCart la esplora.
+sviluppo dedicato. In questa direzione il negozio diventa una fonte di dati per un assistente che il
+marchio non controlla: è l’assistente a decidere come presentare i prodotti, quali proporre accanto
+a quello cercato e in quale ordine, e la relazione con il cliente passa per un’interfaccia esterna.
+La seconda direzione lascia al marchio questa relazione, ma richiede un progetto su misura per ogni
+negozio. ChatCart esplora la seconda.
 
-Prima dello \emph{stage} Halue disponeva già di alcune premesse, cioè i negozi realizzati per
-marchi che vendono su più mercati e gli agenti collegati ai dati dei negozi con strumenti propri
-(\secref{sec:innovazione}). Non aveva invece esperienza su un assistente rivolto al cliente finale,
-che pone problemi diversi da quelli di un agente a uso interno perché deve integrarsi con il tema
-del negozio, rispondere in pochi secondi e comportarsi in modo prevedibile con qualsiasi
-interlocutore. Lo \emph{stage} aveva lo scopo di costruire questa competenza su un caso
-sufficientemente circoscritto da poter essere completato nella durata prevista.
+La scelta è coerente con il modo in cui Halue sta sul mercato. L’azienda lavora su commessa e non
+vende prodotti propri (\secref{sec:profilo}), quindi la sua innovazione passa per le competenze che
+porta nei progetti dei clienti. Un assistente del
+marchio va costruito sul catalogo, sul tema e sui processi di un singolo negozio, cioè sul tipo di
+lavoro che Halue svolge già per i suoi clienti Shopify Plus. È la direzione in cui un’azienda delle
+sue dimensioni può offrire un servizio che le piattaforme non coprono, e in cui può far valere ciò
+che conosce dei negozi che segue. Halue si colloca tra le aziende che lavorano già in modo concreto
+sull’intelligenza artificiale per il commercio elettronico, e con questo \emph{stage} cerca di
+estendere quella competenza a un prodotto rivolto al cliente finale.
+
+Prima dello \emph{stage} Halue disponeva già di alcune premesse:
+
+\begin{itemize}
+	\item i negozi realizzati per marchi che vendono su più mercati, con le loro integrazioni
+	(\secref{sec:clientela});
+	\item gli agenti collegati ai dati dei negozi con strumenti propri e quelli che usa per i processi
+	interni (\secref{sec:innovazione});
+	\item la consulenza e la formazione sull’intelligenza artificiale per i clienti, dalla
+	valutazione della loro preparazione ai \emph{workshop} del fondatore (\secref{sec:profilo}).
+\end{itemize}
+
+Non aveva invece esperienza su un assistente rivolto al cliente finale, che pone problemi diversi
+da quelli di un agente a uso interno perché deve integrarsi con il tema del negozio, rispondere in
+pochi secondi e comportarsi in modo prevedibile con qualsiasi interlocutore. Lo \emph{stage} aveva
+lo scopo di costruire questa competenza su un caso sufficientemente circoscritto da poter essere
+completato nella durata prevista.
 
 Al termine dello \emph{stage}, il risultato costituisce per l’azienda una base di ricerca e
 sviluppo. L’obiettivo dichiarato è arrivare a proporre questo tipo di soluzione ai clienti come
@@ -145,14 +229,10 @@ ho istruito l’agente perché si comportasse come previsto.
 \section{Obiettivi e vincoli del progetto}
 \label{sec:obiettivi}
 
-Mi sono candidato a luglio 2026 e ad agosto ho sostenuto un colloquio conoscitivo con il
-\emph{tutor} e con il fondatore. Halue mi ha poi proposto due temi, l’interfaccia generativa e la
-gestione del contesto di un agente. Ho scelto il primo e ho proposto di declinarlo in un assistente
-che seleziona e popola componenti dell’interfaccia con i dati del negozio.
-
-Il piano organizza il prototipo su due livelli (\figref{fig:livelli}). L’\emph{app layer} è il
-\emph{widget} di chat nel negozio e si limita a visualizzare la conversazione e i componenti.
-L’\emph{agent layer} è il \emph{backend} che ospita l’agente e conserva lo stato della
+Il piano di lavoro, che ho scritto con il \emph{tutor} ad agosto 2026, organizza il prototipo su
+due livelli (\figref{fig:livelli}). L’\emph{app layer} è il \emph{widget} di chat nel negozio e si
+limita a visualizzare la conversazione e i componenti. L’\emph{agent layer} è il \emph{backend},
+cioè il programma eseguito su un \emph{server}, che ospita l’agente e conserva lo stato della
 conversazione. Per interrogare le API di Shopify l’agente usa il
 \gloss{tool-calling}{\emph{tool calling}}, il meccanismo con cui un modello linguistico chiede al
 programma che lo ospita di eseguire una funzione e ne riceve il risultato.
@@ -210,9 +290,48 @@ ricerca nel catalogo scritta su misura, perché il \emph{tutor} giudicava elemen
 	\bottomrule
 \end{tabellatesi}
 
+Gli obiettivi traducono in prodotto i requisiti della \secref{sec:limiti-assistenti}. OB1 porta
+l’assistente dentro il negozio, così che l’esperienza d’acquisto non ne esca. OB2 collega l’agente
+ai dati reali del catalogo invece che alla memoria del modello, secondo la prima delle regole di
+Halue per i progetti di IA (\secref{sec:innovazione}). OB3 e OB4 realizzano l’interfaccia
+generativa con componenti predefiniti, che rispettano l’identità visiva del marchio, e DE1 estende
+lo stesso comportamento ai negozi che vendono su più mercati, come quelli dei clienti di Halue.
+OB5 serve a verificare se l’assistente produce il beneficio che lo studio citato nella
+\secref{sec:limiti-assistenti} attribuisce a un assistente efficace, cioè più clienti che arrivano
+all’acquisto.
+
+Per l’azienda il criterio di successo era un prototipo funzionante dall’inizio alla fine su un
+negozio di esempio, accompagnato da una valutazione onesta di ciò che funziona e di ciò che non
+funziona. Valuto il grado di soddisfacimento di ogni obiettivo nella \secref{sec:soddisfacimento}.
+
+Il progetto aveva i seguenti vincoli, ciascuno con una conseguenza sul lavoro:
+
+\begin{itemize}
+	\item \textbf{Quantità di lavoro}: da 300 a 320 ore, con una distribuzione al massimo a tempo
+	pieno, dal 14 settembre al 9 novembre 2026. La durata fissa obbligava a scegliere presto che cosa
+	approfondire e che cosa lasciare agli sviluppi futuri.
+	\item \textbf{Luogo di lavoro}: da remoto, con un giorno a settimana in sede, un allineamento
+	quotidiano con il \emph{tutor} e una riunione settimanale di un’ora. Gran parte del confronto
+	passava quindi per brevi riunioni a distanza e per i messaggi su Slack.
+	\item \textbf{Tecnologie}: TypeScript in tutto il progetto, dal \emph{widget} al \emph{backend}.
+	Il piano rimandava alle prime settimane la scelta degli strumenti per costruire l’agente e del
+	modello linguistico, che il \emph{tutor} ha lasciato a me.
+	\item \textbf{Piattaforma}: prima i temi Liquid, che sono i più diffusi, e Hydrogen soltanto come
+	eventuale approfondimento finale. Il \emph{widget} doveva quindi funzionare all’interno di temi
+	che non avevo scritto io.
+	\item \textbf{Ambiente}: un unico negozio di sviluppo, senza clienti né traffico reali, con due
+	temi installati per le prove. L’ho allestito come un negozio di cosmetica botanica con circa
+	quaranta prodotti, perché il comportamento di un assistente dipende dal catalogo su cui opera, e
+	varianti, collezioni, confezioni regalo, prodotti esauriti e archiviati lo avvicinano a un caso
+	reale. Senza traffico reale, le metriche di OB5 si possono raccogliere soltanto dalle prove.
+	\item \textbf{Natura del prodotto}: un prototipo di ricerca e sviluppo, essenziale ma solido,
+	senza i requisiti di scala e di costo di un prodotto in produzione. Per questo non ho ottimizzato
+	il consumo di \emph{token} né la capacità di servire molti negozi insieme.
+\end{itemize}
+
 Il piano ripartisce 310 ore indicative tra dieci attività (\figref{fig:piano}) e prevede che la
-ripartizione sia rifinita con il \emph{tutor} nelle prime settimane. Nel capitolo 3 la confronto
-con l’uso effettivo del tempo.
+ripartizione sia rifinita con il \emph{tutor} nelle prime settimane. Nella
+\secref{sec:pianificazione} la confronto con l’uso effettivo del tempo.
 
 \begin{figure}[htbp]
 	\centering
@@ -224,48 +343,70 @@ con l’uso effettivo del tempo.
 	\label{fig:piano}
 \end{figure}
 
-Per l’azienda il criterio di successo era un prototipo funzionante dall’inizio alla fine su un
-negozio di esempio, accompagnato da una valutazione onesta di ciò che funziona e di ciò che non
-funziona. Valuto il grado di soddisfacimento di ogni obiettivo nella \secref{sec:soddisfacimento}.
-
-Il progetto aveva i seguenti vincoli:
-
-\begin{itemize}
-	\item \textbf{Quantità di lavoro}: da 300 a 320 ore, con una distribuzione al massimo a tempo
-	pieno, dal 14 settembre al 9 novembre 2026.
-	\item \textbf{Luogo di lavoro}: da remoto, con un giorno a settimana in sede, un allineamento
-	quotidiano con il \emph{tutor} e una riunione settimanale di un’ora.
-	\item \textbf{Tecnologie}: TypeScript in tutto il progetto. Il piano rimandava alle prime settimane la scelta degli strumenti
-	per costruire l’agente e del modello linguistico, che il \emph{tutor} ha lasciato a me.
-	\item \textbf{Piattaforma}: prima i temi Liquid, che sono i più diffusi, e Hydrogen soltanto come
-	eventuale approfondimento finale.
-	\item \textbf{Ambiente}: un unico negozio di sviluppo, senza clienti né traffico reali, con due
-	temi installati per le prove. L’ho allestito come un negozio di cosmetica botanica con circa
-	quaranta prodotti, perché il comportamento di un assistente dipende dal catalogo su cui opera, e
-	varianti, collezioni, confezioni regalo, prodotti esauriti e archiviati lo avvicinano a un caso
-	reale.
-	\item \textbf{Natura del prodotto}: un prototipo di ricerca e sviluppo, essenziale ma solido,
-	senza i requisiti di scala e di costo di un prodotto in produzione.
-\end{itemize}
-
 \section{Motivazioni e obiettivi personali}
 \label{sec:obiettivi-personali}
 
-Da marzo 2026 lavoro in proprio come sviluppatore di negozi Shopify, occupandomi di migrazioni da
-altre piattaforme, gestione dei negozi e automazioni. La mia esperienza riguardava però soltanto i
-temi Liquid e non lo sviluppo di applicazioni. Tra le proposte di \emph{stage}, quella di Halue
-riguardava progetti su Shopify, era la più vicina al mio lavoro e mi offriva ciò che mi mancava:
-lo sviluppo di un’applicazione in un’azienda che lavora su questa piattaforma ogni giorno. Per
-questo l’ho scelta.
+Da marzo 2026 lavoro in proprio come sviluppatore di negozi Shopify. Il mio cliente principale è
+Dr Kampes, un marchio per cui ho svolto compiti molto diversi tra loro: ho creato e configurato il
+negozio, gestito e ampliato il catalogo, impostato le regole di spedizione, realizzato lo
+\emph{storefront} e collegato il CRM, con le automazioni che seguono l’acquisto e quelle di
+\emph{marketing}. Questo lavoro mi ha dato una visione ampia della piattaforma, ma non mi ha
+permesso di specializzarmi in un ambito. Riguardava inoltre soltanto i temi Liquid, e mai lo
+sviluppo di applicazioni.
+% DA CONFERMARE: Dr Kampes è un marchio di calzature? Serve una voce nei Riferimenti?
+
+Prima di scegliere Halue ho sostenuto un colloquio conoscitivo con un’altra azienda, esterna alle
+offerte dell’ateneo, e ho letto le altre proposte di \emph{stage}. Queste erano pensate per il
+lavoro in aziende grandi e strutturate, mentre io preferisco progetti piccoli e di nicchia, che
+lasciano spazio alla sperimentazione e a iterazioni rapide. La proposta di Halue rispondeva a
+questa preferenza e aveva tre vantaggi:
+
+\begin{itemize}
+	\item riguardava Shopify, la piattaforma su cui già lavoravo, in un’azienda che la usa ogni
+	giorno, e mi permetteva di passare dall’uso dei suoi strumenti alla costruzione di applicazioni;
+	\item mi offriva due mesi a tempo pieno su tecnologie che mi interessavano già, un’occasione che
+	il lavoro in proprio difficilmente concede;
+	\item già al colloquio Halue mi ha proposto di lavorare soprattutto da remoto, una condizione
+	decisiva, perché la sede dista circa un’ora e mezza di auto da casa mia.
+\end{itemize}
+
+Tra i due temi proposti ho scelto l’interfaccia generativa. La gestione del contesto mi
+interessava molto e apriva diverse strade di integrazione con altri strumenti e sistemi, ma
+comportava un rischio. I grandi fornitori di modelli linguistici aggiornano i propri assistenti a
+ritmo serrato, e funzioni come la ricerca nei documenti e negli strumenti di un’azienda entrano in
+quegli assistenti una dopo l’altra. Un sistema costruito in due mesi rischiava di essere superato
+da un aggiornamento di un assistente generico. Un assistente di vendita dentro il negozio di un
+marchio dipende invece da elementi che solo quel negozio possiede, cioè il suo catalogo, il suo
+tema e il suo carrello, ed è quindi un bisogno che un assistente generico copre con più difficoltà.
 
 L’idea dell’interfaccia generativa è di Halue. Quando l’azienda me l’ha proposta vi ho riconosciuto
-l’esigenza di un mio cliente, che mi aveva parlato di un assistente capace di dare assistenza ai
-visitatori del suo negozio e di indirizzarli verso l’acquisto. Il progetto aveva quindi per me un
-valore che andava oltre lo \emph{stage}, e questo ha orientato sia la scelta del tema sia la
-proposta dei componenti.
+l’esigenza di Dr Kampes, che mi aveva parlato di un assistente capace di dare assistenza ai
+visitatori del negozio e di indirizzarli verso l’acquisto. Ho quindi proposto di declinare il tema
+in un assistente che sceglie e popola componenti dell’interfaccia con i dati del negozio, come
+schede prodotto, tabelle di confronto, guide alle taglie e lo stato di un ordine, per accompagnare
+il cliente dalla scoperta dei prodotti all’assistenza dopo la vendita.
 
-Da queste ragioni ho ricavato quattro obiettivi personali (\tabref{tbl:personali}), che valuto
-insieme a quelli del piano nella \secref{sec:soddisfacimento}.
+Il tema toccava anche altri miei interessi:
+
+\begin{itemize}
+	\item imparare a sviluppare applicazioni Shopify, per estendere gli \emph{storefront} con
+	soluzioni su misura;
+	\item collegare i negozi ai miei agenti di IA attraverso le Storefront API e le Admin API
+	(\secref{sec:ecosistema});
+	\item conoscere la piattaforma più a fondo, capendo come i suoi componenti si incastrano, per
+	costruire da zero ciò che finora avevo soltanto usato.
+\end{itemize}
+
+Volevo infine mettere alla prova in un progetto reale ciò che ho imparato nel corso di studi: i
+\gloss{design-pattern}{\emph{design pattern}}, cioè soluzioni riconosciute a problemi ricorrenti di
+progettazione, il rigore nella pianificazione e una progettazione che favorisce le estensioni
+future e la manutenzione nel tempo. Lo studio del C++ mi ha mostrato il valore dei linguaggi
+tipati, in cui il compilatore controlla i tipi dei dati prima dell’esecuzione. Per questo nel piano
+ho proposto TypeScript, che aggiunge i tipi statici a JavaScript, in tutto il progetto.
+
+Il progetto aveva quindi per me un valore che andava oltre lo \emph{stage}. Da queste ragioni ho
+ricavato quattro obiettivi personali (\tabref{tbl:personali}), che valuto insieme a quelli del
+piano nella \secref{sec:soddisfacimento}.
 
 \begin{tabellatesi}{P{0.1}P{0.9}}
 	{I miei obiettivi personali per lo \emph{stage}.}
@@ -281,5 +422,3 @@ insieme a quelli del piano nella \secref{sec:soddisfacimento}.
 	continuo e spetta a me organizzarla, stabilire le priorità e prevedere le pause \\
 	\bottomrule
 \end{tabellatesi}
-
-% DA CONFERMARE: il cliente resta anonimo finché non autorizza la citazione del nome.
