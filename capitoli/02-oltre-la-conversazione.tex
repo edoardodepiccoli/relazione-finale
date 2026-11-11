@@ -60,10 +60,12 @@ tutti di intelligenza artificiale, tra cui:
 \begin{itemize}
 	\item uno \emph{storefront} con interfaccia generativa, in cui un agente costruisce la pagina del
 	negozio in tempo reale in base a ciò che il cliente cerca;
-	\item la gestione del contesto di una base di conoscenza agentica interna all’azienda, cioè un
-	archivio di documenti e informazioni aziendali che gli agenti di IA consultano durante il lavoro,
-	con un sistema di \gloss{ricerca-semantica}{ricerca semantica} che recupera le informazioni in
-	base al loro significato e non soltanto alle parole che contengono;
+	\item lo sviluppo di un agente interno all’azienda, integrato in profondità con la conoscenza e
+	con gli strumenti di Halue. Il tema si concentrava sulla gestione del contesto dell’agente, cioè
+	sulla scelta delle informazioni da fornire al modello insieme a ogni richiesta, che non possono
+	essere troppe, perché il modello ne elabora una quantità limitata. Per sceglierle serve un sistema
+	di \gloss{ricerca-semantica}{ricerca semantica}, che recupera le informazioni in base al loro
+	significato e non soltanto alle parole che contengono;
 	\item il monitoraggio dei sistemi di IA in produzione, cioè il controllo del comportamento degli
 	agenti già in uso presso l’azienda o i suoi clienti.
 \end{itemize}
@@ -72,10 +74,23 @@ I temi coprono tutto il ciclo di un sistema di IA: l’esperienza di chi acquist
 clienti di Halue, i processi interni, in cui l’azienda usa già agenti di IA
 (\secref{sec:innovazione}), e il funzionamento dei sistemi dopo il rilascio. Ho scelto il primo e
 l’ho declinato in un assistente di chat, per le ragioni che espongo nella
-\secref{sec:obiettivi-personali}. Ho poi scritto con il \emph{tutor} il piano di lavoro.
+\secref{sec:obiettivi-personali}. ChatCart tocca però, su scala ridotta, anche gli altri due temi:
+
+\begin{itemize}
+	\item l’agente lavora con il contesto del negozio, cioè il catalogo e le pagine informative, che
+	recupera con strumenti dedicati quando la conversazione li richiede;
+	\item le metriche e l’analisi delle conversazioni (OB5) sono una prima forma di monitoraggio di un
+	sistema di IA in uso.
+\end{itemize}
+
+Ciascuno dei tre ambiti si presta quindi a un’espansione in profondità: un’interfaccia generativa
+che compone intere pagine del negozio, un contesto esteso agli ordini e ai dati dei clienti, un
+monitoraggio che valuta la qualità delle risposte e i costi nel tempo. Ho poi scritto con il
+\emph{tutor} il piano di lavoro.
 
 Al termine lo stagista presenta il lavoro a tutto il \emph{team} e partecipa a una retrospettiva,
-la stessa pratica con cui Halue chiude gli \emph{sprint} e i progetti per i clienti. Il lavoro può
+simile a quelle con cui Halue chiude gli \emph{sprint} e i progetti per i clienti, in cui si discute
+che cosa ha funzionato e che cosa correggere. Il lavoro può
 quindi avere due esiti:
 
 \begin{itemize}
@@ -120,7 +135,7 @@ mentre il valore medio del carrello resta invariato. I clienti che traggono più
 dall’assistente sono quelli che conoscono meno la piattaforma.
 
 Le soluzioni disponibili sul mercato appartengono a cinque tipi, e ciascuno lascia scoperta una
-parte del problema:
+parte del problema. I primi due sono prodotti di terze parti rivolti a chi acquista:
 
 \begin{itemize}
 	\item \textbf{Gli assistenti generici per l’assistenza clienti} risolvono richieste di supporto
@@ -129,6 +144,12 @@ parte del problema:
 	\item \textbf{Gli assistenti alla vendita preconfezionati} si installano nel negozio e
 	consigliano prodotti. L’interfaccia, il modello e il comportamento sono decisi dal fornitore e
 	restano uguali per tutti i negozi che li adottano.
+\end{itemize}
+
+Gli altri tre li offre Shopify, da sola o insieme a Google, e non si rivolgono direttamente a chi
+acquista nel negozio:
+
+\begin{itemize}
 	\item \textbf{Sidekick}\textsuperscript{\ref{rif:sidekick}}, l’assistente che Shopify integra nel
 	pannello di amministrazione, supporta il commerciante nella gestione del negozio e non si
 	rivolge a chi acquista.
