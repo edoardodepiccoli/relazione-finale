@@ -124,14 +124,53 @@ realizzava. I documenti di progetto fissavano le intenzioni, mentre la storia de
 documentava ciò che avevo effettivamente realizzato.
 
 \subsection{Strumenti e assistenti di programmazione}
+\label{sec:strumenti}
 
-Presento gli strumenti che ho impiegato per lo sviluppo, la verifica e il rilascio, tra cui gli
-assistenti di programmazione basati su modelli linguistici. Di questi descrivo l’uso che ne ho
-fatto: la sperimentazione e la validazione rapida delle idee, fino a prototipi funzionanti nell’arco
-di una giornata, a cui seguiva l’implementazione definitiva scritta a mano; la stesura dei documenti
-di progettazione, per individuare in anticipo i casi limite e i \emph{test} necessari; le attività
-di supporto, come la generazione dei dati di prova. Ciò che ho imparato da questo uso lo discuto
-nella \secref{sec:maturazione}.
+La \tabref{tbl:strumenti} riassume gli strumenti con cui ho sviluppato, verificato e pubblicato
+ChatCart. Presento invece le librerie su cui si basa il prodotto insieme all’architettura, nella
+\secref{sec:architettura}, perché la loro scelta deriva dalle decisioni progettuali.
+
+\begin{tabellalunga}{P{0.25}P{0.3}P{0.45}}
+	{\textbf{Attività} & \textbf{Strumenti} & \textbf{Uso}}
+	{Gli strumenti principali impiegati durante lo \emph{stage}.}
+	{tbl:strumenti}
+	Sviluppo & Zed, Shopify CLI, mise & Modifica del codice, avvio sul negozio di prova e
+	versioni degli strumenti fissate per il progetto. \\
+	Coordinamento & Slack, Meet, Obsidian & Resoconti, revisioni e organizzazione personale. \\
+	Versionamento & Git e GitHub & Storia delle modifiche e conservazione del codice. \\
+	Verifica & Vitest, happy-dom, TypeScript, ESLint & Prove automatiche, simulazione della
+	pagina, controllo dei tipi e analisi statica. \\
+	Rilascio & ngrok, Vercel, Neon & Accesso all’applicazione locale e pubblicazione di
+	applicazione e base di dati. \\
+	Assistenti IA & Claude Code, Codex, OpenCode & Studio, confronto di soluzioni, prototipi e
+	preparazione dei casi di prova. \\
+\end{tabellalunga}
+
+Durante lo sviluppo l’applicazione era in esecuzione sul mio computer, mentre Shopify deve poterla
+raggiungere attraverso Internet per inoltrarle le richieste provenienti dal negozio. Per collegare
+le due parti serviva un \gloss{tunnel}{\emph{tunnel}}, un servizio che espone un indirizzo pubblico
+e inoltra le richieste alla macchina locale. Ho sostituito il \emph{tunnel} predefinito della
+Shopify CLI con ngrok, perché il primo accumulava i frammenti della risposta dell’agente e li
+consegnava al \emph{widget} tutti insieme, impedendo la visualizzazione progressiva della risposta.
+Il problema mi ha mostrato presto che dovevo controllare l’intero percorso della risposta,
+compresi gli intermediari esterni al mio codice.
+
+Gli assistenti IA di programmazione mi sono serviti soprattutto nelle attività in cui il progetto
+esplorativo richiedeva di provare molte strade in poco tempo: trovare la documentazione
+pertinente, discutere alternative progettuali, realizzare piccoli prototipi, preparare i dati del
+negozio e scrivere prove a partire dai casi limite che definivo io. Il primo prototipo
+architetturale riguardava l’elenco condiviso degli strumenti dell’agente, diventato poi il
+contratto della \secref{sec:contratto}; poterlo provare rapidamente mi ha permesso di valutarne la
+fattibilità prima di incorporarlo nel progetto.
+
+Ho inoltre collegato il negozio di sviluppo ad assistenti IA con accesso alle Admin API, che lo
+hanno popolato con prodotti, varianti, collezioni e pagine, e per provare l’interfaccia ho usato
+assistenti IA capaci di controllare il \emph{browser}, a cui assegnavo percorsi d’uso diversi. Lo
+stile, le animazioni e la naturalezza delle interazioni li ho valutati personalmente, e ho riletto
+e corretto i \emph{test} che gli assistenti IA mi aiutavano a preparare. I prototipi servivano a
+scegliere tra alternative e a scoprire i problemi in anticipo, mentre l’implementazione definitiva
+di ChatCart l’ho scritta a mano. Nella \secref{sec:maturazione} valuto come questo uso degli
+assistenti IA abbia cambiato il mio modo di programmare.
 
 \section{Studio preliminare e analisi}
 
