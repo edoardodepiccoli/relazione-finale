@@ -221,6 +221,16 @@ dell’utente; l’identità arriva in un JWT, \emph{JSON Web Token}, un dato fi
 legata al negozio anziché al commerciante, perché l’agente deve leggere il catalogo anche quando
 nessuno è collegato all’amministrazione.
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics{assets/03-accesso.pdf}
+	\caption[Installazione e accesso al negozio]{Lo scambio delle credenziali alla prima apertura
+	dell’applicazione. Il \emph{server} verifica il JWT e conserva la sessione del negozio; nelle
+	aperture
+	successive riusa la sessione valida.}
+	\label{fig:accesso-shopify}
+\end{figure}
+
 Restava da collegare il \emph{widget} al \emph{server} senza esporre questa credenziale al
 \emph{browser} del cliente. La soluzione è l’\gloss{app-proxy}{\emph{app proxy}}, un percorso nel
 dominio del negozio attraverso cui Shopify inoltra le richieste all’applicazione, aggiungendo una
