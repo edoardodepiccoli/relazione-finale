@@ -50,6 +50,12 @@
 % Una figura alta fino a tre quarti della pagina resta nel testo invece di finire su una pagina
 % di soli inserti.
 \renewcommand{\floatpagefraction}{0.75}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+% Gli inserti restano nella sezione o sottosezione che li introduce.
+\usepackage[section]{placeins}
+\AddToHook{cmd/subsection/before}{\FloatBarrier}
 \usepackage{float}
 \floatstyle{plain}
 \newfloat{codelisting}{htbp}{lol}[chapter]
@@ -69,6 +75,7 @@
 % dell'ambiente, così la didascalia compare sempre sotto la tabella.
 % I margini standard delle colonne allineano sfondi e righe senza patch.
 \usepackage{booktabs,array}
+\usepackage{longtable}
 \usepackage{needspace}
 \definecolor{TabellaIntestazione}{HTML}{E2E5E9}
 \definecolor{TabellaRiga}{HTML}{F3F4F6}
@@ -76,11 +83,11 @@
 \newenvironment{tabellatesi}[3]{%
 	\def\TabellaDidascalia{#2}%
 	\def\TabellaEtichetta{#3}%
-	\begin{table}[H]%
+	\begin{table}[htbp]%
 	\centering
-	\setstretch{1}\fontsize{11}{13.5}\selectfont
+	\setstretch{1}\fontsize{10.5}{13}\selectfont
 	\setlength{\tabcolsep}{8pt}%
-	\renewcommand{\arraystretch}{1.3}%
+	\renewcommand{\arraystretch}{1.2}%
 	\setlength{\extrarowheight}{3pt}%
 	\setlength{\aboverulesep}{0pt}%
 	\setlength{\belowrulesep}{0pt}%
@@ -93,6 +100,49 @@
 	\caption{\TabellaDidascalia}\label{\TabellaEtichetta}%
 	\end{table}%
 }
+
+% Tabelle del capitolo 3: righe intere, intestazione ripetuta quando cambia pagina.
+% Argomenti: colonne, intestazione, didascalia, etichetta.
+\newenvironment{tabellalunga}[4]{%
+	\par\begingroup
+	\def\TabellaDidascalia{#3}%
+	\def\TabellaEtichetta{#4}%
+	\setstretch{1}\fontsize{10.5}{13}\selectfont
+	\setlength{\tabcolsep}{8pt}%
+	\renewcommand{\arraystretch}{1.2}%
+	\setlength{\extrarowheight}{3pt}%
+	\setlength{\aboverulesep}{0pt}%
+	\setlength{\belowrulesep}{0pt}%
+	\setlength{\LTcapwidth}{\linewidth}%
+	\arrayrulecolor{black!25}%
+	\rowcolors{2}{white}{TabellaRiga}%
+	\begin{longtable}{#1}%
+	\toprule
+	\rowcolor{TabellaIntestazione} #2 \\
+	\midrule
+	\endfirsthead
+	\toprule
+	\rowcolor{TabellaIntestazione} #2 \\
+	\midrule
+	\endhead
+	\endfoot
+	\endlastfoot
+}{%
+	\bottomrule
+	\rowcolor{white}%
+	\caption{\TabellaDidascalia}\label{\TabellaEtichetta}\\
+	\end{longtable}%
+	\endgroup
+}
+
+% Il capitolo 3 consente interruzioni tra i punti degli elenchi. Il gruppo locale
+% conserva le impostazioni dei capitoli già approvati e delle parti successive.
+\newcommand{\iniziocapitoloterzo}{%
+	\begingroup
+	\setlist[itemize,enumerate]{nosep,beginpenalty=10000,midpenalty=0,
+		before={\interlinepenalty=0\relax}}%
+}
+\newcommand{\finecapitoloterzo}{\clearpage\endgroup}
 
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
