@@ -49,6 +49,17 @@ ha previsto. Questo cambiamento, insieme agli strumenti di sviluppo basati sull�
 che una persona può realizzare nelle ore di uno \emph{stage}. Rispetto a quel progetto, ChatCart
 non segue percorsi stabiliti: cerca nel catalogo, compone l’interfaccia e modifica il carrello in
 base alla conversazione.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics{assets/02-paradigmi.pdf}
+	\caption[Un flusso di conversazione predefinito e il ciclo di un agente]{A sinistra un esempio di flusso predefinito come diagramma degli stati UML: le guardie tra
+	parentesi quadre sono le intenzioni riconosciute dal classificatore, e ogni richiesta che non
+	rientra tra quelle previste riceve la risposta di ripiego e torna al benvenuto. A destra il
+	ciclo di un agente, in cui il modello invoca gli strumenti e ne legge i risultati finché non
+	dispone di ciò che serve per rispondere.}
+	\label{fig:paradigmi}
+\end{figure}
 % DA CONFERMARE: lo stage precedente era di Halue? Di che anno?
 
 Ogni \emph{stage} si inserisce in un percorso che lo precede e lo segue. Il tema nasce da
@@ -137,8 +148,7 @@ dall’assistente sono quelli che conoscono meno la piattaforma.
 Le soluzioni disponibili sul mercato appartengono a cinque tipi, e ciascuno lascia scoperta una
 parte del problema. I primi due sono prodotti di terze parti rivolti a chi acquista:
 
-% TEMPORANEO: elenco spezzabile tra due pagine, per evitare lo spazio bianco a fine pagina.
-\begin{itemize}[beginpenalty=0, before={}]
+\begin{itemize}
 	\item \textbf{Gli assistenti generici per l’assistenza clienti} risolvono richieste di supporto
 	su più canali a partire dai documenti dell’azienda. Conoscono poco il catalogo e rispondono con
 	testo, quindi sono adatti alla gestione di un reso più che alla scelta di un prodotto.
@@ -200,6 +210,16 @@ pulsanti restano quelli previsti. Il terzo approccio offre più libertà, ma ren
 la coerenza con il tema del negozio e la correttezza di prezzi, varianti e pulsanti d’acquisto, che
 in un negozio hanno conseguenze dirette sulle vendite.
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics{assets/02-spettro.pdf}
+	\caption[I tre approcci all’interfaccia generativa]{I tre approcci all’interfaccia generativa, in ordine di controllo lasciato al modello. Le
+	finestre sono schematiche: in bordeaux i pulsanti d’acquisto, che nel secondo approccio fanno
+	parte del componente e non dipendono dal modello; i riquadri tratteggiati indicano elementi di
+	cui il modello decide forma e posizione.}
+	\label{fig:spettro}
+\end{figure}
+
 \section{Il commercio agentico nella visione di Halue}
 \label{sec:commercio-agentico}
 
@@ -225,6 +245,16 @@ fonte di dati per un assistente che il marchio non controlla. È l’assistente 
 presentare i prodotti, quali proporre accanto a quello cercato e in quale ordine, e la relazione con
 il cliente passa per un’interfaccia esterna. La seconda direzione lascia questa relazione al
 marchio, ma richiede un progetto su misura per ogni negozio.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics{assets/02-direzioni.pdf}
+	\caption[Le due direzioni del commercio agentico]{Le due direzioni del commercio agentico. Il bordo bordeaux delimita ciò che il marchio
+	controlla: nella prima direzione soltanto i dati e il pagamento, nella seconda anche la
+	conversazione. Nella seconda gli strumenti dell’assistente sono costruiti sul tema e sul catalogo
+	del negozio, mentre il \emph{server} MCP espone le stesse operazioni a qualsiasi agente.}
+	\label{fig:direzioni}
+\end{figure}
 
 L’assistente su misura della \secref{sec:limiti-assistenti} appartiene alla seconda direzione.
 Halue ha scelto di esplorarla con ChatCart, pur seguendo già i nuovi protocolli nei progetti dei
