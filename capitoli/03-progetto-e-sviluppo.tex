@@ -278,16 +278,101 @@ conoscenze che ho poi usato anche per dare agli assistenti IA l’accesso al neg
 \subsection{Un’analisi dei requisiti iterativa}
 \label{sec:requisiti}
 
-Motivo la scelta, condivisa con il \emph{tutor}, di non svolgere un’analisi dei requisiti completa
-all’inizio del progetto: il lavoro aveva carattere esplorativo, nessun cliente ne dettava i
-requisiti, e una specifica fissata a priori sarebbe diventata presto obsoleta. Descrivo il
-procedimento che ho seguito: a partire dagli obiettivi del piano ho abbozzato i casi d’uso
-principali e ne ho ricavato i requisiti, che ho rivisto a ogni iterazione insieme al prodotto. Un
-diagramma mostra i casi d’uso nella loro forma finale e una tabella riporta i requisiti a cui sono
-arrivato, raggruppati per area, ciascuno con un identificativo e l’obiettivo del piano da cui
-deriva; ne misuro la copertura nella \secref{sec:quantitativi}.
+Il piano fissava obiettivi chiari ma nessuna specifica delle funzioni, perché Halue voleva
+esplorare il valore di un assistente con interfaccia generativa prima di stabilirne la forma.
+Un’analisi dei requisiti completa svolta all’inizio avrebbe quindi fissato le scelte proprio quando
+avevo meno informazioni, e io e il \emph{tutor} abbiamo preferito un’analisi iterativa, in cui le
+prove sul prototipo correggevano via via ciò che il prodotto doveva fare.
 
-% DA DEFINIRE: prima i casi d'uso iniziali, poi come raggruppare i requisiti (utente, agente, app...). Solo dopo valutare se partire dalla specifica cancellata il 15/10 in chat-cart.
+Questo modo di procedere corrisponde al ciclo costruire, misurare e imparare che Eric Ries propone
+per le condizioni d’incertezza\textsuperscript{\ref{rif:lean-startup}}. Nel mio caso la misura
+aveva però un limite, perché io e il \emph{tutor} provavamo il prototipo sul negozio di sviluppo,
+senza osservare clienti reali. Le revisioni ci aiutavano a scartare le soluzioni troppo complesse o
+poco convincenti, ma non potevano dimostrare un beneficio sulle vendite.
+
+Per non perdere il legame con il piano mentre le soluzioni cambiavano, ho distinto tre livelli di
+descrizione. Gli obiettivi del piano fissavano lo scopo, i \gloss{caso-uso}{casi d’uso}
+descrivevano le interazioni con cui un attore, cioè un ruolo esterno al sistema, raggiunge un
+risultato, e i requisiti precisavano le proprietà da verificare. OB4, per esempio, richiede
+componenti interattivi; il caso d’uso UC6 descrive l’aggiunta di un prodotto al carrello dalla
+chat; RFOB6 richiede che il cliente possa scegliere la variante e aggiungerla al carrello.
+
+Ho rappresentato i sedici casi d’uso finali in due diagrammi UML, uno per ciascun attore primario,
+cioè per chi usa ChatCart per uno scopo proprio. Il cliente conversa e prepara l’acquisto nel \emph{widget}
+(\figref{fig:casi-uso-cliente}), mentre il commerciante attiva l’assistente nel tema e ne osserva i
+risultati nella \emph{dashboard} (\figref{fig:casi-uso-commerciante}). Shopify e il fornitore dei
+modelli sono invece attori secondari, ai quali ChatCart si rivolge per portare a termine un caso
+d’uso; l’agente non compare tra gli attori, perché fa parte del sistema.
+
+Nel diagramma del commerciante la relazione «\emph{extend}» indica un caso d’uso facoltativo, che si
+innesta in un altro in un punto preciso: il commerciante legge una conversazione (UC15) o ne avvia
+l’analisi (UC16) soltanto dall’elenco delle conversazioni (UC14).
+
+La distinzione si è rivelata utile, perché i casi d’uso sono rimasti relativamente stabili mentre
+cambiavano le soluzioni che li realizzavano. Il carrello, per esempio, funzionava già nella prima
+versione, ma non si integrava in tempo reale con il tema. L’ho tolto il 15 ottobre e, dopo il
+confronto con il \emph{tutor}, l’ho implementato nuovamente, senza che cambiassero il caso d’uso e
+l’obiettivo a cui rispondeva. La seconda implementazione è descritta nella \secref{sec:widget}.
+
+Il 9 ottobre ho raccolto il comportamento atteso dell’agente in una specifica di lavoro,
+accompagnata da scenari di prova. Alcune richieste descrivevano capacità più estese di quelle
+necessarie a dimostrare il valore del prototipo, come leggere altri contenuti del negozio, proporre
+raccomandazioni e gestire ricerche più articolate, e riducendo il perimetro le ho spostate tra gli
+sviluppi futuri. La ricognizione finale conta 45 requisiti; la \tabref{tbl:requisiti-principali}
+ne presenta una selezione di 20, sufficiente a descrivere il nucleo del prodotto, le scelte
+architetturali e i limiti più significativi.
+
+Ogni identificativo è formato dalla lettera R, dal tipo, dalla priorità e da un numero progressivo.
+Il tipo è F per un requisito funzionale, Q per una proprietà di qualità e V per un vincolo; la
+priorità è OB per obbligatorio, DE per desiderabile e OP per opzionale. La selezione conserva i
+numeri della ricognizione completa, e per questo la numerazione non è continua; nella colonna dei
+casi d’uso riporto gli identificativi delle due figure precedenti. Ho considerato
+obbligatorio il carrello nella chat, che deriva da OB4, perché porta
+l’interfaccia generativa fino all’acquisto; le voci desiderabili descrivono invece funzioni
+migliorative, che io e il \emph{tutor} potevamo escludere dal perimetro senza compromettere gli
+obiettivi obbligatori. Valuto la copertura di
+questa selezione nella \secref{sec:quantitativi}.
+
+\begin{tabellalunga}{P{0.16}P{0.54}P{0.14}P{0.16}}
+	{\textbf{Requisito} & \textbf{Proprietà richiesta} & \textbf{Caso d’uso} & \textbf{Obiettivo}}
+	{I venti requisiti principali selezionati dalla ricognizione finale. Gli identificativi
+	mantengono la numerazione originale.}
+	{tbl:requisiti-principali}
+	RFOB2 & Il cliente riceve la risposta in \emph{streaming}, con l’indicazione dell’attività
+	dell’agente. & UC2--UC5 & OB1, OB2 \\
+	RFOB3 & La conversazione riprende quando il cliente torna o cambia pagina. & UC1 & nessuno \\
+	RFOB5 & Ogni messaggio include paese, lingua e pagina corrente. & UC2--UC5 & OB2, DE1 \\
+	RFOB6 & Il cliente sceglie la variante e aggiunge il prodotto dalla scheda. & UC6 & OB4 \\
+	RFOB9 & Chat e tema mantengono il carrello allineato nei due sensi. & UC6, UC7 & OB4 \\
+	RFOB10 & L’agente mostra da uno a tre prodotti con immagine, prezzo e punti di forza. &
+	UC2, UC4 & OB3, OB4 \\
+	RFOB11 & Le risposte sul negozio hanno una scheda con testo e fonte. & UC5 & OB3, OB4 \\
+	RFOB12 & L’agente consulta il negozio entro dieci passi e conclude con al più un componente.
+	& UC2--UC5 & OB2 \\
+	RFOB13 & La risposta assume una delle tre forme: testo, testo e prodotti, scheda sul negozio.
+	& UC2--UC5 & OB3 \\
+	RFOB15 & Prima di citare prezzo o disponibilità, l’agente rilegge il prodotto e la variante.
+	& UC2--UC4 & OB3 \\
+	RFOB22 & La \emph{dashboard} mostra passaggi verso l’acquisto e relativi tassi a trenta giorni.
+	& UC13 & OB5 \\
+	RFOB24 & Il commerciante rilegge messaggi, componenti e azioni in un’unica cronologia.
+	& UC15 & OB5 \\
+	RFDE3 & Testi, prezzi e collegamenti rispettano lingua e mercato del cliente.
+	& UC1--UC10 & DE1 \\
+	RFDE5 & Un componente mostra lo stato di un ordine. & nessuno & DE2 \\
+	RFDE7 & Un modello assegna punteggio ed etichette alle conversazioni concluse.
+	& UC16 & OB5 \\
+	RFDE8 & Le metriche confrontano sessioni con e senza assistente e valore medio dell’ordine.
+	& UC13 & OB5 \\
+	RQOB2 & L’agente afferma fatti letti nel negozio durante la risposta e dichiara i dati mancanti.
+	& UC2--UC5 & OB3 \\
+	RQDE1 & Gli errori del modello o degli strumenti lasciano al cliente un avviso.
+	& UC1--UC11 & nessuno \\
+	RVOB2 & Ogni componente ha una sola definizione nell’elenco condiviso tra agente e
+	\emph{widget}. & UC2, UC4, UC5, UC10 & OB4 \\
+	RVOP1 & Il \emph{widget} funziona anche su uno \emph{storefront} Hydrogen.
+	& nessuno & FA1 \\
+\end{tabellalunga}
 
 \section{Architettura del sistema}
 
