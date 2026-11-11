@@ -86,10 +86,42 @@ un prodotto in un percorso di ricerca e sviluppo, in cui provavo ogni soluzione,
 il \emph{tutor} e, quando serviva, la rivedevo.
 
 \subsection{Organizzazione del lavoro e tracciamento delle attività}
+\label{sec:organizzazione-lavoro}
 
-Illustro come ho organizzato il mio lavoro, svolto in gran parte da remoto: come individuavo le
-attività e ne stabilivo le priorità, come ne tenevo traccia e come preparavo le modifiche più estese
-prima di realizzarle.
+Lavorando quasi sempre da remoto, su un progetto senza un calendario prefissato, dovevo stabilire
+ogni giorno a che cosa dedicare il tempo. Per questo ho organizzato il lavoro intorno a un contesto
+scritto e aggiornato quotidianamente. La mattina registravo un \gloss{brain-dump}{\emph{brain
+dump}} vocale, cioè una raccolta libera e parlata di attività, dubbi e idee, e lo trascrivevo con
+strumenti miei basati su un modello di trascrizione. Dalla trascrizione estraevo le azioni,
+assegnavo loro una priorità e le collocavo in blocchi di tempo del calendario, così da ripartire la
+mattina successiva da ciò che avevo concluso e da ciò che restava aperto. Il procedimento è vicino
+al metodo Getting Things Done di David Allen\textsuperscript{\ref{rif:gtd}}, che propone di
+raccogliere e organizzare fuori dalla memoria ciò che richiede attenzione.
+
+Ho gestito le attività personali, come le riunioni e i resoconti di fine giornata, in Obsidian,
+un’applicazione per note in formato Markdown, e quelle di sviluppo in file Markdown conservati
+accanto al codice, così che anche gli assistenti IA potessero consultarle. Distinguevo le attività
+organizzative da quelle esecutive e, tra queste ultime, anticipavo quelle da cui dipendeva il
+lavoro successivo. Il mio calendario, gestito tramite Apple Calendar e Apple Reminders, restava
+comunque modificabile, perché una prova poteva richiedere più tempo del previsto e un confronto
+con il \emph{tutor} poteva cambiare le priorità.
+
+In un progetto esplorativo il rischio maggiore era dedicare molte ore a una modifica estesa basata
+su un’ipotesi sbagliata. Per questo adattavo la preparazione all’incertezza e all’estensione della
+modifica. Per una correzione circoscritta bastava una nota, mentre per una
+modifica estesa preparavo una breve progettazione, in cui esaminavo i moduli coinvolti,
+confrontavo le soluzioni, descrivevo quella scelta in pseudocodice e cercavo lacune e casi limite
+con un assistente IA. Tra il 14 e il 23 ottobre questo lavoro ha prodotto sei specifiche e cinque
+piani di implementazione, dedicati soprattutto alla sincronizzazione del carrello e alla
+riorganizzazione dell’applicazione.
+
+Poiché le soluzioni cambiavano spesso, dovevo anche poter ricostruire quando e perché avessi preso
+una decisione. Ho quindi registrato le modifiche con messaggi secondo
+\gloss{conventional-commits}{Conventional Commits}, la convenzione che antepone alla descrizione il
+tipo di intervento, per esempio una funzionalità, una correzione o un riordino. Questa disciplina mi
+ha permesso di ricostruire l’evoluzione delle scelte e di collegare ogni prova al codice che la
+realizzava. I documenti di progetto fissavano le intenzioni, mentre la storia delle modifiche
+documentava ciò che avevo effettivamente realizzato.
 
 \subsection{Strumenti e assistenti di programmazione}
 
