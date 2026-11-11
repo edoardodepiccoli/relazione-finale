@@ -11,13 +11,70 @@ progettazione, la realizzazione, le sperimentazioni, la verifica e i risultati.
 \subsection{Pianificazione e interazione con il \emph{tutor} aziendale}
 \label{sec:pianificazione}
 
-Confronto le modalità di interazione previste dal piano di lavoro con quelle effettive: le riunioni
-quotidiane, i resoconti di fine giornata su Slack, la riunione settimanale, i confronti su richiesta
-e le giornate in sede. Discuto le difficoltà della fase iniziale e il modo in cui le ho superate.
-Descrivo infine i resoconti settimanali al relatore e la svolta della terza settimana: con gli
-obiettivi obbligatori già soddisfatti, io e il \emph{tutor} abbiamo deciso di dedicare il resto
-dello \emph{stage} alla sperimentazione. Un diagramma temporale mette a confronto la pianificazione
-originaria del piano di lavoro con il modo in cui ho usato davvero il tempo, attività per attività.
+Il piano di lavoro assegnava 310 ore indicative a dieci attività, senza distribuirle in un
+calendario settimanale. La scelta era coerente con la natura esplorativa del progetto, perché Halue
+non
+sapeva ancora quale forma avrebbe preso un assistente con interfaccia generativa, e un calendario
+dettagliato avrebbe fissato in anticipo decisioni che dipendevano da ciò che avrei scoperto
+lavorando. Io e il \emph{tutor} abbiamo quindi tenuto fissi gli obiettivi e stabilito di volta in
+volta le attività successive in base allo stato del prototipo. Un procedimento di questo tipo
+richiede confronti frequenti, che il piano prevedeva quotidiani e settimanali e che ho adattato al
+lavoro prevalentemente da remoto (\tabref{tbl:coordinamento-stage}).
+
+\begin{tabellalunga}{P{0.3}P{0.7}}
+	{\textbf{Momento previsto} & \textbf{Svolgimento effettivo}}
+	{Le modalità di coordinamento durante lo \emph{stage}.}
+	{tbl:coordinamento-stage}
+	Allineamento quotidiano con il \emph{team} & Ho partecipato allo \emph{stand-up} mattutino,
+	riportando attività concluse, lavoro previsto e impedimenti. \\
+	Allineamento quotidiano con il \emph{tutor} & Ho inviato un resoconto scritto di fine giornata
+	nel canale Slack dedicato. \\
+	Revisione settimanale di un’ora & Io e il \emph{tutor} abbiamo discusso il prototipo, i
+	problemi aperti e le attività successive. \\
+	Supporto su richiesta & Ho chiesto riunioni aggiuntive quando una scelta bloccava il lavoro;
+	in alcuni confronti è intervenuto anche il fondatore. \\
+	Presenza in sede & Dopo i primi due giorni in ufficio, sono stato in sede in media un giorno
+	a settimana. \\
+\end{tabellalunga}
+
+Il lavoro da remoto rendeva il confronto meno immediato che in ufficio, e nelle prime settimane
+ponevo le domande al \emph{tutor} troppo tardi, dopo aver dedicato tempo a soluzioni che un
+confronto anticipato avrebbe corretto. Ho quindi iniziato a preparare ogni confronto per iscritto,
+indicando il risultato atteso, le alternative già provate e le decisioni da prendere insieme. La
+forma scritta mi obbligava a definire il problema prima della riunione e lasciava traccia della
+decisione presa. Per la sincronizzazione del carrello, per esempio, ho presentato tre possibilità:
+specializzare il \emph{widget} per un tema, supportare una famiglia di temi oppure offrire
+un’integrazione generica. Da quel confronto è nata la combinazione di adattatori e ripiego
+descritta nella \secref{sec:widget}; ciò che ho imparato dalla comunicazione a distanza è oggetto
+della \secref{sec:maturazione}.
+
+Il primo passaggio importante è arrivato presto. Nella prima settimana ho studiato l’ecosistema
+Shopify e definito il perimetro del progetto; nella seconda ho completato un primo prototipo
+funzionante, con cui ho verificato le scelte architetturali concordate con il \emph{tutor}. Alla
+fine della terza settimana, dopo circa sette giorni passati a lavorare sul codice, avevo una prima
+versione che copriva gli obiettivi obbligatori OB1--OB5. Il \emph{tutor} l’ha valutata
+positivamente e, con più di metà dello \emph{stage} ancora da svolgere, abbiamo deciso di dedicare
+il tempo restante all’esperienza d’uso e alla sperimentazione, che Halue considerava la parte di
+maggior valore del progetto. La prima versione è diventata così una base da mettere alla prova, e
+funzionalità e architettura hanno continuato a cambiare fino alle ultime settimane.
+
+Per capire quanto questa decisione abbia modificato la distribuzione del lavoro, ho ripartito a
+consuntivo le 304 ore dello \emph{stage} tra le attività del piano, basandomi sulla storia delle
+modifiche al codice e sulle date dei documenti di progetto. La \figref{fig:tempi-stage} riporta il
+risultato in ore intere e indicative.
+% DA CONFERMARE: Edoardo riconosce la ripartizione delle ore almeno per ordine di grandezza?
+
+La progettazione ha richiesto il doppio delle ore previste, perché vi sono tornato ogni volta che
+una prova mostrava un limite della soluzione adottata. La prima realizzazione dell’agente e
+dell’accesso al negozio ha richiesto invece circa la metà del tempo previsto, perché il modello
+ufficiale di Shopify per le applicazioni forniva già autenticazione, sessioni e integrazione con
+l’amministrazione. Lo sviluppo dell’interfaccia si è esteso lungo quasi tutto lo \emph{stage},
+comprese le sperimentazioni poi abbandonate, e il tempo risparmiato nelle prime settimane è andato
+al riordino del codice, al rilascio e alla presentazione finale al resto del \emph{team}, attività
+che il piano non prevedeva come voci autonome. La distribuzione effettiva riflette quindi la
+decisione presa alla fine della terza settimana, che ha trasformato un piano pensato per costruire
+un prodotto in un percorso di ricerca e sviluppo, in cui provavo ogni soluzione, la valutavo con
+il \emph{tutor} e, quando serviva, la rivedevo.
 
 \subsection{Organizzazione del lavoro e tracciamento delle attività}
 
