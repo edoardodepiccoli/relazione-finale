@@ -304,9 +304,29 @@ risultati nella \emph{dashboard} (\figref{fig:casi-uso-commerciante}). Shopify e
 modelli sono invece attori secondari, ai quali ChatCart si rivolge per portare a termine un caso
 d’uso; l’agente non compare tra gli attori, perché fa parte del sistema.
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics{assets/03-casi-uso.pdf}
+	\caption[I casi d’uso del cliente]{I casi d’uso del cliente. Shopify partecipa quando ChatCart
+	legge catalogo, pagine o carrello e quando il pagamento prosegue nella sua procedura; il
+	fornitore dei modelli partecipa alle risposte dell’agente. L’aggiunta al carrello parte da una
+	scheda prodotto, che può comparire nelle risposte di casi d’uso diversi, e per questo è collegata
+	direttamente al cliente.}
+	\label{fig:casi-uso-cliente}
+\end{figure}
+
 Nel diagramma del commerciante la relazione «\emph{extend}» indica un caso d’uso facoltativo, che si
 innesta in un altro in un punto preciso: il commerciante legge una conversazione (UC15) o ne avvia
 l’analisi (UC16) soltanto dall’elenco delle conversazioni (UC14).
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics{assets/03-casi-uso-commerciante.pdf}
+	\caption[I casi d’uso del commerciante]{I casi d’uso del commerciante. L’attivazione avviene
+	nell’\emph{editor} del tema di Shopify, gli altri casi d’uso nella \emph{dashboard}; il fornitore
+	dei modelli partecipa all’analisi, affidata al modello Jev (\secref{sec:metriche}).}
+	\label{fig:casi-uso-commerciante}
+\end{figure}
 
 La distinzione si è rivelata utile, perché i casi d’uso sono rimasti relativamente stabili mentre
 cambiavano le soluzioni che li realizzavano. Il carrello, per esempio, funzionava già nella prima
