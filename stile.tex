@@ -47,6 +47,9 @@
 % Le figure sono file finiti in assets/, inclusi con \includegraphics alla loro larghezza.
 \usepackage{caption}
 \captionsetup{font=small}
+% Una figura alta fino a tre quarti della pagina resta nel testo invece di finire su una pagina
+% di soli inserti.
+\renewcommand{\floatpagefraction}{0.75}
 \usepackage{float}
 \floatstyle{plain}
 \newfloat{codelisting}{htbp}{lol}[chapter]
