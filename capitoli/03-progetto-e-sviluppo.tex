@@ -1062,10 +1062,51 @@ consigli d’acquisto, una scheda con il collegamento alla fonte per le informaz
 cambia pagina, il cliente ritrova la conversazione; da \emph{mobile} il pannello occupa lo schermo,
 mentre da \emph{desktop} resta sovrapposto alla pagina.
 
+\begin{figure}[htbp]
+	\centering
+	\begin{minipage}[t]{0.32\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{assets/03-widget-introduzione.png}
+		\par\small (a) Avvio della chat
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.32\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{assets/03-widget-informazioni.png}
+		\par\small (b) Informazioni del negozio
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.32\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{assets/03-widget-prodotti.png}
+		\par\small (c) Prodotti consigliati
+	\end{minipage}
+	\caption[Il widget nel negozio di sviluppo]{Il \emph{widget} da \emph{mobile}: benvenuto con
+	proposte iniziali, risposta su spedizioni e resi con collegamento alla pagina del negozio,
+	consigli con schede di prodotto scorribili. Ho acquisito le schermate sul negozio di sviluppo.}
+	\label{fig:percorso-cliente}
+\end{figure}
+
 Dalla scheda il cliente seleziona una variante e la aggiunge al carrello, poi ne modifica la
 quantità o prosegue al pagamento. La \figref{fig:acquisto-cliente} mostra questi comandi nella
 stessa conversazione; ogni modifica raggiunge anche il carrello del tema, nel modo descritto nella
 \secref{sec:widget}.
+
+\begin{figure}[htbp]
+	\centering
+	\begin{minipage}[t]{0.42\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{assets/03-widget-varianti.png}
+		\par\small (a) Scelta della variante
+	\end{minipage}\hspace{0.04\linewidth}
+	\begin{minipage}[t]{0.42\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{assets/03-widget-carrello.png}
+		\par\small (b) Carrello nella chat
+	\end{minipage}
+	\caption[Dalla variante al carrello]{Scelta del formato di un prodotto e carrello dopo l’aggiunta.
+	Nel carrello il cliente controlla quantità e subtotale e accede al pagamento con il pulsante
+	dedicato. Le schermate provengono dalla stessa prova sul negozio di sviluppo.}
+	\label{fig:acquisto-cliente}
+\end{figure}
 
 Il commerciante attiva il \emph{widget} dall’\emph{editor} del tema, senza modificarne il codice,
 e configura il ripiego quando il tema lo richiede. Dall’amministrazione consulta poi la
@@ -1074,10 +1115,32 @@ quale passaggio i clienti abbandonano la chat, e l’elenco affianca agli esiti 
 e le
 etichette dell’analisi automatica, per orientare la rilettura.
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{assets/03-dashboard-funnel.png}
+	\par\medskip
+	\includegraphics[width=\linewidth]{assets/03-dashboard-conversazioni.png}
+	\caption[La dashboard del commerciante]{Riepilogo dei passaggi d’uso e conversazioni recenti.
+	L’elenco distingue le conversazioni ancora da analizzare da quelle con punteggio, intenzione
+	del cliente e giudizio sull’assistente. Conteggi e percentuali si riferiscono alle prove sul
+	negozio di sviluppo e non misurano l’efficacia su clienti reali.}
+	\label{fig:percorso-commerciante}
+\end{figure}
+
 Aprendo una conversazione il commerciante ritrova messaggi, prodotti mostrati e azioni del cliente
 in ordine cronologico (\figref{fig:dettaglio-conversazione}) e può confrontare punteggio ed
 etichette con lo scambio effettivo, fino all’aggiunta al carrello e al clic verso il pagamento,
 verificando così il giudizio automatico sul singolo caso.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{assets/03-dashboard-dettaglio.png}
+	\caption[Il dettaglio di una conversazione]{Una conversazione di prova nella vista del
+	commerciante. In alto compaiono punteggio ed etichette; la cronologia conserva risposte,
+	suggerimenti, riferimenti ai prodotti e azioni del cliente. L’evento finale di accesso al
+	pagamento indica il clic, non un acquisto completato.}
+	\label{fig:dettaglio-conversazione}
+\end{figure}
 
 Ho verificato questo percorso su Dawn e Horizon, e il risultato dimostra che la combinazione tra
 conversazione, componenti e carrello del tema è realizzabile nel contesto del prototipo. L’efficacia
