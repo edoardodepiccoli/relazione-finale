@@ -1150,8 +1150,69 @@ clienti reali; restano aperti i limiti discussi nella \secref{sec:sperimentazion
 \subsection{Risultati quantitativi}
 \label{sec:quantitativi}
 
-Riporto in tabelle i dati quantitativi del progetto: la copertura dei requisiti definiti nella
-\secref{sec:requisiti}, la copertura dei \emph{test} con le scelte che la motivano, le righe di
-codice per ciascuna parte dell’applicazione e i documenti che ho consegnato al \emph{team}.
+Valuto i risultati sulla versione finale del codice, del 7 novembre, distinguendo tre dimensioni:
+la copertura dei requisiti, la copertura delle righe di
+codice e la quantità dei prodotti realizzati. Nessuna di queste misure riguarda l’utilità
+commerciale o l’accuratezza del modello.
+
+La \tabref{tbl:copertura-requisiti} riguarda soltanto i venti requisiti principali presentati nella
+\secref{sec:requisiti}, con gli stessi identificativi. Considero soddisfatto un requisito quando la
+versione finale ne realizza il comportamento richiesto; per quelli affidati alle istruzioni, però,
+la valutazione si basa sulla soluzione implementata e sulle prove manuali, senza garantire che il
+modello rispetti la regola in ogni conversazione.
+
+\begin{tabellalunga}{P{0.22}P{0.15}P{0.63}}
+	{\textbf{Stato} & \textbf{Numero} & \textbf{Requisiti della selezione}}
+	{Copertura dei venti requisiti principali nella versione finale.}
+	{tbl:copertura-requisiti}
+	Soddisfatti & 16 & RFOB2, RFOB3, RFOB5, RFOB6, RFOB9, RFOB10, RFOB11, RFOB12,
+	RFOB15, RFOB22, RFOB24, RFDE3, RFDE7, RQOB2, RQDE1, RVOB2. \\
+	Parziali & 1 & RFOB13. \\
+	Non soddisfatti & 3 & RFDE5, RFDE8, RVOP1. \\
+	\textbf{Totale} & \textbf{20} & La base di conteggio è la selezione esposta, non l’insieme
+	originario dei 45 requisiti. \\
+\end{tabellalunga}
+
+RFOB13 è parziale perché il codice impone l’arresto al componente, ma non tutte le combinazioni tra
+testo e componente richieste dalle istruzioni. Io e il \emph{tutor} abbiamo escluso dal perimetro
+lo stato dell’ordine (RFDE5) e la prova su Hydrogen (RVOP1), mentre il confronto con le sessioni
+senza assistente (RFDE8) richiede dati reali che il negozio di sviluppo non offre.
+
+La copertura delle righe attraversate dalle prove è complessivamente del 63,1\%, ma la media
+nasconde quanto le prove si concentrino sulle cuciture (\tabref{tbl:copertura-test}).
+
+\begin{tabellalunga}{P{0.60}P{0.22}P{0.18}}
+	{\textbf{Area} & \textbf{Righe coperte} & \textbf{Copertura}}
+	{Copertura delle righe per area, misurata con Vitest sulla versione finale. L’avvio e il pannello
+	del \emph{widget} comprendono pulsante di apertura, intestazione, campo di testo e pannello del
+	carrello.}
+	{tbl:copertura-test}
+	Logica dell’agente & 673 / 679 & 99,1\% \\
+	\emph{Dashboard} lato \emph{server} & 550 / 554 & 99,3\% \\
+	Conversazioni & 114 / 116 & 98,3\% \\
+	Rotte del \emph{widget} & 49 / 56 & 87,5\% \\
+	Carrello e sincronizzazione & 394 / 403 & 97,8\% \\
+	Tipi e schemi condivisi & 204 / 204 & 100\% \\
+	Schede e messaggi del \emph{widget} & 526 / 697 & 75,5\% \\
+	Avvio e pannello del \emph{widget} & 0 / 538 & 0\% \\
+	Stato della conversazione e librerie del \emph{widget} & 222 / 385 & 57,7\% \\
+	Componenti della \emph{dashboard} & 0 / 298 & 0\% \\
+	Autenticazione, amministrazione e avvio & 9 / 332 & 2,7\% \\
+	\emph{Script} di supporto & 0 / 85 & 0\% \\
+	\textbf{Totale} & \textbf{2.741 / 4.347} & \textbf{63,1\%} \\
+\end{tabellalunga}
+
+Agente, interrogazioni della \emph{dashboard} e sincronizzazione del carrello superano il 97\%,
+mentre i componenti visivi della chat e della \emph{dashboard} dipendono dalle prove manuali. Nella
+versione finale passano tutti i 174 casi in 17 file, insieme al controllo dei tipi e all’analisi
+statica.
+
+Il prodotto comprende 7.550 righe non vuote in 95 file, \emph{test} esclusi: 2.626 nel
+\emph{server}, 4.367 nel \emph{widget}, di cui 1.772 di CSS, e 269 nelle definizioni condivise. La
+documentazione finale comprende il README con i diagrammi e la presentazione del 9 novembre; le
+specifiche e i piani intermedi hanno guidato le modifiche descritte nella
+\secref{sec:organizzazione-lavoro}. Nella \secref{sec:soddisfacimento} valuto questi risultati
+rispetto agli obiettivi.
+% DA CONFERMARE: quali documenti di lavoro il team ha effettivamente ricevuto o letto?
 
 \finecapitoloterzo
