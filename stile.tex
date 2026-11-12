@@ -61,12 +61,44 @@
 \newfloat{codelisting}{htbp}{lol}[chapter]
 \floatname{codelisting}{Codice sorgente}
 \usepackage{listings}
+% Codice: TypeScript come linguaggio predefinito, con la stessa tavolozza delle figure
+% (accento bordeaux per le parole chiave, grigio tenue per i commenti) su fondo grigio chiarissimo.
+\definecolor{CodiceTesto}{HTML}{1F2328}
+\definecolor{CodiceParola}{HTML}{8C1C2B}
+\definecolor{CodiceStringa}{HTML}{1F5F8B}
+\definecolor{CodiceCommento}{HTML}{59636E}
+\definecolor{CodiceFondo}{HTML}{F6F7F9}
+\lstdefinelanguage{TypeScript}{
+	morekeywords={abstract, any, as, async, await, boolean, break, case, catch, class, const,
+		continue, declare, default, do, else, enum, export, extends, false, finally, for, from,
+		function, if, implements, import, in, infer, instanceof, interface, keyof, let, never, new,
+		null, number, of, private, protected, public, readonly, return, satisfies, static, string,
+		super, switch, this, throw, true, try, type, typeof, undefined, unknown, var, void, while,
+		yield},
+	sensitive=true,
+	morecomment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]",
+	morestring=[b]',
+	morestring=[b]`
+}
 \lstset{
-	basicstyle=\small\ttfamily,
+	language=TypeScript,
+	basicstyle=\small\ttfamily\color{CodiceTesto},
+	keywordstyle=\color{CodiceParola}\bfseries,
+	stringstyle=\color{CodiceStringa},
+	commentstyle=\color{CodiceCommento}\itshape,
+	backgroundcolor=\color{CodiceFondo},
+	frame=single,
+	framerule=0pt,
+	framesep=6pt,
+	xleftmargin=6pt,
+	xrightmargin=6pt,
 	breaklines=true,
 	columns=fullflexible,
 	keepspaces=true,
-	showstringspaces=false
+	showstringspaces=false,
+	upquote=true
 }
 
 % Tabelle: stile comune e larghezza complessiva pari al testo.
