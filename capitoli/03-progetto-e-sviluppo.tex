@@ -610,6 +610,17 @@ esecuzioni degli strumenti. A ogni messaggio del cliente l’agente ricostruisce
 al modello, prepara gli
 strumenti per il negozio e avvia il modello (\figref{fig:messaggio-chatcart}).
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics{assets/03-messaggio.pdf}
+	\caption[Il percorso di una risposta]{Una risposta con lettura dei dati e componente finale.
+	Il ciclo ripete le letture finché il modello chiede dati; il \emph{server} inoltra i frammenti al
+	\emph{widget} man mano che li riceve. Per leggibilità il diagramma raccoglie nell’agente il
+	\emph{proxy} e la
+	persistenza, e omette i messaggi suggeriti.}
+	\label{fig:messaggio-chatcart}
+\end{figure}
+
 Il primo vincolo riguarda la durata del ciclo, che termina al primo \emph{display tool}, così che il
 componente resti l’ultimo elemento visibile, oppure dopo dieci passi, perché il modello non consulti
 il catalogo senza concludere; entro questi limiti sceglie liberamente il percorso.
