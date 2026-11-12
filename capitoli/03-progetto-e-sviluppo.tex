@@ -599,13 +599,97 @@ agente e \emph{widget} si scambiano, restava da realizzare ciascuna delle due pa
 \section{Realizzazione}
 
 \subsection{L’agente conversazionale}
+\label{sec:agente}
 
-Descrivo il processo con cui l’agente costruisce una risposta: un ciclo in cui il modello invoca gli
-strumenti per consultare il catalogo, finché non seleziona un componente da mostrare. Discuto come
-ho ripartito il controllo del comportamento tra le istruzioni al modello e le regole fisse nel
-codice, come ho generato i tre messaggi suggeriti e come ho scelto il modello e il livello di
-ragionamento, confrontandone velocità e accuratezza. Un diagramma di sequenza segue il percorso di
-un messaggio dall’utente alla risposta. Questa parte risponde agli obiettivi OB2 e OB3.
+Un modello linguistico lasciato libero può inventare prodotti e prezzi, consultare il catalogo
+senza concludere o mostrare componenti incoerenti con il testo. Realizzare l’agente, che risponde
+agli obiettivi OB2 e OB3, ha significato soprattutto decidere quali di questi rischi affidare alle
+istruzioni e quali al codice. Ho costruito l’agente con l’AI SDK di
+Vercel\textsuperscript{\ref{rif:ai-sdk}}, che gestisce il ciclo di richieste al modello ed
+esecuzioni degli strumenti. A ogni messaggio del cliente l’agente ricostruisce la storia da inviare
+al modello, prepara gli
+strumenti per il negozio e avvia il modello (\figref{fig:messaggio-chatcart}).
+
+Il primo vincolo riguarda la durata del ciclo, che termina al primo \emph{display tool}, così che il
+componente resti l’ultimo elemento visibile, oppure dopo dieci passi, perché il modello non consulti
+il catalogo senza concludere; entro questi limiti sceglie liberamente il percorso.
+
+Il secondo vincolo riguarda l’affidabilità dei dati mostrati, richiesta da RQOB2. Ho separato la
+selezione dei prodotti dalla costruzione delle schede. Il modello indica gli identificativi e scrive
+i punti di forza, mentre il codice rilegge il negozio, ricava titolo, immagine, prezzo e varianti e
+scarta gli identificativi inesistenti. Un prodotto inventato dal modello non può quindi diventare
+una scheda acquistabile, e i dati economici del componente provengono sempre da Shopify; la
+pertinenza del consiglio e la correttezza delle frasi restano invece responsabilità del modello.
+
+Lo stesso criterio guida la divisione delle regole tra istruzioni e codice
+(\tabref{tbl:controllo-agente}). Le istruzioni di sistema, o \gloss{prompt}{\emph{prompt}} di
+sistema, precedono la conversazione e descrivono il ruolo dell’assistente e il comportamento
+richiesto, e vi colloco le regole che richiedono un giudizio sul dialogo. Nel codice fisso invece i
+vincoli strutturali che devono valere a ogni esecuzione, perché il modello può disattendere
+un’istruzione, mentre una condizione verificata dal programma vale sempre.
+
+\begin{tabellalunga}{P{0.22}P{0.42}P{0.36}}
+	{\textbf{Controllo} & \textbf{Esempi} & \textbf{Motivazione}}
+	{La divisione delle regole tra istruzioni al modello e codice.}
+	{tbl:controllo-agente}
+	Istruzioni & Chiarire una richiesta vaga, proporre prodotti pertinenti, dichiarare i dati
+	mancanti, suggerire collezioni utili. & Il comportamento dipende dal significato della
+	conversazione. \\
+	Ciclo agentico & Massimo dieci passi; conclusione al primo \emph{display tool}. & Il codice
+	limita il percorso e la posizione del componente. \\
+	Schemi Zod & Da una a tre schede prodotto; tre punti di forza per scheda. & Gli argomenti
+	devono rispettare la forma ammessa prima dell’esecuzione. \\
+	Lettura del negozio & Titolo, prezzo, disponibilità e immagine ricavati dalle API. & Il
+	modello sceglie il prodotto, il programma costruisce la scheda da dati effettivi. \\
+\end{tabellalunga}
+
+I collegamenti alle collezioni restano nelle istruzioni, perché imporli dopo ogni prodotto li
+renderebbe ripetitivi; il limite sul numero di schede è invece uno schema che il programma verifica
+senza interpretare il dialogo.
+
+Ogni messaggio porta con sé il paese, la lingua e la pagina corrente del cliente, che entrano
+nelle interrogazioni delle Storefront API e aiutano a interpretare riferimenti come «questo
+prodotto». Alla prima risposta, se il cliente non si trova sulla pagina di un prodotto, di una
+collezione o di una ricerca, il codice impone come primo passo la lettura del catalogo, perché
+l’agente proponga scelte che il negozio offre davvero.
+
+Anche la storia della conversazione ha richiesto una scelta, perché modello, \emph{widget} e
+\emph{dashboard} ne hanno bisogni diversi. Conservo i messaggi nella forma completa prodotta
+dall’AI SDK, comprese le parti degli strumenti, e ne ricavo tre rappresentazioni
+(\tabref{tbl:viste-conversazione}). Il modello riceve gli ultimi venti messaggi a partire da un
+messaggio del cliente, senza i risultati dei \emph{data tool} e senza i dati delle varianti che
+servono solo al \emph{widget}. Prezzi e scorte possono cambiare, così come il mercato del cliente,
+e togliere le letture precedenti obbliga il modello a consultare di nuovo il negozio.
+
+\begin{tabellalunga}{P{0.22}P{0.43}P{0.35}}
+	{\textbf{Destinatario} & \textbf{Rappresentazione} & \textbf{Scopo}}
+	{Tre usi della stessa conversazione conservata nella base di dati.}
+	{tbl:viste-conversazione}
+	Modello & Storia ridotta, senza risultati dei \emph{data tool} né dettagli necessari solo
+	all’interfaccia. & Conservare il dialogo senza riusare dati commerciali superati. \\
+	\emph{Widget} & Messaggi e risultati dei componenti. & Riaprire la conversazione con schede
+	e varianti utilizzabili. \\
+	\emph{Dashboard} & Messaggi e componenti trasformati in righe, insieme agli eventi del
+	cliente. & Capire che cosa l’assistente ha proposto e come il cliente ha reagito. \\
+\end{tabellalunga}
+
+Alla risposta aggiungo i messaggi suggeriti con una seconda chiamata al modello, che produce un
+\gloss{output-strutturato}{\emph{output} strutturato}, cioè dati conformi a uno schema anziché
+testo libero. Se la chiamata fallisce, la risposta resta disponibile senza suggerimenti: ho
+preferito rinunciare a un elemento accessorio piuttosto che ritardare la risposta.
+
+Come modello ho usato DeepSeek v4.1 Flash fin dal primo sviluppo, cercando un rapporto tra
+capacità e costo adatto a un prototipo, senza un confronto sistematico con altri modelli. Ho invece
+provato diversi livelli di \gloss{ragionamento}{ragionamento}, cioè quantità diverse di
+elaborazione intermedia prima della risposta, e ho scelto quello medio, perché il livello ridotto,
+pur più rapido, a volte ometteva i componenti, che sono il centro dell’esperienza proposta. Sono
+osservazioni qualitative, senza una misura sistematica della latenza.
+
+L’attesa maggiore rendeva ancora più importante lo \emph{streaming}. Nel primo rilascio di prova,
+su un \emph{server} virtuale gestito da me, il \emph{proxy} che riceveva le richieste tratteneva la
+risposta, e nel rilascio definitivo ho
+controllato che arrivasse progressivamente fino alla chat, dove il \emph{widget} la trasforma in
+interfaccia.
 
 \subsection{Il \emph{widget} e l’integrazione con il tema del negozio}
 
