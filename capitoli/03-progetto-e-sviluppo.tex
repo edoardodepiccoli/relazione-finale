@@ -397,12 +397,83 @@ questa selezione nella \secref{sec:quantitativi}.
 \section{Architettura del sistema}
 
 \subsection{Visione d’insieme}
+\label{sec:architettura}
 
-Illustro l’architettura di ChatCart con un diagramma: il \emph{widget} nel negozio (\emph{app
-layer}), il \emph{server} che ospita l’agente (\emph{agent layer}), la \emph{dashboard} del
-commerciante e i servizi esterni. Motivo la scelta di uno stile funzionale anziché orientato agli
-oggetti, la decisione, su indicazione del \emph{tutor}, di non introdurre astrazioni prima che
-fossero necessarie e i \emph{design pattern} che ho adottato quando lo sono diventate.
+Lo studio della piattaforma e i requisiti imponevano all’architettura tre condizioni: le
+credenziali del negozio non dovevano raggiungere il \emph{browser}, l’agente doveva affermare
+soltanto fatti letti nel negozio (RQOB2) e agente e \emph{widget} dovevano interpretare ogni
+componente nello stesso modo (RVOB2).
+
+Il piano di lavoro prevedeva due livelli, l’\emph{app layer} nel negozio e l’\emph{agent layer} sul
+\emph{server}. Li ho mantenuti perché corrispondono a due ambienti con un diverso grado di fiducia.
+Il \emph{browser} del cliente esegue codice che chiunque può ispezionare, mentre il
+\emph{server} custodisce le credenziali del negozio e l’accesso ai modelli. Vi ho aggiunto la
+persistenza delle conversazioni e l’interfaccia del commerciante, richieste da OB5. La
+\figref{fig:architettura-chatcart} mostra gli ambienti e i collegamenti che li uniscono; il
+carrello resta del negozio, e il \emph{widget} vi opera direttamente senza passare dall’agente.
+
+Il \emph{server} è una sola applicazione React Router, in cui le rotte autenticano le richieste e
+chiamano
+i moduli dell’agente, delle conversazioni e della \emph{dashboard}, separati per responsabilità così
+che una modifica alla lettura delle conversazioni non tocchi il ciclo agentico. Il \emph{widget} è
+un’applicazione React distinta, compilata con Vite e caricata dall’estensione del tema. Accanto a
+esso il tema resta un programma indipendente, che legge e modifica lo stesso carrello senza
+condividere codice con il \emph{widget}. Mantenere allineate le due interfacce è il problema
+centrale della \secref{sec:widget}.
+
+Poiché \emph{server} e \emph{widget} sono programmi distinti, il rischio principale era che
+interpretassero in modo diverso gli stessi dati. Per questo ho usato TypeScript in entrambi e ho
+raccolto nella cartella \texttt{shared/} le definizioni comuni (strumenti, messaggi, prodotti
+mostrati, contesto del cliente ed eventi), così che il compilatore verifichi il contratto tra i due
+programmi. L’AI SDK gestisce il rapporto con i modelli e il ciclo agentico, Zod descrive e valida
+gli schemi dei dati, Prisma collega l’applicazione alla base di dati PostgreSQL.
+
+Il codice segue lo stile funzionale già adottato da React, React Router e AI SDK, e anche i
+\emph{design pattern} hanno preso questa forma, con interfacce espresse come tipi TypeScript,
+adattatori come oggetti e la creazione degli strumenti come funzione. Seguendo un’indicazione del
+\emph{tutor}, ho introdotto le astrazioni solo quando un problema concreto le rendeva utili, perché
+in un prototipo che cambiava ogni settimana avrebbero fissato una suddivisione dei moduli che le
+prove successive potevano smentire.
+
+La \tabref{tbl:pattern} raccoglie i \emph{pattern} introdotti in questo modo, ciascuno con il
+problema concreto che risolveva. Il contratto condiviso e la sincronizzazione del carrello
+richiedono un approfondimento, perché sono le parti in cui l’organizzazione del codice incide di
+più sull’estensibilità del prodotto.
+
+\begin{tabellalunga}{P{0.23}P{0.77}}
+	{\textbf{\emph{Pattern}} & \textbf{Idea e applicazione nel progetto}}
+	{I \emph{pattern} adottati e il problema concreto che risolvono.}
+	{tbl:pattern}
+	\gloss{registry}{\emph{registry}} & Un elenco indicizzato concentra le informazioni su ogni
+	voce. Gli elenchi degli strumenti e degli eventi obbligano tutte le parti a riconoscere gli
+	stessi nomi (\secref{sec:contratto}, \secref{sec:metriche}). \\
+	\gloss{adapter}{\emph{adapter}} e \gloss{strategy}{\emph{strategy}} & Un’interfaccia comune
+	adatta componenti diversi; l’implementazione scelta determina l’algoritmo. Gli adattatori dei
+	temi aggiornano il carrello senza esporre le differenze al codice della chat
+	(\secref{sec:widget}). \\
+	\gloss{decorator}{\emph{decorator}} & Un involucro aggiunge un comportamento conservando
+	l’interfaccia originale. Osservo le richieste del tema senza cambiarne il risultato
+	(\secref{sec:widget}). \\
+	\gloss{observer}{\emph{observer}} & Un soggetto notifica i cambiamenti ai propri iscritti.
+	Tutti i componenti del carrello ricevono lo stesso aggiornamento (\secref{sec:widget}). \\
+	\gloss{factory}{\emph{factory}} & Una funzione costruisce gli oggetti da usare.
+	\texttt{createTools} crea gli strumenti con il negozio e il mercato della richiesta. \\
+	\gloss{dependency-injection}{\emph{dependency injection}} & Una funzione riceve le dipendenze
+	dall’esterno. Nei \emph{test} passo modelli e accessi alle API controllati
+	(\secref{sec:verifica}). \\
+	\gloss{repository}{\emph{repository}} & Un modulo nasconde il modo di conservare i dati.
+	Salvataggio e lettura delle conversazioni attraversano la stessa interfaccia
+	(\secref{sec:metriche}). \\
+\end{tabellalunga}
+
+La \emph{factory} degli strumenti nasce da un problema di isolamento. Ogni strumento deve usare il
+negozio autenticato e il paese e la lingua del cliente corrente. Affidarli agli argomenti scelti
+dal modello gli avrebbe permesso di indicare un mercato sbagliato, e conservarli in variabili
+condivise tra le richieste avrebbe mescolato i dati di richieste concorrenti. \texttt{createTools}
+li riceve invece dal programma a ogni
+richiesta (\figref{fig:pattern-server}). Con la \emph{dependency injection} anche il modello arriva
+come parametro, e le prove lo sostituiscono con uno simulato; il \emph{repository} raccoglie invece
+in un unico modulo gli accessi alle conversazioni.
 
 \subsection{Il contratto tra agente e \emph{widget}}
 \label{sec:contratto}

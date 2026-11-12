@@ -6,6 +6,12 @@ Raccolgo in ordine alfabetico i termini tecnici introdotti nel testo. Alla prima
 corpo della relazione, il termine e il pedice G rimandano alla voce corrispondente.
 
 \begin{description}
+\voceglossario{adapter}{\emph{adapter}}{
+	\emph{Design pattern} che rende compatibile un componente con l’interfaccia che il codice
+	cliente si aspetta, senza modificare né l’uno né l’altro. In ChatCart ogni famiglia di temi ha un
+	adattatore con un’interfaccia comune, e un adattatore di ripiego copre i temi non riconosciuti.
+}
+
 \voceglossario{adr}{ADR}{
 	Documento che registra una decisione di architettura: il contesto in cui nasce, le
 	alternative considerate, la scelta e le sue conseguenze. Conserva le motivazioni della scelta anche
@@ -99,6 +105,18 @@ corpo della relazione, il termine e il pedice G rimandano alla voce corrisponden
 	commerciante il \emph{funnel}, le conversazioni e la loro analisi.
 }
 
+\voceglossario{decorator}{\emph{decorator}}{
+	\emph{Design pattern} che aggiunge un comportamento a un oggetto o a una funzione avvolgendolo
+	in un altro con la stessa interfaccia, senza modificarne il codice e senza che chi lo usa se ne
+	accorga.
+}
+
+\voceglossario{dependency-injection}{\emph{dependency injection}}{
+	\emph{Design pattern} in cui un modulo riceve dall’esterno gli oggetti da cui dipende, invece
+	di crearli da sé. Rende sostituibili le dipendenze, per esempio con versioni finte nei
+	\emph{test}, senza modificare il modulo.
+}
+
 \voceglossario{design-pattern}{\emph{Design pattern}}{
 	Soluzione riconosciuta e documentata a un problema di progettazione che si ripresenta in contesti
 	diversi, descritta in modo indipendente dal linguaggio. Ne è un esempio l’\emph{adapter}, che
@@ -121,6 +139,13 @@ corpo della relazione, il termine e il pedice G rimandano alla voce corrisponden
 	Sistema gestionale che integra dati e processi di diverse aree aziendali, come
 	amministrazione, acquisti, magazzino e vendite. Il collegamento con il negozio permette, per
 	esempio, di sincronizzare ordini e disponibilità dei prodotti.
+}
+
+\voceglossario{factory}{\emph{factory}}{
+	\emph{Design pattern} in cui una funzione, o un oggetto, si occupa di creare gli oggetti di cui
+	il resto del codice ha bisogno, nascondendo come vengono costruiti e con quali dipendenze. In
+	ChatCart crea a ogni richiesta gli strumenti dell’agente, legati al negozio e al mercato del
+	cliente.
 }
 
 \voceglossario{founder-senior-consultant}{\emph{Founder \& Senior Consultant}}{
@@ -196,6 +221,12 @@ corpo della relazione, il termine e il pedice G rimandano alla voce corrisponden
 	code}, le \emph{client credentials} e il \emph{token exchange}, adatti a casi d’uso diversi.
 }
 
+\voceglossario{observer}{\emph{observer}}{
+	\emph{Design pattern} in cui un oggetto, detto soggetto, mantiene un elenco di osservatori e li
+	avvisa a ogni cambiamento del proprio stato, così che restino aggiornati senza interrogarlo di
+	continuo.
+}
+
 \voceglossario{project-management-assistant}{\emph{Project Management Assistant}}{
 	Figura che supporta la gestione dei progetti, contribuendo all’organizzazione delle
 	attività, all’aggiornamento della documentazione e al monitoraggio delle scadenze.
@@ -216,6 +247,18 @@ corpo della relazione, il termine e il pedice G rimandano alla voce corrisponden
 \voceglossario{redesign}{\emph{Redesign}}{
 	Riprogettazione grafica e funzionale di un sito o di un negozio esistente, che ne rinnova
 	l’interfaccia e i percorsi dell’utente, spesso senza cambiare la piattaforma su cui si basa.
+}
+
+\voceglossario{registry}{\emph{registry}}{
+	\emph{Design pattern} che riunisce in un’unica struttura, indicizzata per chiave, le voci di un
+	insieme e le informazioni associate a ciascuna, così che il resto del codice le consulti da un
+	solo punto. In TypeScript il tipo del registro può imporre che ogni voce dell’insieme sia
+	definita.
+}
+
+\voceglossario{repository}{\emph{repository}}{
+	\emph{Design pattern} che concentra in un unico modulo le letture e le scritture di un insieme
+	di dati, nascondendo al resto dell’applicazione il modo in cui sono memorizzati.
 }
 
 \voceglossario{ricerca-semantica}{Ricerca semantica}{
@@ -329,6 +372,11 @@ corpo della relazione, il termine e il pedice G rimandano alla voce corrisponden
 	complessità, impegno e incertezza. Non corrisponde a un numero fisso di ore e acquista significato
 	rispetto alle stime dello stesso gruppo; la scala di Fibonacci è una possibile convenzione, non un
 	obbligo di Scrum.
+}
+
+\voceglossario{strategy}{\emph{strategy}}{
+	\emph{Design pattern} che incapsula in oggetti intercambiabili le varianti di un algoritmo, così
+	che il codice che lo usa possa sceglierne una durante l’esecuzione senza conoscerne i dettagli.
 }
 
 \voceglossario{streaming}{\emph{Streaming}}{
