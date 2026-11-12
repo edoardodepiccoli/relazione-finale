@@ -412,6 +412,18 @@ persistenza delle conversazioni e l’interfaccia del commerciante, richieste da
 \figref{fig:architettura-chatcart} mostra gli ambienti e i collegamenti che li uniscono; il
 carrello resta del negozio, e il \emph{widget} vi opera direttamente senza passare dall’agente.
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics{assets/03-architettura.pdf}
+	\caption[Architettura di ChatCart]{Gli ambienti e i collegamenti del prototipo. Il \emph{widget}
+	raggiunge il \emph{server} solo attraverso l’\emph{app proxy} e condivide con il tema il carrello
+	della
+	AJAX Cart API. La \emph{dashboard} appartiene all’applicazione, ma Shopify la mostra al
+	commerciante
+	nell’amministrazione; i due modelli si raggiungono attraverso l’AI Gateway di Vercel.}
+	\label{fig:architettura-chatcart}
+\end{figure}
+
 Il \emph{server} è una sola applicazione React Router, in cui le rotte autenticano le richieste e
 chiamano
 i moduli dell’agente, delle conversazioni e della \emph{dashboard}, separati per responsabilità così
@@ -474,6 +486,17 @@ li riceve invece dal programma a ogni
 richiesta (\figref{fig:pattern-server}). Con la \emph{dependency injection} anche il modello arriva
 come parametro, e le prove lo sostituiscono con uno simulato; il \emph{repository} raccoglie invece
 in un unico modulo gli accessi alle conversazioni.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics{assets/03-pattern.pdf}
+	\caption[Tre \emph{pattern} del \emph{server}]{Tre \emph{pattern} del \emph{server}. Nelle prove
+	\texttt{streamReply} riceve un modello simulato, che restituisce risposte prestabilite. Le misure
+	della \emph{dashboard} interrogano invece Prisma direttamente: il \emph{funnel} legge in un’unica
+	interrogazione tutte le conversazioni degli ultimi trenta giorni, con il numero dei messaggi del
+	cliente e i tipi di evento, mentre il \emph{repository} opera su una conversazione alla volta.}
+	\label{fig:pattern-server}
+\end{figure}
 
 \subsection{Il contratto tra agente e \emph{widget}}
 \label{sec:contratto}
