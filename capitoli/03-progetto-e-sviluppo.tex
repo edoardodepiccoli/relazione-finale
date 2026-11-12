@@ -501,11 +501,100 @@ in un unico modulo gli accessi alle conversazioni.
 \subsection{Il contratto tra agente e \emph{widget}}
 \label{sec:contratto}
 
-Approfondisco la scelta su cui si regge l’interfaccia generativa: un unico elenco di strumenti,
-condiviso tra agente e \emph{widget}, che distingue gli strumenti che leggono i dati del negozio da
-quelli che mostrano un componente e chiudono la risposta. Spiego come da questo elenco derivo i tipi
-condivisi tra le due parti, così che il \emph{widget} sappia sempre disegnare ciò che l’agente
-sceglie.
+Nel modello di interfaccia generativa scelto per ChatCart il modello linguistico seleziona
+componenti predefiniti e li popola con i dati del negozio (\secref{sec:limiti-assistenti}). Agente
+e \emph{widget} devono quindi concordare sul nome di ogni componente, sugli argomenti con cui
+richiederlo e sui dati necessari a mostrarlo. Poiché i due programmi si compilano e si pubblicano
+separatamente, un campo cambiato soltanto sul \emph{server} potrebbe lasciare nel \emph{browser} un
+componente vuoto senza che alcun errore lo segnali. Per questo ho progettato il contratto in modo
+che queste divergenze emergano durante la compilazione, prima del rilascio.
+
+La definizione comune è un elenco in \texttt{shared/tools.ts}, che per ciascuno degli otto
+strumenti contiene nome, categoria, schema in ingresso e, quando serve, schema in uscita. Le due
+categorie corrispondono ai due modi in cui il modello usa il negozio:
+
+\begin{itemize}
+	\item i \gloss{data-tool}{\emph{data tool}} leggono i dati per il modello: elenco e dettaglio
+	dei prodotti, collezioni, elenco e testo delle pagine del negozio;
+	\item i \gloss{display-tool}{\emph{display tool}} restituiscono i dati dei componenti visibili:
+	schede prodotto, scheda informativa e collegamenti alle collezioni. La loro invocazione
+	conclude la risposta.
+\end{itemize}
+
+Il risultato dei \emph{data tool} resta interno al ragionamento del modello, e il \emph{widget} ne
+mostra soltanto un’indicazione di avanzamento, come «Cerco i prodotti».
+
+Per evitare due descrizioni dello stesso dato da tenere allineate, ho affidato a un unico schema
+Zod sia la validazione sia il controllo dei tipi (\figref{fig:contratto-chatcart}). Durante
+l’esecuzione l’AI SDK presenta lo schema in ingresso al modello come descrizione degli argomenti e
+lo usa per verificarli prima di eseguire lo strumento; durante la compilazione TypeScript ne ricava
+un tipo statico con \texttt{z.infer}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics{assets/03-contratto.pdf}
+	\caption[Il contratto condiviso degli strumenti]{Il \emph{registry} \texttt{TOOLS} e chi ne
+	dipende.
+	L’AI SDK usa gli schemi di ingresso durante l’esecuzione; \emph{server}, \emph{widget} e
+	\emph{dashboard} dipendono dai tipi derivati, che legano ogni risultato al suo esecutore, alla sua
+	vista e alla sua riga nella cronologia.}
+	\label{fig:contratto-chatcart}
+\end{figure}
+
+Per il risultato dei \emph{display tool} lo schema serve soprattutto a ricavare il tipo atteso
+dalle viste, perché questi dati li costruisce il mio codice a partire dal negozio e il controllo
+statico di TypeScript basta a verificarne la coerenza con i componenti. Gli argomenti scelti dal
+modello
+richiedono invece anche la validazione durante l’esecuzione, perché il modello li genera soltanto
+mentre il programma è in esecuzione, fuori dalla portata del controllo dei tipi svolto in
+compilazione. Il contratto garantisce quindi la forma dei dati, senza dimostrare che il modello
+abbia scelto il prodotto giusto o scritto una spiegazione corretta.
+
+Il \codref{lst:elenco-strumenti} mostra un caso ridotto. Lo schema della scheda informativa
+stabilisce gli argomenti e il risultato, e il tipo della vista usa direttamente lo schema in
+uscita. Il testo della risposta arriva dal modello, mentre titolo e indirizzo della fonte arrivano
+dalla pagina del negozio letta dal mio codice.
+
+\begin{codelisting}
+	\caption[Un esempio del contratto tipizzato]{La definizione di un \emph{display tool} e il tipo
+	dei
+	dati della sua vista, semplificati. L’elenco completo comprende anche la categoria e gli altri
+	strumenti; z.infer ricava il tipo dallo schema.}
+	\label{lst:elenco-strumenti}
+	\begin{lstlisting}
+const faqTool = {
+  input: z.object({
+    handle: z.string(), answer: z.string(),
+  }),
+  output: z.object({
+    title: z.string(), answer: z.string(), url: z.string(),
+  }),
+};
+type FaqOutput = z.infer<typeof faqTool.output>;
+type FaqView = (props: { output: FaqOutput }) => ReactNode;
+	\end{lstlisting}
+\end{codelisting}
+
+Dallo stesso \emph{registry} ricavo anche le parti del programma che dipendono dalla categoria
+degli strumenti, come la condizione di arresto dell’agente al primo \emph{display tool}; se a una
+voce mancano l’esecutore, la vista o la riga della cronologia, il compilatore
+lo segnala.
+
+Il vantaggio di questo meccanismo si è visto il 28 ottobre, quando ho aggiunto i collegamenti alle
+collezioni. Ho scritto la definizione condivisa, l’esecutore e le due rappresentazioni, e il
+compilatore ha segnalato ogni punto che dipendeva dal nuovo strumento e non lo gestiva ancora.
+Restavano da aggiornare le istruzioni del modello e la misura dei clic, che il compilatore non può
+controllare perché dipendono dal significato della funzionalità.
+
+Il contratto è arrivato a questa forma in due passi. Il 5 ottobre ho ricavato i tipi comuni dal codice
+dell’agente, rendendo però la parte condivisa dipendente dal \emph{server}, e il 15 ottobre ho
+spostato la definizione in un elenco Zod indipendente.
+
+Resta aperta la compatibilità tra rilasci, perché Shopify pubblica il \emph{widget} separatamente
+dal \emph{server}. Un servizio esteso a più negozi richiederebbe di versionare il contratto, mentre
+già oggi un componente non più riconosciuto non interrompe la riapertura di una vecchia
+conversazione. Definito che cosa
+agente e \emph{widget} si scambiano, restava da realizzare ciascuna delle due parti.
 
 \section{Realizzazione}
 
