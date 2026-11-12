@@ -896,16 +896,81 @@ al pagamento non prova un ordine concluso né un aumento delle vendite.
 \section{Sperimentazioni e sviluppi futuri}
 \label{sec:sperimentazioni}
 
-Dedico questa sezione alle funzionalità che ho sperimentato senza portarle nel prodotto finale,
-perché documentano l’orientamento alla ricerca che io e il \emph{tutor} abbiamo dato al progetto
-dalla terza settimana: i messaggi di invito che comparivano prima dell’apertura della chat, i tre
-tentativi di adattare l’aspetto del \emph{widget} al tema del negozio, l’impiego di Jev nella scelta
-dei componenti, il pannello a tutto schermo su \emph{desktop}. Per ciascuna espongo l’ipotesi di
-partenza, l’esito che ho osservato e le ragioni per cui io e il \emph{tutor} abbiamo deciso di non
-inserirla nel prodotto consegnato. Da queste prove ricavo infine le strade lungo cui ChatCart
-potrebbe evolvere in futuro.
+La prima versione completa copriva gli obiettivi obbligatori, ma non diceva quale esperienza d’uso
+fosse più efficace. Dopo il 2 ottobre io e il \emph{tutor} abbiamo quindi verificato alcune
+ipotesi, accettando di scartare parte del lavoro. La \tabref{tbl:sperimentazioni} raccoglie le
+prove rimaste fuori dal prodotto finale, con l’idea di partenza e il motivo della rinuncia.
 
-% DA CONFERMARE: quali strade di evoluzione indicare.
+\begin{tabellalunga}{P{0.27}P{0.31}P{0.42}}
+	{\textbf{Prova e periodo} & \textbf{Ipotesi} & \textbf{Esito e decisione}}
+	{Le sperimentazioni escluse dalla versione finale. Il confronto sul valore resta qualitativo,
+	basato sulle prove del prototipo.}
+	{tbl:sperimentazioni}
+	Inviti contestuali (8--19/10) & Una domanda legata alla pagina incoraggia l’apertura della chat.
+	& Una chiamata al modello per ogni visita e regole aggiuntive portavano poco valore nelle
+	prove; abbiamo tolto gli inviti. \\
+	Personalizzazione manuale (30/09--1/10) & Il commerciante riproduce l’identità del marchio con
+	impostazioni visive. & La soluzione copriva solo parte dell’aspetto e non riusava i componenti
+	del tema. \\
+	Stile ricavato dal pagamento (2/10) & La configurazione del pagamento rappresenta l’identità del
+	negozio.
+	& Il pagamento ha uno stile indipendente dal tema; non era una fonte sufficiente. \\
+	Stile ricavato dal tema (5--15/10) & Un modello ricava l’aspetto dalla configurazione del tema.
+	& I risultati non giustificavano la complessità; il 15/10 abbiamo tolto la personalizzazione. \\
+	Pannello affiancato (14--15/10) & Restringere la pagina permette una conversazione più immersiva.
+	& Ogni tema richiedeva correzioni per pannelli e navigazione; sono tornato al pannello flottante.
+	\\
+	Storia delle visite (15--21/10) & Le pagine precedenti migliorano il contesto dell’agente.
+	& Era utile soprattutto agli inviti; senza di essi migliorava poco le risposte. \\
+	Jev per scegliere i componenti (solo progettato) & Un modello decisionale sceglie che cosa
+	mostrare.
+	& Avrei dovuto sostituire il ciclo dell’AI SDK con uno mio; ho rinunciato prima di implementarlo.
+	\\
+\end{tabellalunga}
+
+La personalizzazione visiva mostra il criterio con cui abbiamo ridotto il perimetro. Il
+\emph{widget} deve rispettare il \gloss{design-system}{\emph{design system}} del marchio, cioè le
+regole comuni per colori, caratteri, spaziature e componenti, e per ricavarlo ho provato tre fonti
+successive: le scelte manuali del commerciante, le impostazioni del pagamento e i file di
+configurazione del tema interpretati da un modello. La terza strada richiedeva anche di ricostruire
+i valori predefiniti e di interpretare convenzioni diverse tra temi, e la complessità cresceva più
+della qualità ottenuta.
+
+Alla fine ho scelto una configurazione di variabili CSS che lo sviluppatore adatta al cliente. La
+soluzione è coerente con i progetti su misura di Halue, in cui chi integra ChatCart conosce il
+negozio e può intervenire nel codice, mentre l’adattamento automatico servirebbe soprattutto a
+un’applicazione da installare senza assistenza in molti negozi diversi. La rinuncia dipende quindi
+anche dal modo in cui Halue potrebbe proporre il servizio.
+
+Le altre prove hanno messo in luce costi meno evidenti. Gli inviti contestuali generavano
+contenuti prima che il cliente aprisse la chat, e facevano quindi crescere le chiamate al modello
+con il traffico delle pagine anche quando nessuno usava l’assistente; il pannello affiancato
+dipendeva invece dalla struttura di ciascun tema. Ho conservato l’integrazione con il tema dove
+produceva un vantaggio centrale, come nel carrello, e ridotto le funzioni che richiedevano lo
+stesso sforzo per un beneficio marginale.
+
+Le rinunce e i limiti emersi indicano anche dove il prototipo potrebbe evolvere, secondo tre
+priorità:
+
+\begin{enumerate}
+	\item \textbf{Portare il prototipo su negozi reali}. Servono una gestione del catalogo con
+	ricerca mirata e paginazione, la separazione dei dati tra negozi, limiti alle richieste e
+	un’elaborazione dell’analisi adatta a volumi maggiori. Oggi l’agente legge al più i primi 250
+	prodotti e li filtra in memoria; questo limite è accettabile sul catalogo di prova ma
+	richiede una scelta diversa su cataloghi grandi. Il traffico reale permetterebbe anche un
+	confronto con l’esperienza senza assistente.
+	\item \textbf{Estendere ciò che l’agente conosce}. Le informazioni nei campi personalizzati
+	dei prodotti, le raccomandazioni e gli articoli del negozio potrebbero arricchire i consigli.
+	Lo stato degli ordini (DE2) aggiungerebbe il supporto dopo l’acquisto, con la necessità di
+	riconoscere il cliente e accedere ai suoi dati.
+	\item \textbf{Verificare altre integrazioni}. Hydrogen (FA1) richiede di ripensare il carrello
+	sulla Storefront API; il confronto con il \emph{server} MCP di Shopify (FA2) permetterebbe di
+	valutare il costo degli strumenti su misura. Sul prodotto attuale, eseguire automaticamente le
+	prove dei temi a ogni rilascio aiuterebbe a scoprire cambiamenti nelle loro interfacce.
+\end{enumerate}
+
+Questi sviluppi restano proposte, distinte dalle capacità che ho verificato nel prototipo; il modo
+in cui le ho verificate è l’oggetto della sezione successiva.
 
 \section{Verifica e validazione}
 \label{sec:verifica}
