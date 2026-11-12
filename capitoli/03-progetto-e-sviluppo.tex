@@ -1047,11 +1047,42 @@ reali.
 \section{Risultati}
 
 \subsection{Il prodotto dal punto di vista dell’utente}
+\label{sec:prodotto-utente}
 
-Presento ChatCart dal punto di vista di chi lo utilizza, attraverso una sequenza di schermate: un
-cliente che cerca un prodotto, lo confronta con altri, lo aggiunge al carrello e raggiunge il
-pagamento; poi il commerciante che consulta il \emph{funnel} e le conversazioni nella
-\emph{dashboard}. Dichiaro inoltre i limiti noti del prototipo.
+Al termine dello \emph{stage} ChatCart è un prototipo utilizzabile dall’inizio alla fine su un
+negozio di sviluppo con circa quaranta prodotti cosmetici, varianti e collezioni. Le schermate
+seguenti ripercorrono l’esperienza dei due attori. Il cliente può cercare e confrontare prodotti,
+chiedere informazioni e raggiungere il \gloss{checkout}{\emph{checkout}}, la procedura di pagamento
+di Shopify, passando dalla chat allo stesso carrello del negozio
+(\figref{fig:percorso-cliente}).
+
+Il cliente apre il pannello e scrive ciò che cerca, oppure sceglie uno dei suggerimenti iniziali,
+e la risposta compare progressivamente insieme ai componenti pertinenti: schede di prodotto per i
+consigli d’acquisto, una scheda con il collegamento alla fonte per le informazioni sul negozio. Se
+cambia pagina, il cliente ritrova la conversazione; da \emph{mobile} il pannello occupa lo schermo,
+mentre da \emph{desktop} resta sovrapposto alla pagina.
+
+Dalla scheda il cliente seleziona una variante e la aggiunge al carrello, poi ne modifica la
+quantità o prosegue al pagamento. La \figref{fig:acquisto-cliente} mostra questi comandi nella
+stessa conversazione; ogni modifica raggiunge anche il carrello del tema, nel modo descritto nella
+\secref{sec:widget}.
+
+Il commerciante attiva il \emph{widget} dall’\emph{editor} del tema, senza modificarne il codice,
+e configura il ripiego quando il tema lo richiede. Dall’amministrazione consulta poi la
+\emph{dashboard} della \figref{fig:percorso-commerciante}. Il riepilogo dei passaggi mostra in
+quale passaggio i clienti abbandonano la chat, e l’elenco affianca agli esiti osservati i punteggi
+e le
+etichette dell’analisi automatica, per orientare la rilettura.
+
+Aprendo una conversazione il commerciante ritrova messaggi, prodotti mostrati e azioni del cliente
+in ordine cronologico (\figref{fig:dettaglio-conversazione}) e può confrontare punteggio ed
+etichette con lo scambio effettivo, fino all’aggiunta al carrello e al clic verso il pagamento,
+verificando così il giudizio automatico sul singolo caso.
+
+Ho verificato questo percorso su Dawn e Horizon, e il risultato dimostra che la combinazione tra
+conversazione, componenti e carrello del tema è realizzabile nel contesto del prototipo. L’efficacia
+sul comportamento d’acquisto resta invece da verificare, perché ChatCart non ha ricevuto traffico di
+clienti reali; restano aperti i limiti discussi nella \secref{sec:sperimentazioni}.
 
 \subsection{Risultati quantitativi}
 \label{sec:quantitativi}
