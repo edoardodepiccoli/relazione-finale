@@ -703,13 +703,98 @@ controllato che arrivasse progressivamente fino alla chat, dove il \emph{widget}
 interfaccia.
 
 \subsection{Il \emph{widget} e l’integrazione con il tema del negozio}
+\label{sec:widget}
 
-Presento il \emph{widget}: i componenti (schede prodotto con selezione della variante, schede con le
-risposte tratte dalle pagine del negozio, collegamenti alle collezioni), il supporto a più lingue e
-valute e, in particolare, la sincronizzazione del carrello con il tema del negozio. Analizzo perché
-ogni tema Shopify gestisce il carrello in modo diverso e come ho affrontato il problema con un
-\emph{adapter} per ciascun tema e una soluzione di ripiego. Questa parte risponde agli obiettivi
-OB1, OB4 e DE1.
+Il \emph{widget} realizza l’\emph{app layer} e gli obiettivi OB1, OB4 e DE1, e deve funzionare
+dentro il tema del negozio, un ambiente che non controllo, con fogli di stile e \emph{script}
+propri. Il blocco Liquid dell’estensione prepara un elemento radice con lingua, paese e
+contesto della pagina e carica i file JavaScript e CSS compilati da Vite, così che il \emph{widget}
+conosca il contesto senza una richiesta aggiuntiva; nomi di classe propri separano il suo stile da
+quello del tema.
+
+I componenti della conversazione seguono il contratto della \secref{sec:contratto} (schede
+prodotto, scheda informativa e collegamenti alle collezioni), e a essi si aggiungono i suggerimenti
+e il pannello del carrello. Ne mostro la disposizione e il percorso d’uso nella
+\secref{sec:prodotto-utente}; qui approfondisco il problema che ha richiesto più progettazione,
+cioè far condividere a chat e tema lo stesso carrello e lo stesso stato visibile.
+
+Ho stabilito che il cliente acquisti soltanto attraverso i pulsanti dei componenti. Nella versione
+finale l’agente non vede né modifica il carrello. Consiglia i prodotti, mentre il cliente sceglie
+la variante e conferma ogni
+scrittura, così che una decisione del modello linguistico non produca da sola un effetto
+sull’acquisto. Il \emph{widget} assume quindi più responsabilità di quanto prevedesse il piano
+iniziale, che lo presentava soprattutto come livello di visualizzazione, perché legge e scrive da
+sé il carrello di Shopify. Valuto questo scostamento nella \secref{sec:soddisfacimento}.
+
+La AJAX Cart API conserva già un solo carrello per il cliente, ma non aggiorna tutte le interfacce
+che lo mostrano. Dopo una scrittura della chat l’icona e il pannello del tema possono mostrare
+ancora il contenuto precedente, e lo stesso accade alla chat dopo una scrittura del tema. Il
+problema riguarda quindi le interfacce che mostrano il carrello, mentre il dato resta unico. La
+\figref{fig:carrello-chatcart} mostra i moduli che
+realizzano i due versi dell’aggiornamento e i \emph{pattern} che vi applico.
+
+La prima versione del carrello usava regole legate al tema di prova, e per questo l’ho implementata
+nuovamente
+(\secref{sec:requisiti}). Il \emph{tutor} ha proposto l’\emph{adapter}, e io ho scelto di
+combinare due adattatori dedicati con un ripiego generico; ho scartato un secondo carrello sulla
+Storefront API, che avrebbe aggiunto un altro dato da sincronizzare con quello del negozio.
+
+La prima direzione parte dalla chat. Quando il cliente aggiunge o modifica un articolo, il
+\emph{widget} chiede alla AJAX Cart API anche le sezioni HTML necessarie ad aggiornare il tema,
+emette l’evento standard introdotto da Shopify per le modifiche al
+carrello\textsuperscript{\ref{rif:standard-events}} e affida le differenze all’adattatore scelto.
+L’evento parte anche per i temi che non lo ascoltano, perché fa parte del contratto della
+piattaforma. La \tabref{tbl:adattatori} confronta le tre strategie.
+
+\begin{tabellalunga}{P{0.2}P{0.47}P{0.33}}
+	{\textbf{Tema} & \textbf{Aggiornamento} & \textbf{Compromesso}}
+	{Le strategie con cui ChatCart aggiorna il tema dopo una scrittura della chat.}
+	{tbl:adattatori}
+	Horizon & Fornisce le sezioni all’evento standard; il tema le usa per ricostruire il
+	carrello. & Sfrutta l’integrazione prevista dai temi più recenti. \\
+	Dawn & Aggiorna icona e riepilogo e usa il meccanismo di notifica della famiglia Dawn per
+	il pannello laterale. & Richiede un adattamento alle convenzioni del tema. \\
+	Ripiego & Rilegge la pagina e copia gli elementi del carrello indicati dal commerciante.
+	& Funziona senza un adattatore specifico, con configurazione e una lettura aggiuntiva. \\
+\end{tabellalunga}
+
+Il codice del carrello ignora quale adattatore stia usando, perché quello selezionato è la
+\emph{strategy} dell’aggiornamento. Lo scelgo alla prima scrittura, quando gli \emph{script} del
+tema hanno avuto il tempo di inizializzarsi, riconoscendo elementi e funzioni caratteristici anziché
+il solo nome del tema, così da supportare anche i temi derivati dalle famiglie note.
+
+Ho tolto l’astrazione quando avevo un solo comportamento e l’ho reintrodotta quando sono diventati
+tre. Oggi aggiungere il supporto a un tema significa fornire un’altra implementazione
+dell’interfaccia. Gli errori
+degli adattatori restano isolati, perché un aggiornamento visivo fallito non deve annullare una
+scrittura già confermata da Shopify.
+
+La direzione opposta richiede di accorgersi delle azioni del tema, e per questo applico un
+\emph{decorator} alle funzioni di rete della pagina. Il \emph{decorator} conserva il comportamento
+originale di \texttt{fetch} e di \texttt{XMLHttpRequest} e, dopo una scrittura del tema riuscita,
+rilegge il carrello. Le richieste del \emph{widget} usano la funzione originale, così da non essere
+scambiate
+per scritture del tema, e quando la scheda del \emph{browser} torna visibile aggiorno di nuovo lo
+stato per cogliere le modifiche fatte in un’altra scheda.
+
+Resta da distribuire lo stato a tutti i componenti della chat. All’inizio ogni scheda e ogni
+pannello conservava una propria copia del carrello, che poteva divergere dalle altre; oggi un unico
+modulo contiene l’ultimo carrello confermato, l’operazione in corso e l’eventuale errore, e
+notifica ogni cambiamento ai componenti React iscritti con \texttt{useSyncExternalStore}, secondo
+il \emph{pattern observer}.
+
+La chat aggiorna il proprio stato e il tema soltanto dopo la risposta di Shopify, ed esegue le
+scritture una alla volta. Se Shopify rifiuta la quantità
+richiesta, mostro l’errore e rileggo il carrello, perché il negozio potrebbe aver accettato una
+parte dell’operazione. Queste regole privilegiano la coerenza tra le due interfacce rispetto a un
+aggiornamento ottimistico, che mostra subito il risultato atteso e lo corregge se Shopify lo rifiuta.
+
+Per la localizzazione, infine, la direttiva \texttt{@inContext} porta paese e lingua in ogni
+lettura della Storefront API e Shopify ricava la valuta dal paese, così che prezzi e collegamenti
+restino nel mercato del cliente fino al pagamento; i testi fissi del \emph{widget} sono in italiano
+e in inglese, ciascuna lingua in un proprio file di traduzione. Per aggiungerne una, lo
+sviluppatore scrive un nuovo file e lo registra nel modulo delle traduzioni, senza modificare i
+componenti.
 
 \subsection{Metriche di utilizzo e analisi delle conversazioni}
 
