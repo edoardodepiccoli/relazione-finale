@@ -975,11 +975,74 @@ in cui le ho verificate è l’oggetto della sezione successiva.
 \section{Verifica e validazione}
 \label{sec:verifica}
 
-Illustro la mia strategia di verifica: \emph{test} automatici concentrati sui punti in cui ChatCart
-interagisce con sistemi esterni che non controllo, eseguiti su una base di dati reale e senza
-simulare i moduli interni, e le ragioni di questa scelta. Discuto i limiti dei \emph{test}
-tradizionali applicati a un agente che non risponde mai due volte nello stesso modo. Concludo con la
-validazione svolta insieme al \emph{tutor} e con il rilascio dell’applicazione \emph{online}.
+Le parti di ChatCart che possono cambiare senza preavviso sono quelle che non controllo, cioè il
+modello, le API di Shopify e i temi, che possono cambiare
+indipendentemente da ChatCart, mentre la struttura interna dei moduli cambiava spesso per mia
+scelta. Ho quindi concentrato le prove automatiche sulle \gloss{cucitura}{cuciture}, i punti in cui
+il mio codice incontra quei sistemi, così da fissare il comportamento ai confini e lasciare libera
+l’organizzazione interna. La \tabref{tbl:strategia-test} riassume i confini, le tecniche e ciò che
+ciascuna prova può dimostrare.
+
+\begin{tabellalunga}{P{0.2}P{0.38}P{0.42}}
+	{\textbf{Confine} & \textbf{Tecnica} & \textbf{Comportamento verificato}}
+	{La strategia delle prove automatiche sulle cuciture del sistema.}
+	{tbl:strategia-test}
+	Temi & HTML modellato su Dawn e Horizon in happy-dom, una simulazione della pagina.
+	& Riconoscimento del tema, aggiornamento delle sezioni, rilevazione delle scritture esterne.
+	\\
+	API di Shopify & Risposte controllate del \emph{client} Storefront e delle richieste al
+	carrello. & Lettura dei dati, costruzione dei componenti, trattamento degli errori. \\
+	Modello & Modelli simulati dell’AI SDK, con risposta e chiamate osservabili.
+	& Istruzioni, contesto, storia inviata e gestione del ciclo; la prova non valuta la scelta
+	semantica del modello reale. \\
+	Base di dati & PostgreSQL locale con migrazioni e dati di prova.
+	& Interrogazioni del \emph{funnel}, ordine e contenuto delle conversazioni, stato dell’analisi.
+	\\
+	Rotte del proxy & Richieste costruite come quelle del \emph{widget}.
+	& Lettura degli argomenti, chiamata dei moduli e risposta della rotta. \\
+\end{tabellalunga}
+
+Eseguo le prove TypeScript con Vitest e sostituisco soltanto i sistemi esterni al processo,
+mantenendo reali i moduli interni. Un \gloss{mock}{\emph{mock}}, cioè
+un sostituto con risposte stabilite dalla prova, applicato a un modulo interno legherebbe il
+\emph{test} al modo in cui ho diviso il codice; in questo modo, quando ho riorganizzato il codice e
+introdotto i \emph{pattern}, i \emph{test} esistenti hanno continuato a verificare lo stesso
+comportamento senza bisogno di modifiche.
+
+Grazie alla \emph{dependency injection} (\figref{fig:pattern-server}) riproduco senza rete un
+modello che non risponde, una variante esaurita o un catalogo incompleto.
+
+La base di dati richiede un criterio diverso, perché i calcoli del \emph{funnel} e della selezione
+delle conversazioni stanno anche nelle interrogazioni, e simulare Prisma dimostrerebbe soltanto che
+il programma invoca certe funzioni. Ho quindi usato una base di dati reale e, quando la produzione
+è passata a PostgreSQL, ho portato anche le prove su un PostgreSQL locale con le stesse
+migrazioni. Verifico così schema e interrogazioni sullo stesso sistema usato nel rilascio.
+
+Ho scelto i casi a partire dalle regole e dai limiti del prodotto, come una variante non
+disponibile, un
+tema sconosciuto, una conversazione cancellata durante la risposta, due aggiornamenti successivi del
+carrello. Ho lasciato invece alla verifica manuale gran parte della disposizione visiva del
+pannello e della \emph{dashboard}.
+
+Le prove con un modello simulato non dimostrano che l’agente reale sappia consigliare bene. Per
+questo ho svolto conversazioni di prova sul negozio di sviluppo. Il comportamento richiesto nelle
+istruzioni non ha però una verifica automatica continuativa, e questo limita l’interpretazione
+della copertura dei requisiti
+conversazionali.
+
+Alle prove automatiche ho affiancato il controllo dei tipi in modalità rigorosa e un
+\gloss{linter}{\emph{linter}}, uno strumento di analisi statica che segnala costrutti scorretti o
+sospetti, e ho verificato a mano il percorso completo su Dawn e Horizon, da \emph{desktop} e da
+\emph{mobile}. Ho ripetuto queste verifiche dopo aver pubblicato ChatCart su Vercel e Neon a fine
+ottobre, servizi scelti con il \emph{tutor} dopo un primo tentativo su un \emph{server} gestito da me.
+
+La validazione ha accompagnato lo sviluppo attraverso il confronto con il \emph{tutor}, che il 2
+ottobre ha valutato la prima versione completa e il 14 ottobre ha mostrato il lavoro al fondatore;
+il 9 novembre ho presentato il prodotto a tutto il \emph{team}, con una dimostrazione funzionale e
+una discussione tecnica. Questi incontri hanno confermato l’utilità del prototipo per
+l’esplorazione di Halue, ma non equivalgono a una validazione commerciale con visitatori e ordini
+reali.
+
 
 \section{Risultati}
 
