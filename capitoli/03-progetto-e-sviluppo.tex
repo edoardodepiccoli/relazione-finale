@@ -807,12 +807,81 @@ sviluppatore scrive un nuovo file e lo registra nel modulo delle traduzioni, sen
 componenti.
 
 \subsection{Metriche di utilizzo e analisi delle conversazioni}
+\label{sec:metriche}
 
-Descrivo gli eventi che il \emph{widget} registra, il \emph{funnel} che la \emph{dashboard} presenta
-al commerciante e l’analisi delle conversazioni con Jev, un modello decisionale di TypeSafe AI
-uscito durante lo \emph{stage}: a differenza di un modello linguistico generativo, non produce testo
-ma restituisce decisioni tipizzate con la loro probabilità. Da qui apro il confronto tra i due tipi
-di modello nei compiti decisionali. Questa parte risponde all’obiettivo OB5.
+Un assistente di vendita è utile al commerciante solo se il commerciante può capire come i clienti
+lo usano e se li aiuta davvero. Per OB5 ho quindi costruito due strumenti complementari: i
+conteggi delle azioni del cliente, che mostrano come viene usata l’interfaccia, e l’analisi del
+contenuto delle conversazioni, che aiuta a individuare quelle da rileggere. La
+\figref{fig:misure-chatcart} mostra il percorso comune dei dati e i tre usi che ne fa la
+\emph{dashboard}.
+
+Il \emph{server} sa che cosa l’agente ha mostrato, ma soltanto il \emph{widget} osserva come il
+cliente usa i componenti. Per questo registro sei eventi (apertura della chat, clic su prodotto,
+aggiunta al carrello, clic su scheda informativa, clic su collezione e clic al pagamento) e li
+invio attraverso l’\emph{app proxy} con richieste che non bloccano l’interfaccia e che si
+completano anche quando il cliente lascia la pagina, per esempio passando al pagamento. Lo schema
+condiviso ne valida
+tipo e dati, e un \emph{registry} ne fissa il significato per misure e cronologia.
+
+Conservo conversazioni, messaggi ed eventi in PostgreSQL tramite Prisma, un \gloss{orm}{ORM},
+\emph{Object-Relational Mapper}, che genera dallo schema i tipi e le funzioni di accesso ai dati;
+ogni conversazione contiene messaggi, eventi e risultati dell’analisi. Il modulo delle
+conversazioni applica il \emph{repository} e
+concentra due regole: considera significative solo le conversazioni in cui il cliente ha scritto e
+aggiorna l’ultima attività con ogni nuovo messaggio o evento, così che le pagine e l’analisi usino
+lo stesso criterio di attività.
+
+La \emph{dashboard} calcola un \gloss{funnel}{\emph{funnel}}, cioè la sequenza di passaggi che
+avvicinano il visitatore all’acquisto. Per gli ultimi trenta giorni la \emph{dashboard} mostra
+caricamento del
+\emph{widget}, apertura, conversazione avviata, uso di un componente e clic al pagamento, con i
+tassi di coinvolgimento, di uso dei componenti e di conversione. Conto le conversazioni che
+raggiungono ciascun passaggio, perché più clic dello stesso cliente non devono diventare più
+conversioni. L’uso dei componenti rende osservabile la parte generativa dell’interfaccia, anche se
+non ne isola il contributo causale.
+
+Per l’analisi serviva un modello capace di classificare molte conversazioni secondo criteri
+uniformi, un compito diverso da quello dell’assistente di vendita, che richiede la capacità
+generativa e l’uso degli strumenti. Ho scelto Jev, il modello decisionale «System One» di TypeSafe
+AI\textsuperscript{\ref{rif:typesafe-system-one}}, che riceve una situazione e alcune domande con
+le risposte ammesse, descritte da me nella richiesta, e restituisce scelte o punteggi con le
+relative probabilità, senza generare testo.
+
+Considero conclusa una conversazione dopo trenta minuti senza attività. Dal pulsante «Analizza» il
+commerciante avvia l’elaborazione di quelle concluse e non ancora analizzate, o aggiornate dopo
+l’ultima analisi, e con la funzione \texttt{experimental\_evaluate} dell’AI
+SDK\textsuperscript{\ref{rif:vercel-jev}} pongo nella stessa chiamata le tre domande della
+\tabref{tbl:domande-analisi}.
+
+\begin{tabellalunga}{P{0.23}P{0.42}P{0.35}}
+	{\textbf{Indicatore} & \textbf{Domanda} & \textbf{Risposta ammessa}}
+	{Le tre dimensioni dell’analisi automatica di una conversazione.}
+	{tbl:domande-analisi}
+	Qualità dell’aiuto & Quanto l’assistente ha aiutato il cliente a raggiungere ciò che voleva?
+	& Un punteggio mostrato su cinque livelli. \\
+	Intenzione & Che cosa cercava principalmente di fare il cliente? & Una tra nove categorie,
+	come ricerca precisa, confronto o informazioni sul negozio. \\
+	Motivo del giudizio & Quale problema o punto di forza spiega meglio il risultato?
+	& Una tra quattordici etichette, sette problemi e sette punti di forza. \\
+\end{tabellalunga}
+
+Ho tenuto separati intenzione e giudizio, perché la prima classifica la richiesta del cliente, per
+esempio la ricerca di un regalo, mentre il secondo valuta la risposta dell’assistente, e la stessa
+intenzione può ricevere un aiuto buono o scarso. La terza domanda motiva il giudizio con
+un’etichetta, dato che un punteggio isolato non orienterebbe la lettura; il commerciante può poi
+verificarlo nella cronologia.
+
+Lo stesso compito potrebbe svolgerlo un modello generativo con risposta strutturata; ho preferito
+sperimentare un modello progettato per scegliere tra opzioni note. La garanzia riguarda però solo
+la forma della risposta, perché Jev può scegliere una categoria ammessa e sbagliata: l’analisi
+resta uno strumento di consultazione, che il commerciante verifica tornando ai messaggi.
+
+Su Vercel il \emph{server} non può proseguire un lavoro dopo aver inviato la risposta, e ho quindi
+elaborato le conversazioni in sequenza dentro la richiesta avviata dal pulsante, una soluzione
+adatta al negozio di prova che con molte conversazioni richiederebbe un’elaborazione separata.
+Anche il \emph{funnel} va letto con cautela, perché dimostra che le misure funzionano, ma un clic
+al pagamento non prova un ordine concluso né un aumento delle vendite.
 
 \section{Sperimentazioni e sviluppi futuri}
 \label{sec:sperimentazioni}
