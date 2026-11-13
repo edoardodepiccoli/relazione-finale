@@ -140,11 +140,38 @@ istruito l’agente (\secref{sec:commercio-agentico}).
 \section{Maturazione professionale}
 \label{sec:maturazione}
 
-Descrivo la mia maturazione professionale in termini di conoscenze, come l’ecosistema delle
-applicazioni Shopify e la costruzione di agenti, e di abilità, come il lavoro da remoto, la
-comunicazione con il \emph{tutor}, la gestione del tempo e la capacità di stabilire cosa escludere
-dal progetto. Rifletto inoltre su ciò che ho appreso dall’uso dell’intelligenza artificiale nella
-programmazione, il tema su cui si è concentrato l’incontro conclusivo con il fondatore.
+Lo \emph{stage} mi ha lasciato conoscenze tecniche, abilità nel modo di lavorare e un modo diverso
+di usare gli assistenti IA. Considero quest’ultimo l’apprendimento più importante, perché gli
+strumenti di IA fanno già parte del lavoro quotidiano di chi sviluppa, come mostra il ciclo di
+lavoro di Halue (\secref{sec:innovazione}), e perché li avevo già usati spesso prima dello
+\emph{stage}, ma mai con la consapevolezza che ho maturato durante il progetto. Lo tratto per
+ultimo, perché riprende le conoscenze e le abilità che descrivo prima.
+
+Sul piano delle conoscenze, ho imparato come è fatta un’applicazione Shopify dall’inizio alla fine.
+Ho imparato anche React Router 7, il \emph{framework} su cui si basa il modello di Shopify, e le sue
+differenze rispetto a Next.js, il \emph{framework} per React che conoscevo già. In Next.js i
+componenti eseguiti sul \emph{server} leggono i dati al proprio interno, mentre in React Router ogni
+rotta dichiara un \gloss{loader}{\emph{loader}}, la funzione che prepara i dati sul \emph{server}
+prima che la pagina venga mostrata, e un’\gloss{action}{\emph{action}}, la funzione che riceve le
+modifiche inviate dai moduli e dalle richieste. Il componente riceve quindi i dati già pronti, e
+ogni rotta raccoglie in un solo file letture, scritture e interfaccia. In ChatCart la rotta che
+riceve gli eventi dal \emph{widget} dichiara soltanto un’\emph{action}, perché accetta solo
+scritture e non mostra alcuna pagina.
+
+Sulla progettazione di agenti, l’oggetto di OP2, ho imparato a trattare il modello come un
+componente il cui risultato va guidato e controllato. Le istruzioni ne orientano il giudizio sul
+dialogo, il codice impone le regole che non devono dipendere da quel giudizio, e il contratto
+tipizzato verifica la forma dei dati prima che arrivino all’interfaccia (\secref{sec:contratto},
+\secref{sec:agente}). Dove collocare ciascuna regola è stata una delle decisioni più frequenti del
+progetto.
+
+Il riordino del codice mi ha insegnato infine a riconoscere i \emph{design pattern} in una soluzione
+già scritta e a introdurli quando semplificavano il codice (\secref{sec:architettura}). Ho capito
+soprattutto il loro valore come strumento di comunicazione. Un \emph{pattern} condensa in un nome un
+problema ricorrente, la sua soluzione e le conseguenze. Nella presentazione finale ho descritto la
+sincronizzazione del carrello con tre nomi, \emph{adapter}, \emph{decorator} e \emph{observer}, che
+chi conosce i \emph{pattern} associa subito a una struttura e a un comportamento, mentre descrivere
+la stessa soluzione senza quei nomi avrebbe richiesto di spiegare un modulo alla volta.
 
 \section{Formazione universitaria e lavoro}
 
