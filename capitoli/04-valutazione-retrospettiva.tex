@@ -246,8 +246,32 @@ giudizio sull’intero sistema che spettava a me. Ho ottenuto i risultati miglio
 era già definito con precisione, e definirlo richiedeva di conoscere il progetto.
 
 \section{Formazione universitaria e lavoro}
+\label{sec:formazione}
 
-Confronto le competenze che lo \emph{stage} mi ha richiesto con quelle che ho acquisito nel corso di
-studi. Individuo quelle che si sono rivelate utili e le lacune che sono emerse, come la
-progettazione di agenti e la verifica di sistemi dal comportamento non deterministico, sia rispetto
-allo \emph{stage} sia rispetto all’idea che ho del mondo del lavoro.
+Il corso di studi mi ha dato le basi su cui ho costruito gran parte del lavoro svolto durante lo
+\emph{stage}. Due insegnamenti in particolare si sono rivelati decisivi: Ingegneria del Software e
+Programmazione ad Oggetti.
+
+Ingegneria del Software è stato l’insegnamento più impegnativo dei tre anni e quello che mi è
+servito di più. Nel suo progetto didattico ho lavorato per mesi, in modo continuativo, in un gruppo
+di sette studenti, con un’organizzazione formale che comprendeva l’analisi dei requisiti, i
+diagrammi dei casi d’uso e un \gloss{way-of-working}{\emph{way of working}}, cioè l’insieme di
+regole con cui il gruppo pianifica, svolge e verifica il proprio lavoro. Da quel progetto vengono le
+basi di gestione del lavoro con cui ho organizzato lo \emph{stage}, il modo in cui ho scritto
+requisiti e casi d’uso (\secref{sec:requisiti}) e l’impostazione delle prove automatiche
+(\secref{sec:verifica}). Il riscontro dei docenti sul lavoro del gruppo mi ha fatto capire
+l’importanza dei \emph{design pattern}, che in ChatCart ho poi applicato a problemi concreti.
+
+Lo \emph{stage} mi ha mostrato anche come dosare quel rigore. Nel progetto didattico l’analisi dei
+requisiti precedeva la realizzazione, mentre in un progetto esplorativo io e il \emph{tutor} abbiamo
+ricavato i requisiti iterando sul prototipo. Della formazione ricevuta ho mantenuto la
+tracciabilità, cioè il legame esplicito tra ogni requisito, il caso d’uso da cui deriva e
+l’obiettivo del piano, e l’ho applicata a un’analisi costruita durante lo sviluppo.
+
+Programmazione ad Oggetti mi ha dato la base dei linguaggi a tipi statici. Il corso usava C++, e
+anche se ho scritto ChatCart in stile funzionale, l’abitudine a ragionare sui tipi mi ha guidato
+nella scelta di TypeScript in modalità rigorosa e dei tipi derivati dagli schemi Zod, su cui si
+fonda il contratto tra agente e \emph{widget} (\secref{sec:contratto}). Anche i \emph{design
+pattern}, che avevo studiato nella loro forma a oggetti, in ChatCart hanno preso una forma
+funzionale, con interfacce espresse come tipi e la creazione degli strumenti affidata a una
+funzione.
