@@ -2,19 +2,53 @@
 
 \chapter{Valutazione retrospettiva}
 
-Ripercorro lo \emph{stage} a posteriori: in che misura ho raggiunto gli obiettivi, che cosa ho
-imparato e quanto la formazione universitaria mi abbia preparato al lavoro che ho svolto.
+Valuto lo \emph{stage} a posteriori: in che misura ho soddisfatto gli obiettivi del piano di lavoro
+e i miei, che cosa mi ha lasciato in termini di conoscenze e abilità e quanto il corso di studi mi
+abbia preparato al lavoro che ho svolto.
 
 \section{Soddisfacimento degli obiettivi}
 \label{sec:soddisfacimento}
 
-Valuto, sulla base di dati di fatto, il grado di soddisfacimento degli obiettivi presentati nella
-\secref{sec:obiettivi} e nella \secref{sec:obiettivi-personali}: una tabella riporta ciascun
-obiettivo del piano, da OB1 a FA2, e ciascuno dei miei obiettivi personali, con il relativo stato e
-l’evidenza che lo documenta. Valuto allo stesso modo i prodotti attesi: quelli elencati nel piano di
-lavoro e la presentazione formale al \emph{team} che il \emph{tutor} mi ha chiesto a fine
-\emph{stage}. Discuto gli scostamenti, come gli obiettivi che io e il \emph{tutor} abbiamo scartato
-e i limiti delle metriche raccolte.
+Per valutare gli obiettivi ho confrontato la formulazione del piano di lavoro con il comportamento
+della versione finale del codice, la stessa su cui ho misurato i risultati della
+\secref{sec:quantitativi}. Considero raggiunto un obiettivo quando il prototipo realizza ciò che il
+piano descrive, e segnalo come scostamento ogni differenza tra la formulazione e la soluzione
+implementata, anche quando l’ho introdotta di proposito. La \tabref{tbl:stato-obiettivi} riporta lo
+stato degli obiettivi del piano (\tabref{tbl:obbligatori} e \tabref{tbl:desiderabili}) e dei miei
+obiettivi personali (\tabref{tbl:personali}), con la sezione che ne documenta la realizzazione.
+
+\begin{tabellatesi}{P{0.1}P{0.3}P{0.6}}
+	{Lo stato degli obiettivi del piano di lavoro e dei miei obiettivi personali nella versione
+	finale.}
+	{tbl:stato-obiettivi}
+	\toprule
+	\rowcolor{TabellaIntestazione} \textbf{ID} & \textbf{Stato} & \textbf{Evidenza} \\
+	\midrule
+	OB1 & Raggiunto, con scostamento & Il \emph{widget} mostra conversazione e componenti, e gestisce
+	anche il carrello (\secref{sec:widget}). \\
+	OB2 & Raggiunto & Cinque strumenti di lettura interrogano la Storefront API
+	(\secref{sec:agente}). \\
+	OB3 & Raggiunto & L’agente risponde con testo, con una domanda di chiarimento o con un
+	componente (\secref{sec:agente}). \\
+	OB4 & Raggiunto, con scostamento & Tre componenti e i messaggi suggeriti, che in alcuni casi
+	sono due o mancano (\secref{sec:contratto}). \\
+	OB5 & Raggiunto & Sei eventi, \emph{funnel} e analisi delle conversazioni, misurati senza
+	traffico reale (\secref{sec:metriche}). \\
+	DE1 & Raggiunto & Paese e lingua del cliente in ogni lettura del catalogo, prezzi nella valuta
+	del mercato (\secref{sec:widget}). \\
+	DE2 & Non raggiunto & Escluso con il \emph{tutor} dal perimetro del progetto. \\
+	FA1 & Non raggiunto & Escluso con il \emph{tutor} dal perimetro del progetto. \\
+	FA2 & Non raggiunto & Escluso con il \emph{tutor} dal perimetro del progetto. \\
+	OP1 & Raggiunto & Un’applicazione completa, dal modello ufficiale al rilascio
+	(\secref{sec:ecosistema-applicazioni}). \\
+	OP2 & Raggiunto & L’agente, il contratto tipizzato e la divisione delle regole tra istruzioni e
+	codice (\secref{sec:architettura}). \\
+	OP3 & Raggiunto & L’architettura dell’agente e la gestione del negozio con assistenti IA
+	attraverso le Admin API (\secref{sec:strumenti}). \\
+	OP4 & Raggiunto & 304 ore svolte in prevalenza da remoto, con il metodo della
+	\secref{sec:organizzazione-lavoro}. \\
+	\bottomrule
+\end{tabellatesi}
 
 \section{Maturazione professionale}
 \label{sec:maturazione}
