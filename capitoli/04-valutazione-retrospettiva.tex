@@ -50,6 +50,53 @@ obiettivi personali (\tabref{tbl:personali}), con la sezione che ne documenta la
 	\bottomrule
 \end{tabellatesi}
 
+Il prototipo soddisfa tutti gli obiettivi obbligatori, che il piano definisce vincolanti, e le 304
+ore rientrano nell’intervallo da 300 a 320 ore fissato dai vincoli del progetto
+(\secref{sec:obiettivi}). Halue aveva indicato come criterio di successo un prototipo funzionante
+dall’inizio alla fine su un negozio di esempio, accompagnato da una valutazione onesta di ciò che
+funziona e di ciò che non funziona. ChatCart funziona sul negozio di sviluppo nella versione
+pubblicata su Vercel, e la valutazione l’ho presentata al \emph{team} l’ultimo giorno di
+\emph{stage}. Quattro obiettivi raggiunti presentano però differenze dalla formulazione del piano,
+che discuto di seguito insieme agli obiettivi esclusi.
+
+Il piano descriveva il \emph{widget} come responsabile della sola visualizzazione, così che ogni
+decisione restasse nell’\emph{agent layer}. Nella versione finale il \emph{widget} legge e scrive da
+sé il carrello di Shopify e lo mantiene allineato al tema, perché ho stabilito che l’agente non veda
+né modifichi il carrello e che il cliente acquisti soltanto con i pulsanti dei componenti
+(\secref{sec:widget}). Lo scostamento sposta nel \emph{browser} una parte della logica, con un costo
+di manutenzione preciso: un adattatore per ogni famiglia di temi, da aggiornare quando un tema
+cambia le proprie interfacce. In cambio nessuna risposta del modello produce da sola un effetto
+sull’acquisto. Lo considero coerente con l’intento del piano, che voleva separare la presentazione
+dalle decisioni, perché il \emph{widget} esegue soltanto le azioni che il cliente conferma e
+l’agente resta l’unico a decidere che cosa mostrare.
+
+Per OB4 il piano chiedeva tre messaggi suggeriti per ogni risposta. ChatCart li genera con una
+seconda chiamata al modello, accetta due suggerimenti quando uno dei tre non è utilizzabile e mostra
+la risposta senza suggerimenti quando la chiamata fallisce o ne produce meno di due. Ho scelto di
+proposito questa regola, perché preferivo una risposta completa senza un elemento accessorio a una
+risposta in ritardo (\secref{sec:agente}). Il modulo di iscrizione alla \emph{newsletter} citato nel
+piano era soltanto un esempio, e le schede prodotto, la scheda informativa e i collegamenti alle
+collezioni soddisfano la richiesta di almeno due o tre componenti.
+
+OB5 è raggiunto come strumentazione, ma la strumentazione non basta a rispondere alla domanda per
+cui il piano la richiedeva, cioè se l’assistente sia efficace. Sul negozio di sviluppo le misure
+contano le mie conversazioni di prova, e il \emph{funnel} si ferma al clic verso il pagamento,
+perché ChatCart non legge gli ordini e nessun ordine risulta collegato a una conversazione.
+Verificare se l’assistente porta più clienti all’acquisto, il beneficio che lo studio citato nella
+\secref{sec:limiti-assistenti} attribuisce a un assistente efficace, richiede traffico reale e un
+confronto con le sessioni senza assistente, il requisito RFDE8 che la \secref{sec:quantitativi}
+riporta come non soddisfatto. Anche DE1 ha un limite: catalogo, prezzi e risposte seguono la lingua
+e il mercato del cliente, mentre i testi fissi del \emph{widget} esistono in italiano e in inglese,
+e ogni altra lingua richiede un nuovo file di traduzione.
+
+DE2, FA1 e FA2 non sono raggiunti. Io e il \emph{tutor} li abbiamo esclusi dal perimetro dopo aver
+deciso di dedicare la seconda metà dello \emph{stage} all’esperienza d’uso e alla sperimentazione
+(\secref{sec:pianificazione}), che Halue considerava la parte di maggior valore. Il piano prevedeva
+questa possibilità, perché considerava le estensioni solo dopo il completamento degli obiettivi
+obbligatori; DE1 è l’unica estensione che ho realizzato. Lo stato degli ordini avrebbe richiesto
+inoltre di riconoscere il cliente e di accedere ai suoi dati, e la \secref{sec:sperimentazioni}
+descrive che cosa servirebbe per realizzare i tre obiettivi esclusi.
+
 \section{Maturazione professionale}
 \label{sec:maturazione}
 
